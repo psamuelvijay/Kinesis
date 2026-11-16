@@ -39,3 +39,11 @@ Samsung Galaxy S II on the waist, 30 volunteers aged 19-48, 50 Hz, video-labelle
 5. Model B trained on these datasets has no GPS-spoofing labels. Its accuracy says nothing about spoofing detection.
 6. Android step counter data are not in any of these datasets; fusion uses it only in live testing.
 
+
+## Phase 2 findings (Dryad, Model A)
+Source: results/metrics/phase2_*.json; full detail in results/phase2_report.md.
+- Cumulative step counter decreases in 40 of 198 tracks (135 events, all inside one endDate batch). Handled with a running maximum over rows ordered by ms; differences are not clipped.
+- positions.ms and steps.ms are treated as one clock (signalStart) with moderate confidence; not proven. positions.csv has rows with ms < 0 in 180 tracks (819 rows).
+- GPS: 60,468 raw rows; 44 duplicates, 169 with confInterval > 50 m and 73 implied > 10 m/s dropped. 140 gaps longer than 10 s, not interpolated. Speed -1 or NaN is invalid.
+- 14,480 5 s windows generated, 13,466 kept. 25 tracks have GPS path / distanceReference outside 0.8-1.25 and are flagged.
+- Subject-independent split (seed 42): train 12 subjects, validation 3, test 3.
