@@ -1,0 +1,115 @@
+{
+    "step":  "STEP 9 VERIFY",
+    "python":  "3.14.3",
+    "rerun_same_env_twice_bit_identical":  true,
+    "rerun_vs_committed":  {
+                               "bit_identical":  false,
+                               "n_numeric_fields":  824,
+                               "n_fields_diff_gt_1e-9":  190,
+                               "max_abs_diff":  16.97265625,
+                               "max_abs_diff_field":  "test.xgboost.track_level.total_pred",
+                               "cause":  "committed outputs record sklearn 1.9.1/xgboost 3.4.1/numpy 2.5.5/pandas 3.1.1; neither installed interpreter has these (Python 3.14: sklearn 1.8.0, xgboost 3.2.0, numpy 2.4.3, pandas 3.0.1). Preprocessing outputs (windows, splits, exclusions, cleaning, reconciliation, monotonicity) are byte-identical; alignment check differs at ~1e-12 float noise; model metrics differ by library version.",
+                               "selected_model_same":  true,
+                               "rerun_test_rf":  {
+                                                     "n":  2117,
+                                                     "MAE":  1.4027958249106454,
+                                                     "RMSE":  2.069268895746267,
+                                                     "R2":  0.34733990046825236
+                                                 },
+                               "rerun_test_xgb":  {
+                                                      "n":  2117,
+                                                      "MAE":  1.4045726358573787,
+                                                      "RMSE":  2.0433409175368653,
+                                                      "R2":  0.36359311859909316
+                                                  },
+                               "committed_test_rf":  {
+                                                         "n":  2117,
+                                                         "MAE":  1.4027958249106454,
+                                                         "RMSE":  2.069268895746267,
+                                                         "R2":  0.34733990046825236
+                                                     },
+                               "committed_test_xgb":  {
+                                                          "n":  2117,
+                                                          "MAE":  1.398920371172968,
+                                                          "RMSE":  2.0411361057960664,
+                                                          "R2":  0.3649657728953042
+                                                      }
+                           },
+    "subject_leakage":  {
+                            "train":  [
+                                          0,
+                                          2,
+                                          4,
+                                          5,
+                                          6,
+                                          7,
+                                          8,
+                                          13,
+                                          14,
+                                          16,
+                                          17,
+                                          18
+                                      ],
+                            "validation":  [
+                                               3,
+                                               10,
+                                               11
+                                           ],
+                            "test":  [
+                                         1,
+                                         9,
+                                         12
+                                     ],
+                            "overlap_free":  true,
+                            "splits_json_checks":  {
+                                                       "zero_subject_overlap":  true,
+                                                       "all_subjects_assigned":  true,
+                                                       "no_track_in_two_sets":  true
+                                                   }
+                        },
+    "imu_columns_in_features":  {
+                                    "features":  [
+                                                     "n_fixes",
+                                                     "n_speed_valid",
+                                                     "displacement_m",
+                                                     "path_m",
+                                                     "speed_mean",
+                                                     "speed_median",
+                                                     "speed_max",
+                                                     "speed_std",
+                                                     "speed_delta",
+                                                     "conf_mean",
+                                                     "coverage_frac",
+                                                     "covered_dur_s",
+                                                     "derived_speed_mps",
+                                                     "lag_speed_mean",
+                                                     "lag_path_m"
+                                                 ],
+                                    "matches":  [
+
+                                                ],
+                                    "none_found":  true
+                                },
+    "docs_numbers_match_json":  {
+                                    "test.random_forest.MAE":  true,
+                                    "test.random_forest.RMSE":  true,
+                                    "test.random_forest.R2":  true,
+                                    "test.xgboost.MAE":  true,
+                                    "test.xgboost.RMSE":  true,
+                                    "test.xgboost.R2":  true,
+                                    "test.baseline_train_mean.MAE":  true,
+                                    "test.baseline_linear_distance.MAE":  true
+                                },
+    "raw_and_docs_hashes_unchanged":  {
+                                          "docs/Kinesis_Literature_Survey.pdf":  true,
+                                          "docs/Kinesis Data Collection Protocol and Logger Spec (v0.1).md":  true,
+                                          "docs/Kinesis_Guide_Review.pptx":  true,
+                                          "docs/Kinesis_Literature_Review.pptx":  true,
+                                          "docs/Kinesis_Progress_Review_2.pptx":  true,
+                                          "docs/Kinesis_Progress_Review_2_Final.pptx":  true,
+                                          "docs/Review.pptx":  true,
+                                          "datasets/dryad/raw/Data.zip":  true
+                                      },
+    "docs_still_uncommitted_and_identical":  true,
+    "overall":  "PASS_WITH_NOTE: preprocessing and RF reproduce exactly; XGBoost test metrics differ slightly (MAE 1.399 vs 1.405, R2 0.365 vs 0.364) because installed library versions differ from those recorded in committed outputs. Committed outputs/docs left as-is and match each other."
+}
