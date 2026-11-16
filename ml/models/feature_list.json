@@ -1,0 +1,21 @@
+{
+ "features": [
+  "n_fixes",
+  "n_speed_valid",
+  "displacement_m",
+  "path_m",
+  "speed_mean",
+  "speed_median",
+  "speed_max",
+  "speed_std",
+  "speed_delta",
+  "conf_mean",
+  "coverage_frac",
+  "covered_dur_s",
+  "derived_speed_mps",
+  "lag_speed_mean",
+  "lag_path_m"
+ ],
+ "target": "steps_target (steps per 5 s window)",
+ "baseline_distance": "speed_mean * 5 s (GPS only)"
+}

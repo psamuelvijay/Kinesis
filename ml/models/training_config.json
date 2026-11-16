@@ -1,0 +1,252 @@
+{
+ "seed": 42,
+ "split_seed": 42,
+ "split_ids": {
+  "train": [
+   0,
+   2,
+   4,
+   5,
+   6,
+   7,
+   8,
+   13,
+   14,
+   16,
+   17,
+   18
+  ],
+  "validation": [
+   3,
+   10,
+   11
+  ],
+  "test": [
+   1,
+   9,
+   12
+  ]
+ },
+ "library_versions": {
+  "python": "3.14.3",
+  "scikit-learn": "1.9.1",
+  "xgboost": "3.4.1",
+  "numpy": "2.5.5",
+  "pandas": "3.1.1",
+  "joblib": "1.6.0"
+ },
+ "features": [
+  "n_fixes",
+  "n_speed_valid",
+  "displacement_m",
+  "path_m",
+  "speed_mean",
+  "speed_median",
+  "speed_max",
+  "speed_std",
+  "speed_delta",
+  "conf_mean",
+  "coverage_frac",
+  "covered_dur_s",
+  "derived_speed_mps",
+  "lag_speed_mean",
+  "lag_path_m"
+ ],
+ "selected_model": "random_forest",
+ "selection_rule": "lowest validation window MAE (models fit on train subjects only)",
+ "search_grids": {
+  "random_forest": [
+   {
+    "max_depth": 8,
+    "min_samples_leaf": 1,
+    "max_features": 0.5
+   },
+   {
+    "max_depth": 8,
+    "min_samples_leaf": 1,
+    "max_features": 1.0
+   },
+   {
+    "max_depth": 8,
+    "min_samples_leaf": 5,
+    "max_features": 0.5
+   },
+   {
+    "max_depth": 8,
+    "min_samples_leaf": 5,
+    "max_features": 1.0
+   },
+   {
+    "max_depth": 8,
+    "min_samples_leaf": 20,
+    "max_features": 0.5
+   },
+   {
+    "max_depth": 8,
+    "min_samples_leaf": 20,
+    "max_features": 1.0
+   },
+   {
+    "max_depth": 16,
+    "min_samples_leaf": 1,
+    "max_features": 0.5
+   },
+   {
+    "max_depth": 16,
+    "min_samples_leaf": 1,
+    "max_features": 1.0
+   },
+   {
+    "max_depth": 16,
+    "min_samples_leaf": 5,
+    "max_features": 0.5
+   },
+   {
+    "max_depth": 16,
+    "min_samples_leaf": 5,
+    "max_features": 1.0
+   },
+   {
+    "max_depth": 16,
+    "min_samples_leaf": 20,
+    "max_features": 0.5
+   },
+   {
+    "max_depth": 16,
+    "min_samples_leaf": 20,
+    "max_features": 1.0
+   },
+   {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "max_features": 0.5
+   },
+   {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "max_features": 1.0
+   },
+   {
+    "max_depth": null,
+    "min_samples_leaf": 5,
+    "max_features": 0.5
+   },
+   {
+    "max_depth": null,
+    "min_samples_leaf": 5,
+    "max_features": 1.0
+   },
+   {
+    "max_depth": null,
+    "min_samples_leaf": 20,
+    "max_features": 0.5
+   },
+   {
+    "max_depth": null,
+    "min_samples_leaf": 20,
+    "max_features": 1.0
+   }
+  ],
+  "xgboost": [
+   {
+    "max_depth": 3,
+    "learning_rate": 0.03,
+    "n_estimators": 300,
+    "min_child_weight": 1
+   },
+   {
+    "max_depth": 3,
+    "learning_rate": 0.03,
+    "n_estimators": 300,
+    "min_child_weight": 10
+   },
+   {
+    "max_depth": 3,
+    "learning_rate": 0.1,
+    "n_estimators": 300,
+    "min_child_weight": 1
+   },
+   {
+    "max_depth": 3,
+    "learning_rate": 0.1,
+    "n_estimators": 300,
+    "min_child_weight": 10
+   },
+   {
+    "max_depth": 5,
+    "learning_rate": 0.03,
+    "n_estimators": 300,
+    "min_child_weight": 1
+   },
+   {
+    "max_depth": 5,
+    "learning_rate": 0.03,
+    "n_estimators": 300,
+    "min_child_weight": 10
+   },
+   {
+    "max_depth": 5,
+    "learning_rate": 0.1,
+    "n_estimators": 300,
+    "min_child_weight": 1
+   },
+   {
+    "max_depth": 5,
+    "learning_rate": 0.1,
+    "n_estimators": 300,
+    "min_child_weight": 10
+   }
+  ]
+ },
+ "best_params": {
+  "random_forest": {
+   "max_depth": 8,
+   "min_samples_leaf": 5,
+   "max_features": 1.0
+  },
+  "xgboost": {
+   "max_depth": 5,
+   "learning_rate": 0.03,
+   "n_estimators": 300,
+   "min_child_weight": 1
+  }
+ },
+ "fixed_params": {
+  "random_forest": {
+   "n_estimators": 300
+  },
+  "xgboost": {
+   "subsample": 0.8,
+   "colsample_bytree": 0.8,
+   "tree_method": "hist",
+   "objective": "reg:squarederror"
+  }
+ },
+ "final_fit_data": "train subjects only (validation used for selection, not merged into training)",
+ "nan_handling": "feature NaNs (single-fix windows: displacement/path/derived speed; first window of a track: lag_*) are passed natively to RF (sklearn>=1.4) and XGBoost",
+ "baselines": {
+  "baseline_train_mean": "predicts train-mean steps (8.5882)",
+  "baseline_linear_distance": "steps = 1.4385 steps/m x (GPS speed_mean x 5 s); k = median ratio over train windows with distance >= 0.5 m"
+ },
+ "alignment_decision": "H0: treat positions.ms and steps.ms as the same signalStart clock; apply NO per-track or global lag shift; do not re-base positions by testStart.",
+ "alignment_confidence": "moderate (clock identity supported; sub-window offsets of a few seconds cannot be excluded)",
+ "step_handling_decision": {
+  "rule": "Treat the counter as cumulative with out-of-order delivery of rows inside one reporting batch: cum(T) = running maximum of steps over rows with ms<=T (rows ordered by ms); window increment = cum(T_end) - cum(T_start). Never clip individual diffs; report the window-level net change. Rows at identical ms are kept (no dedup needed: running max is order-independent).",
+  "justification_source_keys": [
+   "decrease_pairs_same_endDate",
+   "decrease_pairs_crossing_endDate_batch",
+   "decrease_rows_until_counter_recovers",
+   "sorting_effect_on_decrease_tracks",
+   "final_value_vs_metadata",
+   "reconciliation_sum_window_increments_minus_totSteps",
+   "window_rule_comparison_5s"
+  ],
+  "known_limitation": "A window boundary falling inside a batch can credit up to the batch's max decrease (<=4 steps) to one window and take it back in the next; the net over the track is exact.",
+  "observed_pattern": "All decreases lie inside one endDate batch (rows with identical endDate, ms differing by 0-12 ms): rows of a batch are delivered out of order, not counter resets or corrections. Exception in kind: 14_4 has one row with steps==0 inside a batch (-6) and 14_9 a -10 jump inside a batch; both recover within the batch. Sorting by ms (stable) does not fix them, sorting by (endDate, steps) fixes all but 1 event.",
+  "metadata_reconciliation_exceptions": "5_7 (metadata totSteps is 1 below the last value) and 14_7 (running max is 1 above the last-row value that equals totSteps); 1 step each",
+  "before_first_row": "counter taken as 0 before the first row (first row already holds several steps)"
+ },
+ "window_target": "cum(T_end)-cum(T_start), cum = running max of steps counter (monotonicity decision)",
+ "no_imu_or_step_features": true,
+ "test_scored_once_after_freeze": true
+}
