@@ -1,0 +1,32 @@
+
+Kinesis - data/
+
+
+# --- Phase 1 additions ---
+# Raw dataset contents (large); keep placeholders, docs, and inventory files
+datasets/*/raw/*
+!datasets/*/raw/.gitkeep
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Android
+android/**/build/
+android/**/.gradle/
+android/**/.idea/
+android/**/local.properties
+android/**/*.apk
+android/**/*.aab
+.kotlin/
+
+# OS / Office temp
+~$*
+Thumbs.db
+
+datasets/*/extracted/
