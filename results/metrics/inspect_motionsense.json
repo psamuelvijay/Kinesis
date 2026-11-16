@@ -1,0 +1,3828 @@
+{
+  "dataset": "MotionSense",
+  "streams": {
+    "A_DeviceMotion": {
+      "zip": "A_DeviceMotion_data.zip",
+      "csv_files": 360,
+      "unmatched_csv": 0,
+      "total_rows": 1412865,
+      "columns": [
+        "Unnamed: 0",
+        "attitude.roll",
+        "attitude.pitch",
+        "attitude.yaw",
+        "gravity.x",
+        "gravity.y",
+        "gravity.z",
+        "rotationRate.x",
+        "rotationRate.y",
+        "rotationRate.z",
+        "userAcceleration.x",
+        "userAcceleration.y",
+        "userAcceleration.z"
+      ],
+      "dtypes": {
+        "Unnamed: 0": "int64",
+        "attitude.roll": "float64",
+        "attitude.pitch": "float64",
+        "attitude.yaw": "float64",
+        "gravity.x": "float64",
+        "gravity.y": "float64",
+        "gravity.z": "float64",
+        "rotationRate.x": "float64",
+        "rotationRate.y": "float64",
+        "rotationRate.z": "float64",
+        "userAcceleration.x": "float64",
+        "userAcceleration.y": "float64",
+        "userAcceleration.z": "float64"
+      },
+      "missing_per_column": {
+        "Unnamed: 0": 0,
+        "attitude.roll": 0,
+        "attitude.pitch": 0,
+        "attitude.yaw": 0,
+        "gravity.x": 0,
+        "gravity.y": 0,
+        "gravity.z": 0,
+        "rotationRate.x": 0,
+        "rotationRate.y": 0,
+        "rotationRate.z": 0,
+        "userAcceleration.x": 0,
+        "userAcceleration.y": 0,
+        "userAcceleration.z": 0
+      },
+      "has_timestamp_column": false,
+      "first_column_is_unnamed_index": true
+    },
+    "B_Accelerometer": {
+      "zip": "B_Accelerometer_data.zip",
+      "csv_files": 360,
+      "unmatched_csv": 0,
+      "total_rows": 1433825,
+      "columns": [
+        "Unnamed: 0",
+        "x",
+        "y",
+        "z"
+      ],
+      "dtypes": {
+        "Unnamed: 0": "int64",
+        "x": "float64",
+        "y": "float64",
+        "z": "float64"
+      },
+      "missing_per_column": {
+        "Unnamed: 0": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "has_timestamp_column": false,
+      "first_column_is_unnamed_index": true
+    },
+    "C_Gyroscope": {
+      "zip": "C_Gyroscope_data.zip",
+      "csv_files": 360,
+      "unmatched_csv": 0,
+      "total_rows": 1413262,
+      "columns": [
+        "Unnamed: 0",
+        "x",
+        "y",
+        "z"
+      ],
+      "dtypes": {
+        "Unnamed: 0": "int64",
+        "x": "float64",
+        "y": "float64",
+        "z": "float64"
+      },
+      "missing_per_column": {
+        "Unnamed: 0": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "has_timestamp_column": false,
+      "first_column_is_unnamed_index": true
+    }
+  },
+  "recordings_in_all_three_streams": 360,
+  "recordings_not_in_all_streams": [],
+  "recordings_with_row_count_mismatch_between_streams": [
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 1751,
+        "B_Accelerometer": 1781,
+        "C_Gyroscope": 1751
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 2144,
+        "B_Accelerometer": 2182,
+        "C_Gyroscope": 2144
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 2270,
+        "B_Accelerometer": 2309,
+        "C_Gyroscope": 2271
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 1917,
+        "B_Accelerometer": 1953,
+        "C_Gyroscope": 1919
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 2187,
+        "B_Accelerometer": 2225,
+        "C_Gyroscope": 2188
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 2146,
+        "B_Accelerometer": 2184,
+        "C_Gyroscope": 2149
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 1885,
+        "B_Accelerometer": 1920,
+        "C_Gyroscope": 1886
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 2179,
+        "B_Accelerometer": 2218,
+        "C_Gyroscope": 2180
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 2078,
+        "B_Accelerometer": 2115,
+        "C_Gyroscope": 2080
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 2678,
+        "B_Accelerometer": 2722,
+        "C_Gyroscope": 2678
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 2025,
+        "B_Accelerometer": 2062,
+        "C_Gyroscope": 2028
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 1522,
+        "B_Accelerometer": 1553,
+        "C_Gyroscope": 1523
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 1583,
+        "B_Accelerometer": 1616,
+        "C_Gyroscope": 1585
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 1719,
+        "B_Accelerometer": 1753,
+        "C_Gyroscope": 1721
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 1772,
+        "B_Accelerometer": 1807,
+        "C_Gyroscope": 1773
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 2367,
+        "B_Accelerometer": 2406,
+        "C_Gyroscope": 2368
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 2085,
+        "B_Accelerometer": 2124,
+        "C_Gyroscope": 2086
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 2946,
+        "B_Accelerometer": 2995,
+        "C_Gyroscope": 2948
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 2048,
+        "B_Accelerometer": 2084,
+        "C_Gyroscope": 2051
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 2236,
+        "B_Accelerometer": 2275,
+        "C_Gyroscope": 2238
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 2905,
+        "B_Accelerometer": 2952,
+        "C_Gyroscope": 2906
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 1824,
+        "B_Accelerometer": 1859,
+        "C_Gyroscope": 1826
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 2332,
+        "B_Accelerometer": 2373,
+        "C_Gyroscope": 2332
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 1,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 1647,
+        "B_Accelerometer": 1678,
+        "C_Gyroscope": 1647
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 2458,
+        "B_Accelerometer": 2500,
+        "C_Gyroscope": 2458
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 2639,
+        "B_Accelerometer": 2683,
+        "C_Gyroscope": 2640
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 2911,
+        "B_Accelerometer": 2957,
+        "C_Gyroscope": 2911
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 2244,
+        "B_Accelerometer": 2284,
+        "C_Gyroscope": 2245
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 2163,
+        "B_Accelerometer": 2201,
+        "C_Gyroscope": 2165
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 2484,
+        "B_Accelerometer": 2525,
+        "C_Gyroscope": 2484
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 2223,
+        "B_Accelerometer": 2262,
+        "C_Gyroscope": 2223
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 2448,
+        "B_Accelerometer": 2490,
+        "C_Gyroscope": 2451
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 2507,
+        "B_Accelerometer": 2551,
+        "C_Gyroscope": 2509
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 2887,
+        "B_Accelerometer": 2935,
+        "C_Gyroscope": 2888
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 2742,
+        "B_Accelerometer": 2788,
+        "C_Gyroscope": 2744
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 1903,
+        "B_Accelerometer": 1939,
+        "C_Gyroscope": 1904
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 1809,
+        "B_Accelerometer": 1844,
+        "C_Gyroscope": 1811
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 1974,
+        "B_Accelerometer": 2011,
+        "C_Gyroscope": 1975
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 1935,
+        "B_Accelerometer": 1971,
+        "C_Gyroscope": 1935
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 2953,
+        "B_Accelerometer": 3000,
+        "C_Gyroscope": 2953
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 2916,
+        "B_Accelerometer": 2963,
+        "C_Gyroscope": 2918
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 3156,
+        "B_Accelerometer": 3205,
+        "C_Gyroscope": 3158
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 2491,
+        "B_Accelerometer": 2534,
+        "C_Gyroscope": 2493
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 2616,
+        "B_Accelerometer": 2659,
+        "C_Gyroscope": 2618
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 3436,
+        "B_Accelerometer": 3489,
+        "C_Gyroscope": 3436
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 1920,
+        "B_Accelerometer": 1956,
+        "C_Gyroscope": 1920
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 2832,
+        "B_Accelerometer": 2878,
+        "C_Gyroscope": 2832
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 2,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 1461,
+        "B_Accelerometer": 1491,
+        "C_Gyroscope": 1461
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 896,
+        "B_Accelerometer": 918,
+        "C_Gyroscope": 895
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 1095,
+        "B_Accelerometer": 1121,
+        "C_Gyroscope": 1095
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 1143,
+        "B_Accelerometer": 1170,
+        "C_Gyroscope": 1144
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 925,
+        "B_Accelerometer": 949,
+        "C_Gyroscope": 925
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 699,
+        "B_Accelerometer": 720,
+        "C_Gyroscope": 699
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 1117,
+        "B_Accelerometer": 1144,
+        "C_Gyroscope": 1120
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 927,
+        "B_Accelerometer": 952,
+        "C_Gyroscope": 928
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 1157,
+        "B_Accelerometer": 1185,
+        "C_Gyroscope": 1158
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 913,
+        "B_Accelerometer": 938,
+        "C_Gyroscope": 916
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 1111,
+        "B_Accelerometer": 1138,
+        "C_Gyroscope": 1111
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 969,
+        "B_Accelerometer": 994,
+        "C_Gyroscope": 969
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 814,
+        "B_Accelerometer": 837,
+        "C_Gyroscope": 814
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 557,
+        "B_Accelerometer": 577,
+        "C_Gyroscope": 559
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 544,
+        "B_Accelerometer": 564,
+        "C_Gyroscope": 545
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 979,
+        "B_Accelerometer": 1004,
+        "C_Gyroscope": 980
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 1207,
+        "B_Accelerometer": 1234,
+        "C_Gyroscope": 1209
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 1180,
+        "B_Accelerometer": 1208,
+        "C_Gyroscope": 1182
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 1149,
+        "B_Accelerometer": 1176,
+        "C_Gyroscope": 1149
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 861,
+        "B_Accelerometer": 886,
+        "C_Gyroscope": 863
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 900,
+        "B_Accelerometer": 925,
+        "C_Gyroscope": 901
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 1168,
+        "B_Accelerometer": 1196,
+        "C_Gyroscope": 1171
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 696,
+        "B_Accelerometer": 718,
+        "C_Gyroscope": 698
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 1056,
+        "B_Accelerometer": 1082,
+        "C_Gyroscope": 1056
+      }
+    },
+    {
+      "activity": "dws",
+      "trial": 11,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 439,
+        "B_Accelerometer": 456,
+        "C_Gyroscope": 439
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 4861,
+        "B_Accelerometer": 4927,
+        "C_Gyroscope": 4860
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 4966,
+        "B_Accelerometer": 5036,
+        "C_Gyroscope": 4966
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 4753,
+        "B_Accelerometer": 4820,
+        "C_Gyroscope": 4755
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 5294,
+        "B_Accelerometer": 5367,
+        "C_Gyroscope": 5294
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 3558,
+        "B_Accelerometer": 3611,
+        "C_Gyroscope": 3558
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 4343,
+        "B_Accelerometer": 4406,
+        "C_Gyroscope": 4343
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 4549,
+        "B_Accelerometer": 4615,
+        "C_Gyroscope": 4550
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 4247,
+        "B_Accelerometer": 4308,
+        "C_Gyroscope": 4247
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 3847,
+        "B_Accelerometer": 3904,
+        "C_Gyroscope": 3849
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 4397,
+        "B_Accelerometer": 4462,
+        "C_Gyroscope": 4398
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 3284,
+        "B_Accelerometer": 3336,
+        "C_Gyroscope": 3285
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 4534,
+        "B_Accelerometer": 4599,
+        "C_Gyroscope": 4536
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 3414,
+        "B_Accelerometer": 3467,
+        "C_Gyroscope": 3416
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 3896,
+        "B_Accelerometer": 3954,
+        "C_Gyroscope": 3898
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 3974,
+        "B_Accelerometer": 4033,
+        "C_Gyroscope": 3975
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 4814,
+        "B_Accelerometer": 4881,
+        "C_Gyroscope": 4814
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 3377,
+        "B_Accelerometer": 3430,
+        "C_Gyroscope": 3377
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 4856,
+        "B_Accelerometer": 4924,
+        "C_Gyroscope": 4855
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 5214,
+        "B_Accelerometer": 5293,
+        "C_Gyroscope": 5217
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 4143,
+        "B_Accelerometer": 4203,
+        "C_Gyroscope": 4145
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 5535,
+        "B_Accelerometer": 5611,
+        "C_Gyroscope": 5538
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 4813,
+        "B_Accelerometer": 4882,
+        "C_Gyroscope": 4814
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 4815,
+        "B_Accelerometer": 4881,
+        "C_Gyroscope": 4815
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 9,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 2843,
+        "B_Accelerometer": 2889,
+        "C_Gyroscope": 2843
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 1567,
+        "B_Accelerometer": 1592,
+        "C_Gyroscope": 1566
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 1452,
+        "B_Accelerometer": 1483,
+        "C_Gyroscope": 1453
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 1216,
+        "B_Accelerometer": 1244,
+        "C_Gyroscope": 1217
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 921,
+        "B_Accelerometer": 946,
+        "C_Gyroscope": 924
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 765,
+        "B_Accelerometer": 788,
+        "C_Gyroscope": 767
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 929,
+        "B_Accelerometer": 954,
+        "C_Gyroscope": 931
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 1350,
+        "B_Accelerometer": 1379,
+        "C_Gyroscope": 1355
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 1952,
+        "B_Accelerometer": 1988,
+        "C_Gyroscope": 1952
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 1072,
+        "B_Accelerometer": 1099,
+        "C_Gyroscope": 1074
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 1453,
+        "B_Accelerometer": 1484,
+        "C_Gyroscope": 1454
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 985,
+        "B_Accelerometer": 1011,
+        "C_Gyroscope": 987
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 1244,
+        "B_Accelerometer": 1272,
+        "C_Gyroscope": 1244
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 1029,
+        "B_Accelerometer": 1055,
+        "C_Gyroscope": 1029
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 1237,
+        "B_Accelerometer": 1265,
+        "C_Gyroscope": 1239
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 1178,
+        "B_Accelerometer": 1205,
+        "C_Gyroscope": 1178
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 1699,
+        "B_Accelerometer": 1733,
+        "C_Gyroscope": 1700
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 960,
+        "B_Accelerometer": 985,
+        "C_Gyroscope": 960
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 1262,
+        "B_Accelerometer": 1291,
+        "C_Gyroscope": 1264
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 1207,
+        "B_Accelerometer": 1236,
+        "C_Gyroscope": 1210
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 1385,
+        "B_Accelerometer": 1415,
+        "C_Gyroscope": 1387
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 1636,
+        "B_Accelerometer": 1669,
+        "C_Gyroscope": 1637
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 1468,
+        "B_Accelerometer": 1499,
+        "C_Gyroscope": 1468
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 1147,
+        "B_Accelerometer": 1173,
+        "C_Gyroscope": 1147
+      }
+    },
+    {
+      "activity": "jog",
+      "trial": 16,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 790,
+        "B_Accelerometer": 810,
+        "C_Gyroscope": 790
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 10292,
+        "B_Accelerometer": 10419,
+        "C_Gyroscope": 10292
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 9220,
+        "B_Accelerometer": 9338,
+        "C_Gyroscope": 9221
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 12303,
+        "B_Accelerometer": 12452,
+        "C_Gyroscope": 12303
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 9099,
+        "B_Accelerometer": 9214,
+        "C_Gyroscope": 9099
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 9609,
+        "B_Accelerometer": 9731,
+        "C_Gyroscope": 9609
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 7760,
+        "B_Accelerometer": 7862,
+        "C_Gyroscope": 7761
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 11383,
+        "B_Accelerometer": 11524,
+        "C_Gyroscope": 11385
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 9657,
+        "B_Accelerometer": 9781,
+        "C_Gyroscope": 9657
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 11125,
+        "B_Accelerometer": 11263,
+        "C_Gyroscope": 11126
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 9397,
+        "B_Accelerometer": 9517,
+        "C_Gyroscope": 9399
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 7926,
+        "B_Accelerometer": 8031,
+        "C_Gyroscope": 7928
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 8050,
+        "B_Accelerometer": 8155,
+        "C_Gyroscope": 8052
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 9901,
+        "B_Accelerometer": 10027,
+        "C_Gyroscope": 9902
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 12757,
+        "B_Accelerometer": 12915,
+        "C_Gyroscope": 12758
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 9820,
+        "B_Accelerometer": 9945,
+        "C_Gyroscope": 9821
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 11001,
+        "B_Accelerometer": 11138,
+        "C_Gyroscope": 11002
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 11221,
+        "B_Accelerometer": 11364,
+        "C_Gyroscope": 11222
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 8923,
+        "B_Accelerometer": 9037,
+        "C_Gyroscope": 8925
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 11690,
+        "B_Accelerometer": 11835,
+        "C_Gyroscope": 11692
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 7937,
+        "B_Accelerometer": 8040,
+        "C_Gyroscope": 7940
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 10326,
+        "B_Accelerometer": 10455,
+        "C_Gyroscope": 10326
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 8466,
+        "B_Accelerometer": 8576,
+        "C_Gyroscope": 8469
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 6106,
+        "B_Accelerometer": 6190,
+        "C_Gyroscope": 6106
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 5,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 10688,
+        "B_Accelerometer": 10819,
+        "C_Gyroscope": 10688
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 10292,
+        "B_Accelerometer": 10419,
+        "C_Gyroscope": 10292
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 3712,
+        "B_Accelerometer": 3768,
+        "C_Gyroscope": 3712
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 1894,
+        "B_Accelerometer": 1929,
+        "C_Gyroscope": 1895
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 3069,
+        "B_Accelerometer": 3118,
+        "C_Gyroscope": 3072
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 4296,
+        "B_Accelerometer": 4357,
+        "C_Gyroscope": 4296
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 4090,
+        "B_Accelerometer": 4151,
+        "C_Gyroscope": 4092
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 4918,
+        "B_Accelerometer": 4988,
+        "C_Gyroscope": 4919
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 4720,
+        "B_Accelerometer": 4787,
+        "C_Gyroscope": 4721
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 5081,
+        "B_Accelerometer": 5153,
+        "C_Gyroscope": 5083
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 5864,
+        "B_Accelerometer": 5945,
+        "C_Gyroscope": 5866
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 7650,
+        "B_Accelerometer": 7751,
+        "C_Gyroscope": 7652
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 2934,
+        "B_Accelerometer": 2982,
+        "C_Gyroscope": 2934
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 3274,
+        "B_Accelerometer": 3325,
+        "C_Gyroscope": 3276
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 2928,
+        "B_Accelerometer": 2976,
+        "C_Gyroscope": 2928
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 5979,
+        "B_Accelerometer": 6060,
+        "C_Gyroscope": 5979
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 4225,
+        "B_Accelerometer": 4287,
+        "C_Gyroscope": 4226
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 3106,
+        "B_Accelerometer": 3156,
+        "C_Gyroscope": 3107
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 4494,
+        "B_Accelerometer": 4559,
+        "C_Gyroscope": 4496
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 4962,
+        "B_Accelerometer": 5032,
+        "C_Gyroscope": 4964
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 2522,
+        "B_Accelerometer": 2564,
+        "C_Gyroscope": 2522
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 4137,
+        "B_Accelerometer": 4197,
+        "C_Gyroscope": 4139
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 3557,
+        "B_Accelerometer": 3610,
+        "C_Gyroscope": 3558
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 3031,
+        "B_Accelerometer": 3077,
+        "C_Gyroscope": 3031
+      }
+    },
+    {
+      "activity": "sit",
+      "trial": 13,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 3386,
+        "B_Accelerometer": 3437,
+        "C_Gyroscope": 3386
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 10194,
+        "B_Accelerometer": 10322,
+        "C_Gyroscope": 10194
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 7851,
+        "B_Accelerometer": 7952,
+        "C_Gyroscope": 7851
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 10245,
+        "B_Accelerometer": 10373,
+        "C_Gyroscope": 10247
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 8019,
+        "B_Accelerometer": 8122,
+        "C_Gyroscope": 8019
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 9209,
+        "B_Accelerometer": 9325,
+        "C_Gyroscope": 9209
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 8767,
+        "B_Accelerometer": 8879,
+        "C_Gyroscope": 8767
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 9230,
+        "B_Accelerometer": 9348,
+        "C_Gyroscope": 9230
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 10561,
+        "B_Accelerometer": 10694,
+        "C_Gyroscope": 10562
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 7668,
+        "B_Accelerometer": 7767,
+        "C_Gyroscope": 7670
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 7147,
+        "B_Accelerometer": 7242,
+        "C_Gyroscope": 7149
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 11294,
+        "B_Accelerometer": 11437,
+        "C_Gyroscope": 11297
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 9307,
+        "B_Accelerometer": 9426,
+        "C_Gyroscope": 9307
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 11868,
+        "B_Accelerometer": 12016,
+        "C_Gyroscope": 11870
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 9834,
+        "B_Accelerometer": 9959,
+        "C_Gyroscope": 9834
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 7601,
+        "B_Accelerometer": 7701,
+        "C_Gyroscope": 7601
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 9282,
+        "B_Accelerometer": 9400,
+        "C_Gyroscope": 9283
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 7050,
+        "B_Accelerometer": 7146,
+        "C_Gyroscope": 7053
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 7533,
+        "B_Accelerometer": 7632,
+        "C_Gyroscope": 7536
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 16424,
+        "B_Accelerometer": 16622,
+        "C_Gyroscope": 16426
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 9679,
+        "B_Accelerometer": 9802,
+        "C_Gyroscope": 9681
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 10429,
+        "B_Accelerometer": 10560,
+        "C_Gyroscope": 10430
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 7627,
+        "B_Accelerometer": 7727,
+        "C_Gyroscope": 7628
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 7024,
+        "B_Accelerometer": 7115,
+        "C_Gyroscope": 7024
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 6,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 10973,
+        "B_Accelerometer": 11108,
+        "C_Gyroscope": 10973
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 2553,
+        "B_Accelerometer": 2595,
+        "C_Gyroscope": 2553
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 2425,
+        "B_Accelerometer": 2465,
+        "C_Gyroscope": 2425
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 4062,
+        "B_Accelerometer": 4121,
+        "C_Gyroscope": 4062
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 2546,
+        "B_Accelerometer": 2588,
+        "C_Gyroscope": 2546
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 3209,
+        "B_Accelerometer": 3259,
+        "C_Gyroscope": 3212
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 5583,
+        "B_Accelerometer": 5660,
+        "C_Gyroscope": 5583
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 2655,
+        "B_Accelerometer": 2699,
+        "C_Gyroscope": 2657
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 3106,
+        "B_Accelerometer": 3155,
+        "C_Gyroscope": 3107
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 2161,
+        "B_Accelerometer": 2200,
+        "C_Gyroscope": 2163
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 3267,
+        "B_Accelerometer": 3318,
+        "C_Gyroscope": 3269
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 2972,
+        "B_Accelerometer": 3020,
+        "C_Gyroscope": 2973
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 2229,
+        "B_Accelerometer": 2269,
+        "C_Gyroscope": 2230
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 3900,
+        "B_Accelerometer": 3958,
+        "C_Gyroscope": 3902
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 2730,
+        "B_Accelerometer": 2776,
+        "C_Gyroscope": 2730
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 5184,
+        "B_Accelerometer": 5256,
+        "C_Gyroscope": 5184
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 4211,
+        "B_Accelerometer": 4272,
+        "C_Gyroscope": 4211
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 3146,
+        "B_Accelerometer": 3197,
+        "C_Gyroscope": 3149
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 3809,
+        "B_Accelerometer": 3866,
+        "C_Gyroscope": 3809
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 4014,
+        "B_Accelerometer": 4073,
+        "C_Gyroscope": 4016
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 2115,
+        "B_Accelerometer": 2152,
+        "C_Gyroscope": 2117
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 3836,
+        "B_Accelerometer": 3894,
+        "C_Gyroscope": 3839
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 5779,
+        "B_Accelerometer": 5858,
+        "C_Gyroscope": 5782
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 2150,
+        "B_Accelerometer": 2188,
+        "C_Gyroscope": 2150
+      }
+    },
+    {
+      "activity": "std",
+      "trial": 14,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 3969,
+        "B_Accelerometer": 4028,
+        "C_Gyroscope": 3969
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 2195,
+        "B_Accelerometer": 2233,
+        "C_Gyroscope": 2195
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 2635,
+        "B_Accelerometer": 2679,
+        "C_Gyroscope": 2635
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 2395,
+        "B_Accelerometer": 2436,
+        "C_Gyroscope": 2399
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 2468,
+        "B_Accelerometer": 2510,
+        "C_Gyroscope": 2470
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 1981,
+        "B_Accelerometer": 2017,
+        "C_Gyroscope": 1983
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 1957,
+        "B_Accelerometer": 1993,
+        "C_Gyroscope": 1957
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 2787,
+        "B_Accelerometer": 2833,
+        "C_Gyroscope": 2790
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 2877,
+        "B_Accelerometer": 2924,
+        "C_Gyroscope": 2878
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 2422,
+        "B_Accelerometer": 2464,
+        "C_Gyroscope": 2423
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 2505,
+        "B_Accelerometer": 2549,
+        "C_Gyroscope": 2508
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 2368,
+        "B_Accelerometer": 2410,
+        "C_Gyroscope": 2369
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 2249,
+        "B_Accelerometer": 2289,
+        "C_Gyroscope": 2251
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 902,
+        "B_Accelerometer": 927,
+        "C_Gyroscope": 905
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 1606,
+        "B_Accelerometer": 1639,
+        "C_Gyroscope": 1608
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 2494,
+        "B_Accelerometer": 2535,
+        "C_Gyroscope": 2496
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 2799,
+        "B_Accelerometer": 2846,
+        "C_Gyroscope": 2801
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 2508,
+        "B_Accelerometer": 2551,
+        "C_Gyroscope": 2508
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 3184,
+        "B_Accelerometer": 3236,
+        "C_Gyroscope": 3187
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 2938,
+        "B_Accelerometer": 2986,
+        "C_Gyroscope": 2941
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 2562,
+        "B_Accelerometer": 2605,
+        "C_Gyroscope": 2563
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 3349,
+        "B_Accelerometer": 3401,
+        "C_Gyroscope": 3351
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 2397,
+        "B_Accelerometer": 2438,
+        "C_Gyroscope": 2399
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 3229,
+        "B_Accelerometer": 3279,
+        "C_Gyroscope": 3229
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 3,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 1397,
+        "B_Accelerometer": 1426,
+        "C_Gyroscope": 1397
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 3075,
+        "B_Accelerometer": 3121,
+        "C_Gyroscope": 3075
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 3332,
+        "B_Accelerometer": 3383,
+        "C_Gyroscope": 3332
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 2951,
+        "B_Accelerometer": 2998,
+        "C_Gyroscope": 2953
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 2762,
+        "B_Accelerometer": 2807,
+        "C_Gyroscope": 2765
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 2692,
+        "B_Accelerometer": 2736,
+        "C_Gyroscope": 2693
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 2403,
+        "B_Accelerometer": 2445,
+        "C_Gyroscope": 2405
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 3304,
+        "B_Accelerometer": 3357,
+        "C_Gyroscope": 3306
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 2991,
+        "B_Accelerometer": 3040,
+        "C_Gyroscope": 2992
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 2887,
+        "B_Accelerometer": 2934,
+        "C_Gyroscope": 2889
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 2994,
+        "B_Accelerometer": 3042,
+        "C_Gyroscope": 2996
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 2783,
+        "B_Accelerometer": 2829,
+        "C_Gyroscope": 2786
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 2849,
+        "B_Accelerometer": 2895,
+        "C_Gyroscope": 2849
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 1512,
+        "B_Accelerometer": 1544,
+        "C_Gyroscope": 1513
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 2466,
+        "B_Accelerometer": 2508,
+        "C_Gyroscope": 2467
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 3229,
+        "B_Accelerometer": 3281,
+        "C_Gyroscope": 3232
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 3898,
+        "B_Accelerometer": 3956,
+        "C_Gyroscope": 3898
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 2909,
+        "B_Accelerometer": 2957,
+        "C_Gyroscope": 2911
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 3483,
+        "B_Accelerometer": 3537,
+        "C_Gyroscope": 3485
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 3529,
+        "B_Accelerometer": 3583,
+        "C_Gyroscope": 3531
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 3013,
+        "B_Accelerometer": 3061,
+        "C_Gyroscope": 3015
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 3702,
+        "B_Accelerometer": 3757,
+        "C_Gyroscope": 3704
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 2710,
+        "B_Accelerometer": 2755,
+        "C_Gyroscope": 2711
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 4086,
+        "B_Accelerometer": 4147,
+        "C_Gyroscope": 4086
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 4,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 1512,
+        "B_Accelerometer": 1541,
+        "C_Gyroscope": 1512
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 1066,
+        "B_Accelerometer": 1090,
+        "C_Gyroscope": 1066
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 1268,
+        "B_Accelerometer": 1296,
+        "C_Gyroscope": 1270
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 1212,
+        "B_Accelerometer": 1240,
+        "C_Gyroscope": 1215
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 1227,
+        "B_Accelerometer": 1255,
+        "C_Gyroscope": 1228
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 903,
+        "B_Accelerometer": 928,
+        "C_Gyroscope": 905
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 1026,
+        "B_Accelerometer": 1052,
+        "C_Gyroscope": 1029
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 1361,
+        "B_Accelerometer": 1391,
+        "C_Gyroscope": 1361
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 1262,
+        "B_Accelerometer": 1290,
+        "C_Gyroscope": 1264
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 1183,
+        "B_Accelerometer": 1211,
+        "C_Gyroscope": 1184
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 1326,
+        "B_Accelerometer": 1355,
+        "C_Gyroscope": 1328
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 1149,
+        "B_Accelerometer": 1176,
+        "C_Gyroscope": 1151
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 1442,
+        "B_Accelerometer": 1472,
+        "C_Gyroscope": 1442
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 377,
+        "B_Accelerometer": 396,
+        "C_Gyroscope": 378
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 1093,
+        "B_Accelerometer": 1119,
+        "C_Gyroscope": 1094
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 876,
+        "B_Accelerometer": 900,
+        "C_Gyroscope": 876
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 1405,
+        "B_Accelerometer": 1434,
+        "C_Gyroscope": 1405
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 1204,
+        "B_Accelerometer": 1233,
+        "C_Gyroscope": 1205
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 1250,
+        "B_Accelerometer": 1278,
+        "C_Gyroscope": 1250
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 1371,
+        "B_Accelerometer": 1401,
+        "C_Gyroscope": 1373
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 1144,
+        "B_Accelerometer": 1171,
+        "C_Gyroscope": 1144
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 1617,
+        "B_Accelerometer": 1649,
+        "C_Gyroscope": 1618
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 1008,
+        "B_Accelerometer": 1033,
+        "C_Gyroscope": 1008
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 1496,
+        "B_Accelerometer": 1527,
+        "C_Gyroscope": 1496
+      }
+    },
+    {
+      "activity": "ups",
+      "trial": 12,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 743,
+        "B_Accelerometer": 765,
+        "C_Gyroscope": 743
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 5439,
+        "B_Accelerometer": 5513,
+        "C_Gyroscope": 5439
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 7681,
+        "B_Accelerometer": 7781,
+        "C_Gyroscope": 7683
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 6410,
+        "B_Accelerometer": 6496,
+        "C_Gyroscope": 6411
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 6471,
+        "B_Accelerometer": 6558,
+        "C_Gyroscope": 6472
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 4735,
+        "B_Accelerometer": 4803,
+        "C_Gyroscope": 4736
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 7088,
+        "B_Accelerometer": 7182,
+        "C_Gyroscope": 7088
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 6864,
+        "B_Accelerometer": 6956,
+        "C_Gyroscope": 6865
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 6122,
+        "B_Accelerometer": 6206,
+        "C_Gyroscope": 6124
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 7104,
+        "B_Accelerometer": 7198,
+        "C_Gyroscope": 7105
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 6402,
+        "B_Accelerometer": 6489,
+        "C_Gyroscope": 6403
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 6626,
+        "B_Accelerometer": 6714,
+        "C_Gyroscope": 6627
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 6742,
+        "B_Accelerometer": 6831,
+        "C_Gyroscope": 6742
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 5464,
+        "B_Accelerometer": 5540,
+        "C_Gyroscope": 5465
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 6767,
+        "B_Accelerometer": 6857,
+        "C_Gyroscope": 6767
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 6934,
+        "B_Accelerometer": 7027,
+        "C_Gyroscope": 6934
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 7366,
+        "B_Accelerometer": 7463,
+        "C_Gyroscope": 7366
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 6996,
+        "B_Accelerometer": 7090,
+        "C_Gyroscope": 6996
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 8402,
+        "B_Accelerometer": 8512,
+        "C_Gyroscope": 8403
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 6678,
+        "B_Accelerometer": 6768,
+        "C_Gyroscope": 6679
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 7026,
+        "B_Accelerometer": 7120,
+        "C_Gyroscope": 7028
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 7360,
+        "B_Accelerometer": 7457,
+        "C_Gyroscope": 7360
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 6442,
+        "B_Accelerometer": 6529,
+        "C_Gyroscope": 6443
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 6505,
+        "B_Accelerometer": 6590,
+        "C_Gyroscope": 6505
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 7,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 5021,
+        "B_Accelerometer": 5091,
+        "C_Gyroscope": 5021
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 4340,
+        "B_Accelerometer": 4400,
+        "C_Gyroscope": 4340
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 5614,
+        "B_Accelerometer": 5691,
+        "C_Gyroscope": 5616
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 5194,
+        "B_Accelerometer": 5266,
+        "C_Gyroscope": 5194
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 5336,
+        "B_Accelerometer": 5409,
+        "C_Gyroscope": 5339
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 3841,
+        "B_Accelerometer": 3897,
+        "C_Gyroscope": 3843
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 5176,
+        "B_Accelerometer": 5249,
+        "C_Gyroscope": 5177
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 4883,
+        "B_Accelerometer": 4952,
+        "C_Gyroscope": 4885
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 4828,
+        "B_Accelerometer": 4897,
+        "C_Gyroscope": 4830
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 4754,
+        "B_Accelerometer": 4822,
+        "C_Gyroscope": 4757
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 6111,
+        "B_Accelerometer": 6195,
+        "C_Gyroscope": 6114
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 4889,
+        "B_Accelerometer": 4958,
+        "C_Gyroscope": 4891
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 4860,
+        "B_Accelerometer": 4929,
+        "C_Gyroscope": 4860
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 3782,
+        "B_Accelerometer": 3839,
+        "C_Gyroscope": 3784
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 4695,
+        "B_Accelerometer": 4762,
+        "C_Gyroscope": 4696
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 4906,
+        "B_Accelerometer": 4975,
+        "C_Gyroscope": 4907
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 5446,
+        "B_Accelerometer": 5520,
+        "C_Gyroscope": 5446
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 4665,
+        "B_Accelerometer": 4733,
+        "C_Gyroscope": 4665
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 5973,
+        "B_Accelerometer": 6054,
+        "C_Gyroscope": 5973
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 5295,
+        "B_Accelerometer": 5369,
+        "C_Gyroscope": 5295
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 5014,
+        "B_Accelerometer": 5084,
+        "C_Gyroscope": 5014
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 6304,
+        "B_Accelerometer": 6390,
+        "C_Gyroscope": 6307
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 4948,
+        "B_Accelerometer": 5019,
+        "C_Gyroscope": 4950
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 5441,
+        "B_Accelerometer": 5515,
+        "C_Gyroscope": 5441
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 8,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 4076,
+        "B_Accelerometer": 4134,
+        "C_Gyroscope": 4076
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 1,
+      "rows": {
+        "A_DeviceMotion": 1333,
+        "B_Accelerometer": 1359,
+        "C_Gyroscope": 1333
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 2,
+      "rows": {
+        "A_DeviceMotion": 6305,
+        "B_Accelerometer": 6389,
+        "C_Gyroscope": 6305
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 3,
+      "rows": {
+        "A_DeviceMotion": 3594,
+        "B_Accelerometer": 3648,
+        "C_Gyroscope": 3597
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 4,
+      "rows": {
+        "A_DeviceMotion": 3768,
+        "B_Accelerometer": 3824,
+        "C_Gyroscope": 3768
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 5,
+      "rows": {
+        "A_DeviceMotion": 2436,
+        "B_Accelerometer": 2477,
+        "C_Gyroscope": 2436
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 6,
+      "rows": {
+        "A_DeviceMotion": 2459,
+        "B_Accelerometer": 2502,
+        "C_Gyroscope": 2460
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 7,
+      "rows": {
+        "A_DeviceMotion": 2957,
+        "B_Accelerometer": 3004,
+        "C_Gyroscope": 2959
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 8,
+      "rows": {
+        "A_DeviceMotion": 2620,
+        "B_Accelerometer": 2664,
+        "C_Gyroscope": 2621
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 9,
+      "rows": {
+        "A_DeviceMotion": 2334,
+        "B_Accelerometer": 2374,
+        "C_Gyroscope": 2334
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 10,
+      "rows": {
+        "A_DeviceMotion": 2257,
+        "B_Accelerometer": 2297,
+        "C_Gyroscope": 2257
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 11,
+      "rows": {
+        "A_DeviceMotion": 1630,
+        "B_Accelerometer": 1664,
+        "C_Gyroscope": 1633
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 12,
+      "rows": {
+        "A_DeviceMotion": 2614,
+        "B_Accelerometer": 2659,
+        "C_Gyroscope": 2617
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 13,
+      "rows": {
+        "A_DeviceMotion": 1775,
+        "B_Accelerometer": 1810,
+        "C_Gyroscope": 1775
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 14,
+      "rows": {
+        "A_DeviceMotion": 2241,
+        "B_Accelerometer": 2282,
+        "C_Gyroscope": 2242
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 15,
+      "rows": {
+        "A_DeviceMotion": 2582,
+        "B_Accelerometer": 2624,
+        "C_Gyroscope": 2584
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 16,
+      "rows": {
+        "A_DeviceMotion": 2744,
+        "B_Accelerometer": 2789,
+        "C_Gyroscope": 2746
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 17,
+      "rows": {
+        "A_DeviceMotion": 2216,
+        "B_Accelerometer": 2256,
+        "C_Gyroscope": 2216
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 18,
+      "rows": {
+        "A_DeviceMotion": 2388,
+        "B_Accelerometer": 2430,
+        "C_Gyroscope": 2388
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 19,
+      "rows": {
+        "A_DeviceMotion": 3227,
+        "B_Accelerometer": 3278,
+        "C_Gyroscope": 3229
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 20,
+      "rows": {
+        "A_DeviceMotion": 2861,
+        "B_Accelerometer": 2908,
+        "C_Gyroscope": 2861
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 21,
+      "rows": {
+        "A_DeviceMotion": 3192,
+        "B_Accelerometer": 3242,
+        "C_Gyroscope": 3193
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 22,
+      "rows": {
+        "A_DeviceMotion": 2373,
+        "B_Accelerometer": 2413,
+        "C_Gyroscope": 2373
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 23,
+      "rows": {
+        "A_DeviceMotion": 3306,
+        "B_Accelerometer": 3357,
+        "C_Gyroscope": 3306
+      }
+    },
+    {
+      "activity": "wlk",
+      "trial": 15,
+      "subject": 24,
+      "rows": {
+        "A_DeviceMotion": 2060,
+        "B_Accelerometer": 2096,
+        "C_Gyroscope": 2060
+      }
+    }
+  ],
+  "n_row_count_mismatch": 360,
+  "max_abs_row_diff_A_vs_B_C": 198,
+  "activity_codes": [
+    "dws",
+    "jog",
+    "sit",
+    "std",
+    "ups",
+    "wlk"
+  ],
+  "subjects": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "n_subjects": 24,
+  "trials_per_activity": {
+    "dws": [
+      1,
+      2,
+      11
+    ],
+    "jog": [
+      9,
+      16
+    ],
+    "sit": [
+      5,
+      13
+    ],
+    "std": [
+      6,
+      14
+    ],
+    "ups": [
+      3,
+      4,
+      12
+    ],
+    "wlk": [
+      7,
+      8,
+      15
+    ]
+  },
+  "recordings_per_activity": {
+    "dws": 72,
+    "jog": 48,
+    "sit": 48,
+    "std": 48,
+    "ups": 72,
+    "wlk": 72
+  },
+  "rows_per_recording": {
+    "min": 377,
+    "median": 2948.5,
+    "max": 16424
+  },
+  "sampling_rate": {
+    "measured_from_timestamps": null,
+    "note": "No timestamp column in any file. 50 Hz is the documented rate (README) and cannot be verified from the data; only row counts are known.",
+    "documented_hz": 50
+  },
+  "subjects_info": {
+    "columns": [
+      "code",
+      "weight",
+      "height",
+      "age",
+      "gender"
+    ],
+    "rows": 24,
+    "missing": {
+      "code": 0,
+      "weight": 0,
+      "height": 0,
+      "age": 0,
+      "gender": 0
+    },
+    "gender_counts": {
+      "1": 14,
+      "0": 10
+    }
+  },
+  "subjects_info_codes_match_recordings": true,
+  "required_features": {
+    "accel_xyz": true,
+    "accel_stream": "B_Accelerometer (x,y,z; per docs, total acceleration incl. gravity)",
+    "gyro_xyz": true,
+    "labels": true,
+    "subject_ids": true,
+    "timestamps": false
+  }
+}

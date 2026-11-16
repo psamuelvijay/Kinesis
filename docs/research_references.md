@@ -1,0 +1,7 @@
+﻿# Research References
+
+## Datasets
+1. Caramaschi, S., Olsson, C. M., Orchard, E., Molloy, J., Salvi, D. (2024). *An inertial and positioning dataset for the walking activity* (Version 6) [Dataset]. Dryad. https://doi.org/10.5061/dryad.n2z34tn5q. License CC0-1.0. Related article listed on the Dryad record: https://doi.org/10.3390/s24082632; metadata also links the Malisa app https://dariosalvi78.github.io/Malisa/ and the 6MWT example code https://github.com/SaraCaramaschi/walking_dataset_for_6MWT/. Title and authors of the article are not confirmed from the downloaded files..
+2. Malekzadeh, M., Clegg, R. G., Cavallaro, A., Haddadi, H. (2019). Mobile Sensor Data Anonymization. *Proceedings of the International Conference on Internet of Things Design and Implementation (IoTDI '19)*, ACM, pp. 49-58. https://doi.org/10.1145/3302505.3310068. Data: https://github.com/mmalekzadeh/motion-sense (MIT). Citation details from the author's README and memory; verify page numbers before submission.
+3. Anguita, D., Ghio, A., Oneto, L., Parra, X., Reyes-Ortiz, J. L. (2013). A Public Domain Dataset for Human Activity Recognition Using Smartphones. *21st European Symposium on Artificial Neural Networks (ESANN 2013)*, Bruges, Belgium. Data: Reyes-Ortiz, J., Anguita, D., Ghio, A., Oneto, L., Parra, X. (2013). Human Activity Recognition Using Smartphones [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C54S4K. CC BY 4.0. Verify the dataset DOI against the UCI page before submission.
+

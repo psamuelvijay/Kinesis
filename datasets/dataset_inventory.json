@@ -1,0 +1,532 @@
+{
+  "generated_by": "ml/preprocessing/build_inventory.py",
+  "datasets": [
+    {
+      "name": "Dryad walking activity dataset (Caramaschi et al.)",
+      "source_url": "https://datadryad.org/dataset/doi%3A10.5061/dryad.n2z34tn5q",
+      "doi": "10.5061/dryad.n2z34tn5q",
+      "version": "Dryad version 6, published 2024-11-01",
+      "license": "CC0-1.0",
+      "status": "available",
+      "metadata_tracks_rows": 203,
+      "metadata_subjects": 19,
+      "usable_subjects": {
+        "gps_and_steps (Model A)": 18,
+        "gps_and_motion_and_steps (fusion calibration)": 14
+      },
+      "usable_recordings": {
+        "gps_and_steps (Model A)": 198,
+        "gps_and_motion_and_steps (fusion calibration)": 146
+      },
+      "available_features": {
+        "events": [
+          "signalStart",
+          "testStart",
+          "testEnd"
+        ],
+        "positions": [
+          "ms",
+          "latitude",
+          "longitude",
+          "altitude",
+          "confInterval",
+          "heading",
+          "speed"
+        ],
+        "steps": [
+          "ms",
+          "steps",
+          "floorsUp",
+          "floorsDown",
+          "distance",
+          "startDate",
+          "endDate"
+        ],
+        "motion": [
+          "ms",
+          "accelX",
+          "accelY",
+          "accelZ",
+          "accelWithGX",
+          "accelWithGY",
+          "accelWithGZ",
+          "rotRateAlpha",
+          "rotRateBeta",
+          "rotRateGamma",
+          "interval"
+        ],
+        "orientation": [
+          "ms",
+          "abs",
+          "alpha",
+          "beta",
+          "gamma"
+        ],
+        "reference_cont_distance": [
+          "ms",
+          "distance"
+        ]
+      },
+      "excluded_recordings": {
+        "model_A": {
+          "15_0": [
+            "metadata hasGNSS=False",
+            "positions.csv empty",
+            "steps.csv empty"
+          ],
+          "15_1": [
+            "metadata hasGNSS=False",
+            "positions.csv empty",
+            "steps.csv empty"
+          ],
+          "15_2": [
+            "metadata hasGNSS=False",
+            "positions.csv empty",
+            "steps.csv empty"
+          ],
+          "15_3": [
+            "metadata hasGNSS=False",
+            "positions.csv empty",
+            "steps.csv empty"
+          ],
+          "15_4": [
+            "metadata hasGNSS=False",
+            "positions.csv empty",
+            "steps.csv empty"
+          ],
+          "8_10": [
+            "folder has no row in metadata_tracks.csv"
+          ]
+        },
+        "fusion_calibration": {
+          "0_0": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_1": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_10": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_11": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_12": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_13": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_14": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_2": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_3": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_4": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_5": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_6": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_7": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_8": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "0_9": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "1_0": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "1_1": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "1_2": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "1_3": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "1_4": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "1_5": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "1_6": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "1_7": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "1_8": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "1_9": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "15_0": [
+            "metadata hasGNSS=False",
+            "positions.csv empty",
+            "steps.csv empty"
+          ],
+          "15_1": [
+            "metadata hasGNSS=False",
+            "positions.csv empty",
+            "steps.csv empty"
+          ],
+          "15_2": [
+            "metadata hasGNSS=False",
+            "positions.csv empty",
+            "steps.csv empty"
+          ],
+          "15_3": [
+            "metadata hasGNSS=False",
+            "positions.csv empty",
+            "steps.csv empty"
+          ],
+          "15_4": [
+            "metadata hasGNSS=False",
+            "positions.csv empty",
+            "steps.csv empty"
+          ],
+          "2_0": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "2_1": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "2_2": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "2_3": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "2_4": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "2_5": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "2_6": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "2_7": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "2_8": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "2_9": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "3_0": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "3_5": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "3_6": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "3_7": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "3_8": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "3_9": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "8_10": [
+            "folder has no row in metadata_tracks.csv"
+          ],
+          "9_0": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "9_1": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "9_10": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "9_2": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "9_3": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "9_4": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "9_5": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "9_6": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "9_7": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "9_8": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ],
+          "9_9": [
+            "metadata hasMotion=False",
+            "motion.csv empty"
+          ]
+        }
+      },
+      "folder_not_in_metadata": [
+        "8_10"
+      ],
+      "sampling_rates_hz": {
+        "gps_median_hz_over_usable_A_tracks": {
+          "n": 198,
+          "min": 0.1431229426077,
+          "p25": 0.25006251562890724,
+          "median": 1.0,
+          "p75": 1.0071784724810033,
+          "max": 1.9047619047619047
+        },
+        "gps_mean_hz_over_usable_A_tracks": {
+          "n": 198,
+          "min": 0.09959684927532465,
+          "p25": 0.258571753776106,
+          "median": 0.9992443216940712,
+          "p75": 1.0651896984771652,
+          "max": 1.7347351619178522
+        },
+        "gps_valid_speed_mean_hz": {
+          "n": 198,
+          "min": 0.05684799720132937,
+          "p25": 0.25153597178704645,
+          "median": 0.9722694241067041,
+          "p75": 1.0669684401931494,
+          "max": 1.7368299657358184
+        },
+        "gps_max_gap_s": {
+          "n": 198,
+          "min": 1.0,
+          "p25": 1.59725,
+          "median": 4.737,
+          "p75": 10.004,
+          "max": 361.436
+        },
+        "motion_median_hz_over_tracks_with_motion": {
+          "n": 152,
+          "min": 58.8235294117647,
+          "p25": 58.8235294117647,
+          "median": 58.8235294117647,
+          "p75": 58.8235294117647,
+          "max": 58.8235294117647
+        },
+        "motion_mean_hz_over_tracks_with_motion": {
+          "n": 152,
+          "min": 6.263008244309712,
+          "p25": 59.611130848283,
+          "median": 59.80780309077683,
+          "p75": 59.94488394982846,
+          "max": 60.00243612950011
+        },
+        "steps_mean_hz_over_usable_A_tracks": {
+          "n": 198,
+          "min": 0.2522541548605856,
+          "p25": 0.38740892709168057,
+          "median": 0.9596087740388799,
+          "p75": 1.5257937240521653,
+          "max": 1.9783848277584317
+        },
+        "steps_max_gap_s": {
+          "n": 198,
+          "min": 0.996,
+          "p25": 5.129,
+          "median": 8.8295,
+          "p75": 17.206,
+          "max": 299.525
+        }
+      },
+      "label_sets": null,
+      "inspection": "results/metrics/inspect_dryad.json"
+    },
+    {
+      "name": "MotionSense",
+      "source_url": "https://github.com/mmalekzadeh/motion-sense",
+      "version": "GitHub master, commit 261cb0d60611a049ab38127738e42cc510ed50f4",
+      "license": "MIT",
+      "status": "available",
+      "usable_subjects": 24,
+      "usable_recordings": 360,
+      "recordings_definition": "one subject x one trial; present in all of A_DeviceMotion, B_Accelerometer, C_Gyroscope",
+      "available_features": {
+        "B_Accelerometer": [
+          "x",
+          "y",
+          "z"
+        ],
+        "C_Gyroscope": [
+          "x",
+          "y",
+          "z"
+        ],
+        "A_DeviceMotion": [
+          "attitude.roll",
+          "attitude.pitch",
+          "attitude.yaw",
+          "gravity.x",
+          "gravity.y",
+          "gravity.z",
+          "rotationRate.x",
+          "rotationRate.y",
+          "rotationRate.z",
+          "userAcceleration.x",
+          "userAcceleration.y",
+          "userAcceleration.z"
+        ],
+        "subject_info": [
+          "code",
+          "weight",
+          "height",
+          "age",
+          "gender"
+        ]
+      },
+      "excluded_recordings": [],
+      "excluded_note": "None excluded for missing data (0 missing values). All 360 recordings have different row counts between the accelerometer stream and the gyroscope stream (see inspect json); they are not sample-aligned.",
+      "sampling_rates_hz": {
+        "measured": null,
+        "documented": 50,
+        "note": "no timestamps in files"
+      },
+      "label_sets": {
+        "activity_codes": [
+          "dws",
+          "jog",
+          "sit",
+          "std",
+          "ups",
+          "wlk"
+        ],
+        "recordings_per_activity": {
+          "dws": 72,
+          "jog": 48,
+          "sit": 48,
+          "std": 48,
+          "ups": 72,
+          "wlk": 72
+        }
+      },
+      "inspection": "results/metrics/inspect_motionsense.json"
+    },
+    {
+      "name": "UCI HAR (Human Activity Recognition Using Smartphones)",
+      "source_url": "https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones",
+      "doi": "10.24432/C54S4K",
+      "version": "Version 1.0 (UCI page last updated 2024-03-10)",
+      "license": "CC BY 4.0",
+      "status": "available",
+      "usable_subjects": 30,
+      "usable_recordings": 10299,
+      "recordings_definition": "pre-segmented 128-sample windows (2.56 s, 50% overlap); continuous recordings not provided",
+      "available_features": {
+        "inertial_signals": [
+          "body_acc_x",
+          "body_acc_y",
+          "body_acc_z",
+          "body_gyro_x",
+          "body_gyro_y",
+          "body_gyro_z",
+          "total_acc_x",
+          "total_acc_y",
+          "total_acc_z"
+        ],
+        "feature_vector": "561 features (X_*.txt)"
+      },
+      "excluded_recordings": [],
+      "sampling_rates_hz": {
+        "measured_from_timestamps": null,
+        "documented_hz": 50,
+        "note": "No timestamps; 128 samples per 2.56 s window implies 50 Hz per documentation. Not independently measurable."
+      },
+      "split_provided": {
+        "train": {
+          "windows": 7352,
+          "subjects": 21
+        },
+        "test": {
+          "windows": 2947,
+          "subjects": 9
+        }
+      },
+      "label_sets": {
+        "1": "WALKING",
+        "2": "WALKING_UPSTAIRS",
+        "3": "WALKING_DOWNSTAIRS",
+        "4": "SITTING",
+        "5": "STANDING",
+        "6": "LAYING"
+      },
+      "inspection": "results/metrics/inspect_uci_har.json"
+    }
+  ]
+}
