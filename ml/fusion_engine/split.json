@@ -1,0 +1,49 @@
+{
+ "description": "Calibration vs held-out subjects for the Phase 4 fusion engine (Dryad genuine walking only; Dryad has no spoofing).",
+ "source": "results/metrics/phase2_splits.json (subject-level Phase 2 split) intersected with metadata hasMotion==TRUE and hasGNSS==TRUE",
+ "calibration_subjects": [
+  4,
+  5,
+  6,
+  7,
+  8,
+  13,
+  14,
+  16,
+  17,
+  18
+ ],
+ "heldout_subjects": [
+  3,
+  10,
+  11,
+  12
+ ],
+ "heldout_detail": {
+  "phase2_test_with_motion": [
+   12
+  ],
+  "phase2_validation_with_motion": [
+   3,
+   10,
+   11
+  ],
+  "note": "Phase 2 validation subjects 3, 10, 11 were used to select Model A hyper-parameters. No fusion threshold has been computed from them. Only subject 12 is fully out-of-sample for Model A; Model A is comparison-only here."
+ },
+ "unusable_subjects": {
+  "0": "no motion and/or no GNSS tracks (metadata hasMotion/hasGNSS)",
+  "1": "no motion and/or no GNSS tracks (metadata hasMotion/hasGNSS)",
+  "2": "no motion and/or no GNSS tracks (metadata hasMotion/hasGNSS)",
+  "9": "no motion and/or no GNSS tracks (metadata hasMotion/hasGNSS)"
+ },
+ "overlap": [],
+ "n_tracks": {
+  "calibration": 94,
+  "heldout": 52
+ },
+ "rules": [
+  "Thresholds, quantiles and persistence N are computed from calibration subjects only.",
+  "Held-out subjects are touched once, by evaluate.py, after thresholds.json is frozen and hashed.",
+  "Split written before any held-out evaluation quantity was computed."
+ ]
+}

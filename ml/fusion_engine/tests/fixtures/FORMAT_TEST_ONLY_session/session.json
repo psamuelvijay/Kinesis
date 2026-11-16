@@ -1,0 +1,20 @@
+{
+  "format_test_only": true,
+  "_warning": "FORMAT TEST ONLY. NOT DATA. NOT USED FOR ANY METRIC. Hand-specified alternating values to check the file schema and parser; no phone recorded this.",
+  "session_id": "FORMAT-TEST-ONLY-0001",
+  "split": "format_test",
+  "scenario": "S1",
+  "ground_truth": "walking",
+  "subject_id": "FIXTURE",
+  "device_model": "none (format test)",
+  "android_version": "none (format test)",
+  "boot_offset_ms": 1699999000000,
+  "start_utc_ms": 1700000000000,
+  "start_elapsed_ns": 1000000000000,
+  "operator_start_utc_ms": 1700000000000,
+  "operator_end_utc_ms": 1700000006000,
+  "has_step_counter": true,
+  "route_id": "none",
+  "placement": "none",
+  "gps_provider": "gps"
+}

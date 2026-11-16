@@ -1,0 +1,380 @@
+{
+ "version": 1,
+ "status": "frozen (SHA-256 in results/metrics/phase4_thresholds_hash.json)",
+ "scope": "Hand-set consistency thresholds. Fusion is a consistency detector, not a spoofing classifier. Model B is an activity classifier not trained on spoofing. No ML training in the fusion layer; values are quantiles of genuine Dryad walking measured on calibration subjects only.",
+ "decision_window_s": 5.0,
+ "aggregation": {
+  "model_b_windows": "probability mean over Model B windows (128 samples at 50 Hz, stride 64) lying fully inside the decision window",
+  "imu_class": "argmax of the mean probabilities; ties STATIONARY > WALKING > OTHER",
+  "majority_vote": "not used (reported nowhere); probability mean keeps the class margin available to the rules"
+ },
+ "persistence": {
+  "N": 2,
+  "rule": "reported state changes to a decisive state after N consecutive identical raw states; UNCERTAIN/INSUFFICIENT_DATA are reported immediately",
+  "selection": {
+   "candidates": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "design_minimum": 2,
+   "target_false_suspicious_episodes_per_walking_hour": 1.0,
+   "calibration_table_in_sample": {
+    "1": {
+     "false_suspicious_episodes": 2,
+     "false_suspicious_episodes_per_walking_hour": 0.18395503321410323,
+     "false_suspicious_windows_reported": 3,
+     "false_suspicious_windows_raw": 3,
+     "median_time_to_first_GENUINE_WALKING_s": 20.0,
+     "tracks_never_GENUINE_WALKING": 4,
+     "tracks": 94,
+     "decision_latency_floor_s": 5.0
+    },
+    "2": {
+     "false_suspicious_episodes": 1,
+     "false_suspicious_episodes_per_walking_hour": 0.09197751660705161,
+     "false_suspicious_windows_reported": 1,
+     "false_suspicious_windows_raw": 3,
+     "median_time_to_first_GENUINE_WALKING_s": 35.0,
+     "tracks_never_GENUINE_WALKING": 18,
+     "tracks": 94,
+     "decision_latency_floor_s": 10.0
+    },
+    "3": {
+     "false_suspicious_episodes": 0,
+     "false_suspicious_episodes_per_walking_hour": 0.0,
+     "false_suspicious_windows_reported": 0,
+     "false_suspicious_windows_raw": 3,
+     "median_time_to_first_GENUINE_WALKING_s": 50.0,
+     "tracks_never_GENUINE_WALKING": 28,
+     "tracks": 94,
+     "decision_latency_floor_s": 15.0
+    },
+    "4": {
+     "false_suspicious_episodes": 0,
+     "false_suspicious_episodes_per_walking_hour": 0.0,
+     "false_suspicious_windows_reported": 0,
+     "false_suspicious_windows_raw": 3,
+     "median_time_to_first_GENUINE_WALKING_s": 55.0,
+     "tracks_never_GENUINE_WALKING": 36,
+     "tracks": 94,
+     "decision_latency_floor_s": 20.0
+    }
+   }
+  }
+ },
+ "calibration_subjects": [
+  4,
+  5,
+  6,
+  7,
+  8,
+  13,
+  14,
+  16,
+  17,
+  18
+ ],
+ "calibration_tracks": 94,
+ "calibration_windows_all": 7828,
+ "calibration_windows_gate_pass": 6363,
+ "thresholds": {
+  "ACC_MAX_M": {
+   "value": 16.37878999999999,
+   "unit": "m",
+   "meaning": "mean GPS confInterval of the window above which the window is INSUFFICIENT_DATA",
+   "quantity": "window mean confInterval",
+   "provenance": {
+    "dataset": "Dryad (real, genuine hand-held walking; no spoofing)",
+    "quantile": 0.99,
+    "subjects": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     13,
+     14,
+     16,
+     17,
+     18
+    ],
+    "n_tracks": 93,
+    "n_windows": 7128,
+    "per_subject_quantile": {
+     "4": 13.421509279999999,
+     "5": 10.196848000000003,
+     "6": 34.813171999999994,
+     "7": 16.92439002,
+     "8": 15.12764356,
+     "13": 9.678617999999998,
+     "14": 9.977845599999995,
+     "16": 8.101699999999997,
+     "17": 11.596527620000016,
+     "18": 7.385242
+    }
+   },
+   "status": "calibrated on Dryad genuine hand-held walking (calibration subjects)"
+  },
+  "COV_MIN": {
+   "value": 0.7924,
+   "unit": "fraction",
+   "meaning": "minimum fraction of the 5 s window covered by kept GPS fixes",
+   "quantity": "gps coverage_frac",
+   "provenance": {
+    "dataset": "Dryad (real, genuine hand-held walking; no spoofing)",
+    "quantile": 0.1,
+    "subjects": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     13,
+     14,
+     16,
+     17,
+     18
+    ],
+    "n_tracks": 93,
+    "n_windows": 7128,
+    "per_subject_quantile": {
+     "4": 0.7962,
+     "5": 0.79192,
+     "6": 0.26188,
+     "7": 0.7662,
+     "8": 0.7967799999999999,
+     "13": 0.77944,
+     "14": 0.8,
+     "16": 0.7952,
+     "17": 0.5994,
+     "18": 0.7962
+    }
+   },
+   "status": "calibrated on Dryad genuine hand-held walking (calibration subjects)"
+  },
+  "V_MOVE_MPS": {
+   "value": 0.3207219,
+   "unit": "m/s",
+   "meaning": "GPS reported speed (window median) at or above which GPS movement is 'significant'. Also the still/moving boundary: the still side is provisional (no live stationary calibration data)",
+   "quantity": "window median valid GPS speed",
+   "provenance": {
+    "dataset": "Dryad (real, genuine hand-held walking; no spoofing)",
+    "quantile": 0.05,
+    "subjects": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     13,
+     14,
+     16,
+     17,
+     18
+    ],
+    "n_tracks": 92,
+    "n_windows": 6363,
+    "per_subject_quantile": {
+     "4": 0.31130040000000003,
+     "5": 0.054667600000000004,
+     "6": 0.7815102,
+     "7": 0.2333675,
+     "8": 0.548896,
+     "13": 0.06865595000000001,
+     "14": 0.81,
+     "16": 0.35231875,
+     "17": 0.9899809,
+     "18": 0.3828955
+    }
+   },
+   "status": "calibrated on Dryad genuine hand-held walking (calibration subjects); still side: provisional (no live stationary calibration data)"
+  },
+  "V_MOVE_DISP_MPS": {
+   "value": 0.5454659957865169,
+   "unit": "m/s",
+   "meaning": "displacement / covered seconds at or above which displacement movement is 'significant'; still side provisional (no live stationary calibration data)",
+   "quantity": "gps displacement_m / covered_dur_s",
+   "provenance": {
+    "dataset": "Dryad (real, genuine hand-held walking; no spoofing)",
+    "quantile": 0.05,
+    "subjects": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     13,
+     14,
+     16,
+     17,
+     18
+    ],
+    "n_tracks": 92,
+    "n_windows": 6363,
+    "per_subject_quantile": {
+     "4": 0.5584321564814815,
+     "5": 0.08561437819986778,
+     "6": 0.9618080554668875,
+     "7": 0.7410868661231842,
+     "8": 0.7475362247168984,
+     "13": 0.13700870540357787,
+     "14": 0.8173146625000001,
+     "16": 0.48078810305350717,
+     "17": 1.3237238705153185,
+     "18": 0.5668744027535202
+    }
+   },
+   "status": "calibrated on Dryad genuine hand-held walking (calibration subjects); still side: provisional (no live stationary calibration data)"
+  },
+  "V_WALK_MAX_MPS": {
+   "value": 1.84561502,
+   "unit": "m/s",
+   "meaning": "GPS speed above which movement is outside the pedestrian envelope (running / cycling / vehicle) -> UNCERTAIN",
+   "quantity": "window median valid GPS speed",
+   "provenance": {
+    "dataset": "Dryad (real, genuine hand-held walking; no spoofing)",
+    "quantile": 0.99,
+    "subjects": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     13,
+     14,
+     16,
+     17,
+     18
+    ],
+    "n_tracks": 92,
+    "n_windows": 6363,
+    "per_subject_quantile": {
+     "4": 1.41594816,
+     "5": 1.2716138899999936,
+     "6": 1.927579119999998,
+     "7": 1.9548688199999997,
+     "8": 1.6808002999999998,
+     "13": 1.27024141,
+     "14": 1.74,
+     "16": 1.7577655500000018,
+     "17": 1.6149185500000003,
+     "18": 1.6355614900000002
+    }
+   },
+   "status": "calibrated on Dryad genuine hand-held walking (calibration subjects)"
+  },
+  "STEP_MIN": {
+   "value": 2.0,
+   "unit": "steps per 5 s",
+   "meaning": "physical step increase counted as 'steps increase'",
+   "quantity": "physical step increment per 5 s window (running max of steps.csv)",
+   "provenance": {
+    "dataset": "Dryad (real, genuine hand-held walking; no spoofing)",
+    "quantile": 0.05,
+    "subjects": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     13,
+     14,
+     16,
+     17,
+     18
+    ],
+    "n_tracks": 92,
+    "n_windows": 6363,
+    "per_subject_quantile": {
+     "4": 7.0,
+     "5": 0.0,
+     "6": 6.0,
+     "7": 6.0,
+     "8": 8.0,
+     "13": 0.0,
+     "14": 7.0,
+     "16": 0.25,
+     "17": 5.1,
+     "18": 0.0
+    }
+   },
+   "status": "calibrated on Dryad genuine hand-held walking (calibration subjects)"
+  },
+  "P_STAT_SUSPICIOUS": {
+   "value": 0.999866,
+   "unit": "probability",
+   "meaning": "mean Model B P(STATIONARY) required for SUSPICIOUS (never below 0.5)",
+   "quantity": "mean P_stationary of Model B windows in the decision window",
+   "provenance": {
+    "dataset": "Dryad (real, genuine hand-held walking; no spoofing)",
+    "quantile": 0.99,
+    "subjects": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     13,
+     14,
+     16,
+     17,
+     18
+    ],
+    "n_tracks": 92,
+    "n_windows": 6363,
+    "per_subject_quantile": {
+     "4": 0.003223339999999982,
+     "5": 0.99991668,
+     "6": 0.0035874399999998915,
+     "7": 0.03396373999999844,
+     "8": 0.2783987999999981,
+     "13": 0.99991896,
+     "14": 0.6141534600000007,
+     "16": 0.9998788000000001,
+     "17": 0.6362992400000003,
+     "18": 0.99986738
+    }
+   },
+   "status": "calibrated on Dryad genuine hand-held walking (calibration subjects)"
+  },
+  "STEP_ZERO_MAX": {
+   "value": 1,
+   "unit": "steps per 5 s",
+   "meaning": "physical step increase counted as 'steps ~0' (one spurious pedometer step tolerated)",
+   "provenance": {
+    "dataset": "hand-set design constant; no real stationary pedometer data in the repository"
+   },
+   "status": "provisional (no live stationary calibration data)"
+  },
+  "P_STAT_STATIONARY": {
+   "value": 0.5,
+   "unit": "probability",
+   "meaning": "mean Model B P(STATIONARY) required for the STATIONARY state (majority)",
+   "provenance": {
+    "dataset": "hand-set design constant; Dryad has no stationary windows, Model B STATIONARY recall on this domain is unknown"
+   },
+   "status": "provisional (no live stationary calibration data)"
+  },
+  "MIN_IMU_WINDOWS": {
+   "value": 1,
+   "unit": "Model B windows",
+   "meaning": "minimum Model B windows fully inside the decision window",
+   "provenance": {
+    "dataset": "design constant (a 5 s window holds at most 2 windows of 2.56 s at stride 1.28 s)"
+   },
+   "status": "design constant"
+  }
+ },
+ "provisional_thresholds": [
+  "V_MOVE_MPS",
+  "V_MOVE_DISP_MPS",
+  "STEP_ZERO_MAX",
+  "P_STAT_STATIONARY"
+ ],
+ "input_files_sha256": {
+  "results/metrics/phase4_fusion_signals.csv": "b515dbd856fc3d182695c4ce3627589db3c9c757846d7fcef26b68ea40757ac1",
+  "ml/fusion_engine/split.json": "6d57e27f046bf937661e314c9127def1977517b491fc39f76683062b6821c06b"
+ }
+}

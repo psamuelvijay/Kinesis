@@ -1,0 +1,624 @@
+{
+ "scope": "Genuine Dryad walking, held-out subjects only. Dryad has no spoofing: no detection rate is reported. Fusion is a consistency detector, not a spoofing classifier; Model B is an activity classifier not trained on spoofing. Any SUSPICIOUS window below is a false positive.",
+ "thresholds_sha256": "5184189b40f914a07c62c68d29b459cfe74e2eae40c2099d1a8950316b639725",
+ "split_sha256": "6d57e27f046bf937661e314c9127def1977517b491fc39f76683062b6821c06b",
+ "engine_sha256": "b5340c22527b6abb97ca1e11ece5c5c6d51f07ac9656b305d2c471b5ce06f6ab",
+ "signals_sha256": "b515dbd856fc3d182695c4ce3627589db3c9c757846d7fcef26b68ea40757ac1",
+ "persistence_N": 2,
+ "heldout_subjects": [
+  3,
+  10,
+  11,
+  12
+ ],
+ "provisional_thresholds": [
+  "V_MOVE_MPS",
+  "V_MOVE_DISP_MPS",
+  "STEP_ZERO_MAX",
+  "P_STAT_STATIONARY"
+ ],
+ "overall": {
+  "n_windows": 2950,
+  "n_tracks": 52,
+  "walking_hours": 4.097222222222222,
+  "raw_counts": {
+   "GENUINE_WALKING": 962,
+   "STATIONARY": 65,
+   "SUSPICIOUS_GPS_MOVEMENT": 5,
+   "UNCERTAIN": 708,
+   "INSUFFICIENT_DATA": 1210
+  },
+  "raw_fraction_of_all_windows": {
+   "GENUINE_WALKING": 0.32610169491525426,
+   "STATIONARY": 0.022033898305084745,
+   "SUSPICIOUS_GPS_MOVEMENT": 0.001694915254237288,
+   "UNCERTAIN": 0.24,
+   "INSUFFICIENT_DATA": 0.4101694915254237
+  },
+  "n_evaluable_windows_excluding_INSUFFICIENT_DATA": 1740,
+  "raw_fraction_of_evaluable_windows": {
+   "GENUINE_WALKING": 0.5528735632183908,
+   "STATIONARY": 0.03735632183908046,
+   "SUSPICIOUS_GPS_MOVEMENT": 0.0028735632183908046,
+   "UNCERTAIN": 0.4068965517241379,
+   "INSUFFICIENT_DATA": 0.0
+  },
+  "reported_counts_after_persistence": {
+   "GENUINE_WALKING": 599,
+   "STATIONARY": 42,
+   "SUSPICIOUS_GPS_MOVEMENT": 0,
+   "UNCERTAIN": 1099,
+   "INSUFFICIENT_DATA": 1210
+  },
+  "reported_fraction_of_all_windows": {
+   "GENUINE_WALKING": 0.2030508474576271,
+   "STATIONARY": 0.01423728813559322,
+   "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+   "UNCERTAIN": 0.37254237288135594,
+   "INSUFFICIENT_DATA": 0.4101694915254237
+  },
+  "false_suspicious_raw_windows": 5,
+  "false_suspicious_raw_fraction_of_all_windows": 0.001694915254237288,
+  "false_suspicious_reported_windows": 0,
+  "false_suspicious_reported_fraction_of_all_windows": 0.0,
+  "false_suspicious_reported_episodes": 0,
+  "false_suspicious_reported_episodes_per_walking_hour": 0.0
+ },
+ "overall_excluding_phase2_distance_anomaly_tracks": {
+  "n_windows": 2409,
+  "n_tracks": 46,
+  "walking_hours": 3.345833333333333,
+  "raw_counts": {
+   "GENUINE_WALKING": 784,
+   "STATIONARY": 29,
+   "SUSPICIOUS_GPS_MOVEMENT": 4,
+   "UNCERTAIN": 583,
+   "INSUFFICIENT_DATA": 1009
+  },
+  "raw_fraction_of_all_windows": {
+   "GENUINE_WALKING": 0.3254462432544624,
+   "STATIONARY": 0.012038190120381901,
+   "SUSPICIOUS_GPS_MOVEMENT": 0.0016604400166044002,
+   "UNCERTAIN": 0.2420091324200913,
+   "INSUFFICIENT_DATA": 0.41884599418845997
+  },
+  "n_evaluable_windows_excluding_INSUFFICIENT_DATA": 1400,
+  "raw_fraction_of_evaluable_windows": {
+   "GENUINE_WALKING": 0.56,
+   "STATIONARY": 0.020714285714285713,
+   "SUSPICIOUS_GPS_MOVEMENT": 0.002857142857142857,
+   "UNCERTAIN": 0.4164285714285714,
+   "INSUFFICIENT_DATA": 0.0
+  },
+  "reported_counts_after_persistence": {
+   "GENUINE_WALKING": 476,
+   "STATIONARY": 15,
+   "SUSPICIOUS_GPS_MOVEMENT": 0,
+   "UNCERTAIN": 909,
+   "INSUFFICIENT_DATA": 1009
+  },
+  "reported_fraction_of_all_windows": {
+   "GENUINE_WALKING": 0.1975923619759236,
+   "STATIONARY": 0.0062266500622665,
+   "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+   "UNCERTAIN": 0.37733499377334995,
+   "INSUFFICIENT_DATA": 0.41884599418845997
+  },
+  "false_suspicious_raw_windows": 4,
+  "false_suspicious_raw_fraction_of_all_windows": 0.0016604400166044002,
+  "false_suspicious_reported_windows": 0,
+  "false_suspicious_reported_fraction_of_all_windows": 0.0,
+  "false_suspicious_reported_episodes": 0,
+  "false_suspicious_reported_episodes_per_walking_hour": 0.0
+ },
+ "per_subject": {
+  "3": {
+   "n_windows": 285,
+   "n_tracks": 4,
+   "walking_hours": 0.3958333333333333,
+   "raw_counts": {
+    "GENUINE_WALKING": 232,
+    "STATIONARY": 0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0,
+    "UNCERTAIN": 19,
+    "INSUFFICIENT_DATA": 34
+   },
+   "raw_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.8140350877192982,
+    "STATIONARY": 0.0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.06666666666666667,
+    "INSUFFICIENT_DATA": 0.11929824561403508
+   },
+   "n_evaluable_windows_excluding_INSUFFICIENT_DATA": 251,
+   "raw_fraction_of_evaluable_windows": {
+    "GENUINE_WALKING": 0.9243027888446215,
+    "STATIONARY": 0.0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.07569721115537849,
+    "INSUFFICIENT_DATA": 0.0
+   },
+   "reported_counts_after_persistence": {
+    "GENUINE_WALKING": 201,
+    "STATIONARY": 0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0,
+    "UNCERTAIN": 50,
+    "INSUFFICIENT_DATA": 34
+   },
+   "reported_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.7052631578947368,
+    "STATIONARY": 0.0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.17543859649122806,
+    "INSUFFICIENT_DATA": 0.11929824561403508
+   },
+   "false_suspicious_raw_windows": 0,
+   "false_suspicious_raw_fraction_of_all_windows": 0.0,
+   "false_suspicious_reported_windows": 0,
+   "false_suspicious_reported_fraction_of_all_windows": 0.0,
+   "false_suspicious_reported_episodes": 0,
+   "false_suspicious_reported_episodes_per_walking_hour": 0.0
+  },
+  "10": {
+   "n_windows": 1023,
+   "n_tracks": 18,
+   "walking_hours": 1.4208333333333334,
+   "raw_counts": {
+    "GENUINE_WALKING": 262,
+    "STATIONARY": 22,
+    "SUSPICIOUS_GPS_MOVEMENT": 0,
+    "UNCERTAIN": 219,
+    "INSUFFICIENT_DATA": 520
+   },
+   "raw_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.2561094819159335,
+    "STATIONARY": 0.021505376344086023,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.21407624633431085,
+    "INSUFFICIENT_DATA": 0.5083088954056696
+   },
+   "n_evaluable_windows_excluding_INSUFFICIENT_DATA": 503,
+   "raw_fraction_of_evaluable_windows": {
+    "GENUINE_WALKING": 0.5208747514910537,
+    "STATIONARY": 0.0437375745526839,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.43538767395626243,
+    "INSUFFICIENT_DATA": 0.0
+   },
+   "reported_counts_after_persistence": {
+    "GENUINE_WALKING": 144,
+    "STATIONARY": 16,
+    "SUSPICIOUS_GPS_MOVEMENT": 0,
+    "UNCERTAIN": 343,
+    "INSUFFICIENT_DATA": 520
+   },
+   "reported_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.14076246334310852,
+    "STATIONARY": 0.015640273704789834,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.33528836754643204,
+    "INSUFFICIENT_DATA": 0.5083088954056696
+   },
+   "false_suspicious_raw_windows": 0,
+   "false_suspicious_raw_fraction_of_all_windows": 0.0,
+   "false_suspicious_reported_windows": 0,
+   "false_suspicious_reported_fraction_of_all_windows": 0.0,
+   "false_suspicious_reported_episodes": 0,
+   "false_suspicious_reported_episodes_per_walking_hour": 0.0
+  },
+  "11": {
+   "n_windows": 890,
+   "n_tracks": 16,
+   "walking_hours": 1.2361111111111112,
+   "raw_counts": {
+    "GENUINE_WALKING": 207,
+    "STATIONARY": 19,
+    "SUSPICIOUS_GPS_MOVEMENT": 2,
+    "UNCERTAIN": 157,
+    "INSUFFICIENT_DATA": 505
+   },
+   "raw_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.23258426966292134,
+    "STATIONARY": 0.021348314606741574,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0022471910112359553,
+    "UNCERTAIN": 0.17640449438202246,
+    "INSUFFICIENT_DATA": 0.5674157303370787
+   },
+   "n_evaluable_windows_excluding_INSUFFICIENT_DATA": 385,
+   "raw_fraction_of_evaluable_windows": {
+    "GENUINE_WALKING": 0.5376623376623376,
+    "STATIONARY": 0.04935064935064935,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.005194805194805195,
+    "UNCERTAIN": 0.4077922077922078,
+    "INSUFFICIENT_DATA": 0.0
+   },
+   "reported_counts_after_persistence": {
+    "GENUINE_WALKING": 115,
+    "STATIONARY": 10,
+    "SUSPICIOUS_GPS_MOVEMENT": 0,
+    "UNCERTAIN": 260,
+    "INSUFFICIENT_DATA": 505
+   },
+   "reported_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.12921348314606743,
+    "STATIONARY": 0.011235955056179775,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.29213483146067415,
+    "INSUFFICIENT_DATA": 0.5674157303370787
+   },
+   "false_suspicious_raw_windows": 2,
+   "false_suspicious_raw_fraction_of_all_windows": 0.0022471910112359553,
+   "false_suspicious_reported_windows": 0,
+   "false_suspicious_reported_fraction_of_all_windows": 0.0,
+   "false_suspicious_reported_episodes": 0,
+   "false_suspicious_reported_episodes_per_walking_hour": 0.0
+  },
+  "12": {
+   "n_windows": 752,
+   "n_tracks": 14,
+   "walking_hours": 1.0444444444444445,
+   "raw_counts": {
+    "GENUINE_WALKING": 261,
+    "STATIONARY": 24,
+    "SUSPICIOUS_GPS_MOVEMENT": 3,
+    "UNCERTAIN": 313,
+    "INSUFFICIENT_DATA": 151
+   },
+   "raw_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.3470744680851064,
+    "STATIONARY": 0.031914893617021274,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.003989361702127659,
+    "UNCERTAIN": 0.4162234042553192,
+    "INSUFFICIENT_DATA": 0.20079787234042554
+   },
+   "n_evaluable_windows_excluding_INSUFFICIENT_DATA": 601,
+   "raw_fraction_of_evaluable_windows": {
+    "GENUINE_WALKING": 0.43427620632279534,
+    "STATIONARY": 0.03993344425956739,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.004991680532445923,
+    "UNCERTAIN": 0.5207986688851913,
+    "INSUFFICIENT_DATA": 0.0
+   },
+   "reported_counts_after_persistence": {
+    "GENUINE_WALKING": 139,
+    "STATIONARY": 16,
+    "SUSPICIOUS_GPS_MOVEMENT": 0,
+    "UNCERTAIN": 446,
+    "INSUFFICIENT_DATA": 151
+   },
+   "reported_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.1848404255319149,
+    "STATIONARY": 0.02127659574468085,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.5930851063829787,
+    "INSUFFICIENT_DATA": 0.20079787234042554
+   },
+   "false_suspicious_raw_windows": 3,
+   "false_suspicious_raw_fraction_of_all_windows": 0.003989361702127659,
+   "false_suspicious_reported_windows": 0,
+   "false_suspicious_reported_fraction_of_all_windows": 0.0,
+   "false_suspicious_reported_episodes": 0,
+   "false_suspicious_reported_episodes_per_walking_hour": 0.0
+  }
+ },
+ "per_os": {
+  "Android": {
+   "n_windows": 1997,
+   "n_tracks": 35,
+   "walking_hours": 2.7736111111111112,
+   "raw_counts": {
+    "GENUINE_WALKING": 917,
+    "STATIONARY": 65,
+    "SUSPICIOUS_GPS_MOVEMENT": 5,
+    "UNCERTAIN": 681,
+    "INSUFFICIENT_DATA": 329
+   },
+   "raw_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.45918878317476214,
+    "STATIONARY": 0.03254882323485228,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0025037556334501754,
+    "UNCERTAIN": 0.3410115172759139,
+    "INSUFFICIENT_DATA": 0.16474712068102154
+   },
+   "n_evaluable_windows_excluding_INSUFFICIENT_DATA": 1668,
+   "raw_fraction_of_evaluable_windows": {
+    "GENUINE_WALKING": 0.5497601918465228,
+    "STATIONARY": 0.03896882494004796,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.002997601918465228,
+    "UNCERTAIN": 0.40827338129496404,
+    "INSUFFICIENT_DATA": 0.0
+   },
+   "reported_counts_after_persistence": {
+    "GENUINE_WALKING": 599,
+    "STATIONARY": 42,
+    "SUSPICIOUS_GPS_MOVEMENT": 0,
+    "UNCERTAIN": 1027,
+    "INSUFFICIENT_DATA": 329
+   },
+   "reported_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.299949924887331,
+    "STATIONARY": 0.02103154732098147,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.514271407110666,
+    "INSUFFICIENT_DATA": 0.16474712068102154
+   },
+   "false_suspicious_raw_windows": 5,
+   "false_suspicious_raw_fraction_of_all_windows": 0.0025037556334501754,
+   "false_suspicious_reported_windows": 0,
+   "false_suspicious_reported_fraction_of_all_windows": 0.0,
+   "false_suspicious_reported_episodes": 0,
+   "false_suspicious_reported_episodes_per_walking_hour": 0.0
+  },
+  "iOS": {
+   "n_windows": 953,
+   "n_tracks": 17,
+   "walking_hours": 1.323611111111111,
+   "raw_counts": {
+    "GENUINE_WALKING": 45,
+    "STATIONARY": 0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0,
+    "UNCERTAIN": 27,
+    "INSUFFICIENT_DATA": 881
+   },
+   "raw_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.0472193074501574,
+    "STATIONARY": 0.0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.02833158447009444,
+    "INSUFFICIENT_DATA": 0.9244491080797481
+   },
+   "n_evaluable_windows_excluding_INSUFFICIENT_DATA": 72,
+   "raw_fraction_of_evaluable_windows": {
+    "GENUINE_WALKING": 0.625,
+    "STATIONARY": 0.0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.375,
+    "INSUFFICIENT_DATA": 0.0
+   },
+   "reported_counts_after_persistence": {
+    "GENUINE_WALKING": 0,
+    "STATIONARY": 0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0,
+    "UNCERTAIN": 72,
+    "INSUFFICIENT_DATA": 881
+   },
+   "reported_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.0,
+    "STATIONARY": 0.0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.07555089192025184,
+    "INSUFFICIENT_DATA": 0.9244491080797481
+   },
+   "false_suspicious_raw_windows": 0,
+   "false_suspicious_raw_fraction_of_all_windows": 0.0,
+   "false_suspicious_reported_windows": 0,
+   "false_suspicious_reported_fraction_of_all_windows": 0.0,
+   "false_suspicious_reported_episodes": 0,
+   "false_suspicious_reported_episodes_per_walking_hour": 0.0
+  }
+ },
+ "per_speed_range_mps_track_average": {
+  "1.0-1.3": {
+   "n_windows": 2172,
+   "n_tracks": 39,
+   "walking_hours": 3.0166666666666666,
+   "raw_counts": {
+    "GENUINE_WALKING": 613,
+    "STATIONARY": 15,
+    "SUSPICIOUS_GPS_MOVEMENT": 3,
+    "UNCERTAIN": 558,
+    "INSUFFICIENT_DATA": 983
+   },
+   "raw_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.2822283609576427,
+    "STATIONARY": 0.006906077348066298,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0013812154696132596,
+    "UNCERTAIN": 0.2569060773480663,
+    "INSUFFICIENT_DATA": 0.4525782688766114
+   },
+   "n_evaluable_windows_excluding_INSUFFICIENT_DATA": 1189,
+   "raw_fraction_of_evaluable_windows": {
+    "GENUINE_WALKING": 0.5155592935239697,
+    "STATIONARY": 0.012615643397813289,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.002523128679562658,
+    "UNCERTAIN": 0.4693019343986543,
+    "INSUFFICIENT_DATA": 0.0
+   },
+   "reported_counts_after_persistence": {
+    "GENUINE_WALKING": 309,
+    "STATIONARY": 5,
+    "SUSPICIOUS_GPS_MOVEMENT": 0,
+    "UNCERTAIN": 875,
+    "INSUFFICIENT_DATA": 983
+   },
+   "reported_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.14226519337016574,
+    "STATIONARY": 0.0023020257826887663,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.40285451197053407,
+    "INSUFFICIENT_DATA": 0.4525782688766114
+   },
+   "false_suspicious_raw_windows": 3,
+   "false_suspicious_raw_fraction_of_all_windows": 0.0013812154696132596,
+   "false_suspicious_reported_windows": 0,
+   "false_suspicious_reported_fraction_of_all_windows": 0.0,
+   "false_suspicious_reported_episodes": 0,
+   "false_suspicious_reported_episodes_per_walking_hour": 0.0
+  },
+  "1.3-1.6": {
+   "n_windows": 498,
+   "n_tracks": 7,
+   "walking_hours": 0.6916666666666667,
+   "raw_counts": {
+    "GENUINE_WALKING": 312,
+    "STATIONARY": 0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0,
+    "UNCERTAIN": 96,
+    "INSUFFICIENT_DATA": 90
+   },
+   "raw_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.6265060240963856,
+    "STATIONARY": 0.0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.1927710843373494,
+    "INSUFFICIENT_DATA": 0.18072289156626506
+   },
+   "n_evaluable_windows_excluding_INSUFFICIENT_DATA": 408,
+   "raw_fraction_of_evaluable_windows": {
+    "GENUINE_WALKING": 0.7647058823529411,
+    "STATIONARY": 0.0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.23529411764705882,
+    "INSUFFICIENT_DATA": 0.0
+   },
+   "reported_counts_after_persistence": {
+    "GENUINE_WALKING": 268,
+    "STATIONARY": 0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0,
+    "UNCERTAIN": 140,
+    "INSUFFICIENT_DATA": 90
+   },
+   "reported_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.5381526104417671,
+    "STATIONARY": 0.0,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.28112449799196787,
+    "INSUFFICIENT_DATA": 0.18072289156626506
+   },
+   "false_suspicious_raw_windows": 0,
+   "false_suspicious_raw_fraction_of_all_windows": 0.0,
+   "false_suspicious_reported_windows": 0,
+   "false_suspicious_reported_fraction_of_all_windows": 0.0,
+   "false_suspicious_reported_episodes": 0,
+   "false_suspicious_reported_episodes_per_walking_hour": 0.0
+  },
+  "<1.0": {
+   "n_windows": 280,
+   "n_tracks": 6,
+   "walking_hours": 0.3888888888888889,
+   "raw_counts": {
+    "GENUINE_WALKING": 37,
+    "STATIONARY": 50,
+    "SUSPICIOUS_GPS_MOVEMENT": 2,
+    "UNCERTAIN": 54,
+    "INSUFFICIENT_DATA": 137
+   },
+   "raw_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.13214285714285715,
+    "STATIONARY": 0.17857142857142858,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.007142857142857143,
+    "UNCERTAIN": 0.19285714285714287,
+    "INSUFFICIENT_DATA": 0.48928571428571427
+   },
+   "n_evaluable_windows_excluding_INSUFFICIENT_DATA": 143,
+   "raw_fraction_of_evaluable_windows": {
+    "GENUINE_WALKING": 0.25874125874125875,
+    "STATIONARY": 0.34965034965034963,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.013986013986013986,
+    "UNCERTAIN": 0.3776223776223776,
+    "INSUFFICIENT_DATA": 0.0
+   },
+   "reported_counts_after_persistence": {
+    "GENUINE_WALKING": 22,
+    "STATIONARY": 37,
+    "SUSPICIOUS_GPS_MOVEMENT": 0,
+    "UNCERTAIN": 84,
+    "INSUFFICIENT_DATA": 137
+   },
+   "reported_fraction_of_all_windows": {
+    "GENUINE_WALKING": 0.07857142857142857,
+    "STATIONARY": 0.13214285714285715,
+    "SUSPICIOUS_GPS_MOVEMENT": 0.0,
+    "UNCERTAIN": 0.3,
+    "INSUFFICIENT_DATA": 0.48928571428571427
+   },
+   "false_suspicious_raw_windows": 2,
+   "false_suspicious_raw_fraction_of_all_windows": 0.007142857142857143,
+   "false_suspicious_reported_windows": 0,
+   "false_suspicious_reported_fraction_of_all_windows": 0.0,
+   "false_suspicious_reported_episodes": 0,
+   "false_suspicious_reported_episodes_per_walking_hour": 0.0
+  }
+ },
+ "reasons_by_state": {
+  "GENUINE_WALKING": {
+   "gps_moving_imu_walking_steps_increase": 962
+  },
+  "INSUFFICIENT_DATA": {
+   "gps_accuracy_poor": 3,
+   "gps_coverage_low": 306,
+   "missing_input(gps window excluded by Phase 2, single GPS fix so no displacement, or no Model B window)": 901
+  },
+  "STATIONARY": {
+   "gps_still_imu_stationary_steps_unchanged": 65
+  },
+  "SUSPICIOUS_GPS_MOVEMENT": {
+   "gps_moving_imu_stationary_no_steps": 5
+  },
+  "UNCERTAIN": {
+   "gps_speed_above_walking_envelope": 6,
+   "gps_speed_displacement_disagree": 151,
+   "gps_still_but_imu_or_steps_active": 7,
+   "imu_other_activity": 473,
+   "imu_stationary_but_steps_present": 23,
+   "imu_stationary_weak_probability": 21,
+   "imu_walking_but_steps_not_increasing": 27
+  }
+ },
+ "windows_excluded": {
+  "generated_decision_windows": 2950,
+  "gps_window_absent_phase2_exclusion": 343,
+  "phase2_exclusion_reasons_for_heldout_tracks": {
+   "long_gap_overlap": 247,
+   "no_fix": 53,
+   "no_valid_speed": 43
+  },
+  "no_model_b_window": 8,
+  "INSUFFICIENT_DATA_total": 1210,
+  "note": "Excluded windows stay in the denominator ('raw_fraction_of_all_windows'); a second denominator excludes INSUFFICIENT_DATA."
+ },
+ "time_to_decision_s": {
+  "definition": "seconds from the start of the walk (first decision window) to the END of the first window whose reported (post-persistence) state matches; lower bound is N x 5 s",
+  "first_reported_GENUINE_WALKING": {
+   "tracks": 52,
+   "tracks_never": 17,
+   "seconds_quantiles": {
+    "p10": 20.0,
+    "p50": 50.0,
+    "p90": 113.0
+   }
+  },
+  "first_reported_decisive_state": {
+   "tracks": 52,
+   "tracks_never": 17,
+   "seconds_quantiles": {
+    "p10": 15.0,
+    "p50": 35.0,
+    "p90": 90.0
+   }
+  }
+ },
+ "model_a_comparison_only": {
+  "note": "Model A is not an input to any rule. The saved model was pickled with scikit-learn 1.9.1 and is run with 1.8.0 here (version-mismatch warning); values are indicative.",
+  "all_heldout": {
+   "n": 2607,
+   "mae_steps_per_5s": 1.892186306098964,
+   "mean_bias": -0.07253743766781744
+  },
+  "subject_12_out_of_sample_for_model_a": {
+   "n": 716,
+   "mae_steps_per_5s": 1.3381858938547486,
+   "mean_bias": -0.18215963687150832
+  },
+  "subjects_3_10_11_model_a_validation_subjects": {
+   "n": 1891,
+   "mae_steps_per_5s": 2.1019506081438393,
+   "mean_bias": -0.031030565838180865
+  }
+ },
+ "reporting_rules_followed": [
+  "no spoofing detection rate",
+  "no synthetic or perturbed GPS data",
+  "no thresholds computed in this script"
+ ]
+}

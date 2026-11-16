@@ -1,0 +1,7 @@
+{
+ "status": "PENDING USER DATA",
+ "detail": "datasets/live_recordings/evaluation/ has no valid session. No metric was computed; nothing was simulated.",
+ "rejected_sessions": [],
+ "thresholds_used": "frozen thresholds.json (stationary side provisional)",
+ "thresholds_sha256": "5184189b40f914a07c62c68d29b459cfe74e2eae40c2099d1a8950316b639725"
+}

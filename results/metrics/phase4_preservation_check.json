@@ -1,0 +1,181 @@
+﻿{
+    "created_utc":  "2026-11-16T16:39:32.5040718Z",
+    "note":  "Hashes taken after the 7-path restore (first attempt at hashing failed on a PowerShell alias clash). Model files best_model.joblib, random_forest.joblib, xgboost.json, activity_* were unaffected by the restore; ml/models/evaluation_metrics.json and training_config.json are restored metadata.",
+    "docs_before":  {
+                        "docs/Kinesis_Literature_Survey.pdf":  "d35dc21a5b61bc790ffa50fb3283923c23c7dc68592e67893ea895cc7a86cefd",
+                        "docs/Kinesis Data Collection Protocol and Logger Spec (v0.1).md":  "744706e8228b872afc3a24191e1122de3e15f7724f5880af6024b672cc38e45e",
+                        "docs/Kinesis_Guide_Review.pptx":  "d0e4acfb871058d97f3b1c8528a3ccbd8ac66b42b95a3fe5a66ffe04bf843415",
+                        "docs/Kinesis_Literature_Review.pptx":  "a9671e65aa0180f9a63338d56bb4b3068d34ad639728d7d00d46a8ae733b9589",
+                        "docs/Kinesis_Progress_Review_2.pptx":  "3cd720bc9451c90601fbc98a59846693c42bc07778884d9e13fc4df67e5c66b0",
+                        "docs/Kinesis_Progress_Review_2_Final.pptx":  "998645bdd64517709287239d2457658ea27a59cc8bf6f72981492ea6c4ff3143",
+                        "docs/Review.pptx":  "110590ee4d624eee1c2b708aa711fd159e55c128b81dcaba19b79cfe62e42bd4"
+                    },
+    "agents_before":  {
+                          ".agents/tasks/phase2/git_status_after.txt":  "b320ac53fbb2cc18c37c75b82722c1bf4893fb08cf4a23c91298e09f4f45fe6b",
+                          ".agents/tasks/phase2/git_status_before.txt":  "1e77cae0a2b26541ab9cc420c32b6d3b1117cea74535a6b52a175161b6d0cc47",
+                          ".agents/tasks/phase2/hashes_after.json":  "498fbb7ab5456379022a735a95c93af3870bfcc2fa0d518ff4a4d8c586b83605",
+                          ".agents/tasks/phase2/hashes_before.json":  "498fbb7ab5456379022a735a95c93af3870bfcc2fa0d518ff4a4d8c586b83605",
+                          ".agents/tasks/phase2/review.json":  "8c04f50f143eddbe94ba565bc539aff89da71d877c0e692a366e8e60998d9361",
+                          ".agents/tasks/phase2/review.md":  "5be9d0cf455f49e297cff04ea775e4110f4b70a4f713896b810ecb3a385d880d"
+                      },
+    "frozen_models_before":  {
+                                 "ml/models/activity_combined_xgboost.joblib":  "01e50674e993c86ad2c7f1ce9f7e908664d99e7053f49edef6b0ebf878487cc2",
+                                 "ml/models/activity_combined_xgboost.json":  "798deaad42cc52f0eef6e3ddaf527ae907d345d29dbc82c7ec1f8392706b90f3",
+                                 "ml/models/activity_feature_list.json":  "657eba773c3bdbd4326a131592de05344669acac53a73c5e1a63bc63c58c6f5d",
+                                 "ml/models/activity_motionsense_xgboost.joblib":  "0a41e39dec31b73b08dcc0ca683c20e441ded21e5cfc9f84c4209ee92c76f117",
+                                 "ml/models/activity_motionsense_xgboost.json":  "7cc94835fe3a7b562bc3c85cc1483fef8f99786e2f88d38a7347bd51465f9908",
+                                 "ml/models/activity_training_config.json":  "5c5f4c054caf5339a4258481c9ccd14a7daee82b8f1949a951eb7467b4deb9de",
+                                 "ml/models/activity_uci_xgboost.joblib":  "db7cdba9407e9d5dfe1441c54bee530f1ee65f5dd7cb57f407f07d34983a82b0",
+                                 "ml/models/activity_uci_xgboost.json":  "9b46497bbcb4b904d6fefe6cbcc72b3127fce788c912bd5ca915c10518a00a6d",
+                                 "ml/models/baselines.joblib":  "839776819e27b68ff17d091c25c6d9f805799bdfb2410ea8c22fb8fde8a2adc4",
+                                 "ml/models/best_model.joblib":  "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+                                 "ml/models/evaluation_metrics.json":  "9d8113ed644bfe1c6c4c1a06ab709194adf273d2e8e8835bbf1e9beb8ab7d27e",
+                                 "ml/models/feature_list.json":  "eb05ad9857860c521c125d5800721338b12ad4c2c7e60a63cde6513dc4e93042",
+                                 "ml/models/random_forest.joblib":  "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+                                 "ml/models/training_config.json":  "5789f8ca3deb7451e66b2fe690c10e2380297e16902ab9beb4a33ddf4f8ff489",
+                                 "ml/models/xgboost.json":  "1b2f084c49dd40020a84363797ac732fdaf1783b947c8e7941534aab5aca5562"
+                             },
+    "frozen_models_after":  {
+                                "ml/models/activity_combined_xgboost.joblib":  "01e50674e993c86ad2c7f1ce9f7e908664d99e7053f49edef6b0ebf878487cc2",
+                                "ml/models/activity_combined_xgboost.json":  "798deaad42cc52f0eef6e3ddaf527ae907d345d29dbc82c7ec1f8392706b90f3",
+                                "ml/models/activity_feature_list.json":  "657eba773c3bdbd4326a131592de05344669acac53a73c5e1a63bc63c58c6f5d",
+                                "ml/models/activity_motionsense_xgboost.joblib":  "0a41e39dec31b73b08dcc0ca683c20e441ded21e5cfc9f84c4209ee92c76f117",
+                                "ml/models/activity_motionsense_xgboost.json":  "7cc94835fe3a7b562bc3c85cc1483fef8f99786e2f88d38a7347bd51465f9908",
+                                "ml/models/activity_training_config.json":  "5c5f4c054caf5339a4258481c9ccd14a7daee82b8f1949a951eb7467b4deb9de",
+                                "ml/models/activity_uci_xgboost.joblib":  "db7cdba9407e9d5dfe1441c54bee530f1ee65f5dd7cb57f407f07d34983a82b0",
+                                "ml/models/activity_uci_xgboost.json":  "9b46497bbcb4b904d6fefe6cbcc72b3127fce788c912bd5ca915c10518a00a6d",
+                                "ml/models/baselines.joblib":  "839776819e27b68ff17d091c25c6d9f805799bdfb2410ea8c22fb8fde8a2adc4",
+                                "ml/models/best_model.joblib":  "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+                                "ml/models/evaluation_metrics.json":  "9d8113ed644bfe1c6c4c1a06ab709194adf273d2e8e8835bbf1e9beb8ab7d27e",
+                                "ml/models/feature_list.json":  "eb05ad9857860c521c125d5800721338b12ad4c2c7e60a63cde6513dc4e93042",
+                                "ml/models/random_forest.joblib":  "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+                                "ml/models/training_config.json":  "5789f8ca3deb7451e66b2fe690c10e2380297e16902ab9beb4a33ddf4f8ff489",
+                                "ml/models/xgboost.json":  "1b2f084c49dd40020a84363797ac732fdaf1783b947c8e7941534aab5aca5562"
+                            },
+    "frozen_models_after_equal_before":  {
+                                             "ml/models/activity_combined_xgboost.joblib":  true,
+                                             "ml/models/activity_combined_xgboost.json":  true,
+                                             "ml/models/activity_feature_list.json":  true,
+                                             "ml/models/activity_motionsense_xgboost.joblib":  true,
+                                             "ml/models/activity_motionsense_xgboost.json":  true,
+                                             "ml/models/activity_training_config.json":  true,
+                                             "ml/models/activity_uci_xgboost.joblib":  true,
+                                             "ml/models/activity_uci_xgboost.json":  true,
+                                             "ml/models/baselines.joblib":  true,
+                                             "ml/models/best_model.joblib":  true,
+                                             "ml/models/evaluation_metrics.json":  true,
+                                             "ml/models/feature_list.json":  true,
+                                             "ml/models/random_forest.joblib":  true,
+                                             "ml/models/training_config.json":  true,
+                                             "ml/models/xgboost.json":  true
+                                         },
+    "docs_after":  {
+                       "docs/Kinesis_Literature_Survey.pdf":  "d35dc21a5b61bc790ffa50fb3283923c23c7dc68592e67893ea895cc7a86cefd",
+                       "docs/Kinesis Data Collection Protocol and Logger Spec (v0.1).md":  "744706e8228b872afc3a24191e1122de3e15f7724f5880af6024b672cc38e45e",
+                       "docs/Kinesis_Guide_Review.pptx":  "d0e4acfb871058d97f3b1c8528a3ccbd8ac66b42b95a3fe5a66ffe04bf843415",
+                       "docs/Kinesis_Literature_Review.pptx":  "a9671e65aa0180f9a63338d56bb4b3068d34ad639728d7d00d46a8ae733b9589",
+                       "docs/Kinesis_Progress_Review_2.pptx":  "3cd720bc9451c90601fbc98a59846693c42bc07778884d9e13fc4df67e5c66b0",
+                       "docs/Kinesis_Progress_Review_2_Final.pptx":  "998645bdd64517709287239d2457658ea27a59cc8bf6f72981492ea6c4ff3143",
+                       "docs/Review.pptx":  "110590ee4d624eee1c2b708aa711fd159e55c128b81dcaba19b79cfe62e42bd4"
+                   },
+    "docs_after_equal_before":  {
+                                    "docs/Kinesis_Literature_Survey.pdf":  true,
+                                    "docs/Kinesis Data Collection Protocol and Logger Spec (v0.1).md":  true,
+                                    "docs/Kinesis_Guide_Review.pptx":  true,
+                                    "docs/Kinesis_Literature_Review.pptx":  true,
+                                    "docs/Kinesis_Progress_Review_2.pptx":  true,
+                                    "docs/Kinesis_Progress_Review_2_Final.pptx":  true,
+                                    "docs/Review.pptx":  true
+                                },
+    "agents_after":  {
+                         ".agents/tasks/phase2/git_status_after.txt":  "b320ac53fbb2cc18c37c75b82722c1bf4893fb08cf4a23c91298e09f4f45fe6b",
+                         ".agents/tasks/phase2/git_status_before.txt":  "1e77cae0a2b26541ab9cc420c32b6d3b1117cea74535a6b52a175161b6d0cc47",
+                         ".agents/tasks/phase2/hashes_after.json":  "498fbb7ab5456379022a735a95c93af3870bfcc2fa0d518ff4a4d8c586b83605",
+                         ".agents/tasks/phase2/hashes_before.json":  "498fbb7ab5456379022a735a95c93af3870bfcc2fa0d518ff4a4d8c586b83605",
+                         ".agents/tasks/phase2/review.json":  "8c04f50f143eddbe94ba565bc539aff89da71d877c0e692a366e8e60998d9361",
+                         ".agents/tasks/phase2/review.md":  "5be9d0cf455f49e297cff04ea775e4110f4b70a4f713896b810ecb3a385d880d"
+                     },
+    "agents_after_equal_before":  {
+                                      ".agents/tasks/phase2/git_status_after.txt":  true,
+                                      ".agents/tasks/phase2/git_status_before.txt":  true,
+                                      ".agents/tasks/phase2/hashes_after.json":  true,
+                                      ".agents/tasks/phase2/hashes_before.json":  true,
+                                      ".agents/tasks/phase2/review.json":  true,
+                                      ".agents/tasks/phase2/review.md":  true
+                                  },
+    "verification_work_item_6":  {
+                                     "checked_utc":  "2026-11-16T17:08:59.982275+00:00",
+                                     "all_frozen_models_unchanged":  true,
+                                     "all_untracked_docs_and_pdf_hash_unchanged":  true,
+                                     "all_agents_files_hash_unchanged":  true,
+                                     "literature_survey_pdf_git_status":  "M docs/Kinesis_Literature_Survey.pdf",
+                                     "literature_survey_pdf_still_modified":  true,
+                                     "agents_files_now":  [
+                                                              ".agents/tasks/phase2/git_status_after.txt",
+                                                              ".agents/tasks/phase2/git_status_before.txt",
+                                                              ".agents/tasks/phase2/hashes_after.json",
+                                                              ".agents/tasks/phase2/hashes_before.json",
+                                                              ".agents/tasks/phase2/review.json",
+                                                              ".agents/tasks/phase2/review.md"
+                                                          ],
+                                     "agents_files_all_listed_before_still_present":  true,
+                                     "note":  "Model A files (best_model.joblib, random_forest.joblib, xgboost.json) are inside frozen_models."
+                                 },
+    "verification_review1_pass":  {
+                                      "checked_utc":  "2026-11-16T17:13:55.8222871Z",
+                                      "pass":  "review1 fix pass",
+                                      "all_frozen_models_unchanged":  true,
+                                      "all_untracked_docs_and_pdf_hash_unchanged":  true,
+                                      "all_agents_files_hash_unchanged":  true,
+                                      "literature_survey_pdf_git_status":  "M docs/Kinesis_Literature_Survey.pdf",
+                                      "literature_survey_pdf_still_modified":  true,
+                                      "agents_files_now":  [
+                                                               ".agents/tasks/phase2/git_status_after.txt",
+                                                               ".agents/tasks/phase2/git_status_before.txt",
+                                                               ".agents/tasks/phase2/hashes_after.json",
+                                                               ".agents/tasks/phase2/hashes_before.json",
+                                                               ".agents/tasks/phase2/review.json",
+                                                               ".agents/tasks/phase2/review.md"
+                                                           ],
+                                      "frozen_models_equal_before":  {
+                                                                         "ml/models/activity_combined_xgboost.joblib":  true,
+                                                                         "ml/models/activity_combined_xgboost.json":  true,
+                                                                         "ml/models/activity_feature_list.json":  true,
+                                                                         "ml/models/activity_motionsense_xgboost.joblib":  true,
+                                                                         "ml/models/activity_motionsense_xgboost.json":  true,
+                                                                         "ml/models/activity_training_config.json":  true,
+                                                                         "ml/models/activity_uci_xgboost.joblib":  true,
+                                                                         "ml/models/activity_uci_xgboost.json":  true,
+                                                                         "ml/models/baselines.joblib":  true,
+                                                                         "ml/models/best_model.joblib":  true,
+                                                                         "ml/models/evaluation_metrics.json":  true,
+                                                                         "ml/models/feature_list.json":  true,
+                                                                         "ml/models/random_forest.joblib":  true,
+                                                                         "ml/models/training_config.json":  true,
+                                                                         "ml/models/xgboost.json":  true
+                                                                     },
+                                      "docs_equal_before":  {
+                                                                "docs/Kinesis_Literature_Survey.pdf":  true,
+                                                                "docs/Kinesis Data Collection Protocol and Logger Spec (v0.1).md":  true,
+                                                                "docs/Kinesis_Guide_Review.pptx":  true,
+                                                                "docs/Kinesis_Literature_Review.pptx":  true,
+                                                                "docs/Kinesis_Progress_Review_2.pptx":  true,
+                                                                "docs/Kinesis_Progress_Review_2_Final.pptx":  true,
+                                                                "docs/Review.pptx":  true
+                                                            },
+                                      "agents_equal_before":  {
+                                                                  ".agents/tasks/phase2/git_status_after.txt":  true,
+                                                                  ".agents/tasks/phase2/git_status_before.txt":  true,
+                                                                  ".agents/tasks/phase2/hashes_after.json":  true,
+                                                                  ".agents/tasks/phase2/hashes_before.json":  true,
+                                                                  ".agents/tasks/phase2/review.json":  true,
+                                                                  ".agents/tasks/phase2/review.md":  true
+                                                              },
+                                      "model_documentation_md":  {
+                                                                     "tracked_file_modified_by_phase4":  true,
+                                                                     "edit":  "Appended section \u0027## Fusion Engine (Phase 4)\u0027 (LF endings). Review1 fixes: removed stray CR before \u0027results/phase4_report.md\u0027; reverted line-ending-only change on the Reproducibility line (diff is now 3 added lines + blank). Not committed unless the caller commits it.",
+                                                                     "sha256_now":  "c88ccdc7b335ce6512b0185cb16a3188e7942221806ca0495f5f64ff2723d799",
+                                                                     "cr_bytes_now":  0
+                                                                 }
+                                  }
+}

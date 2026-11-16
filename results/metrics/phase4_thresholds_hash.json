@@ -1,0 +1,6 @@
+{
+ "thresholds_json_sha256": "5184189b40f914a07c62c68d29b459cfe74e2eae40c2099d1a8950316b639725",
+ "split_json_sha256": "6d57e27f046bf937661e314c9127def1977517b491fc39f76683062b6821c06b",
+ "engine_py_sha256": "b5340c22527b6abb97ca1e11ece5c5c6d51f07ac9656b305d2c471b5ce06f6ab",
+ "frozen_before": "any held-out evaluation (evaluate.py verifies these hashes first)"
+}

@@ -1,0 +1,178 @@
+{
+ "quantile_levels": {
+  "ACC_MAX_M": 0.99,
+  "COV_MIN": 0.1,
+  "V_MOVE_MPS": 0.05,
+  "V_MOVE_DISP_MPS": 0.05,
+  "V_WALK_MAX_MPS": 0.99,
+  "STEP_MIN": 0.05,
+  "P_STAT_SUSPICIOUS": 0.99
+ },
+ "per_subject_quantiles": {
+  "ACC_MAX_M": {
+   "4": 13.421509279999999,
+   "5": 10.196848000000003,
+   "6": 34.813171999999994,
+   "7": 16.92439002,
+   "8": 15.12764356,
+   "13": 9.678617999999998,
+   "14": 9.977845599999995,
+   "16": 8.101699999999997,
+   "17": 11.596527620000016,
+   "18": 7.385242
+  },
+  "COV_MIN": {
+   "4": 0.7962,
+   "5": 0.79192,
+   "6": 0.26188,
+   "7": 0.7662,
+   "8": 0.7967799999999999,
+   "13": 0.77944,
+   "14": 0.8,
+   "16": 0.7952,
+   "17": 0.5994,
+   "18": 0.7962
+  },
+  "V_MOVE_MPS": {
+   "4": 0.31130040000000003,
+   "5": 0.054667600000000004,
+   "6": 0.7815102,
+   "7": 0.2333675,
+   "8": 0.548896,
+   "13": 0.06865595000000001,
+   "14": 0.81,
+   "16": 0.35231875,
+   "17": 0.9899809,
+   "18": 0.3828955
+  },
+  "V_MOVE_DISP_MPS": {
+   "4": 0.5584321564814815,
+   "5": 0.08561437819986778,
+   "6": 0.9618080554668875,
+   "7": 0.7410868661231842,
+   "8": 0.7475362247168984,
+   "13": 0.13700870540357787,
+   "14": 0.8173146625000001,
+   "16": 0.48078810305350717,
+   "17": 1.3237238705153185,
+   "18": 0.5668744027535202
+  },
+  "V_WALK_MAX_MPS": {
+   "4": 1.41594816,
+   "5": 1.2716138899999936,
+   "6": 1.927579119999998,
+   "7": 1.9548688199999997,
+   "8": 1.6808002999999998,
+   "13": 1.27024141,
+   "14": 1.74,
+   "16": 1.7577655500000018,
+   "17": 1.6149185500000003,
+   "18": 1.6355614900000002
+  },
+  "STEP_MIN": {
+   "4": 7.0,
+   "5": 0.0,
+   "6": 6.0,
+   "7": 6.0,
+   "8": 8.0,
+   "13": 0.0,
+   "14": 7.0,
+   "16": 0.25,
+   "17": 5.1,
+   "18": 0.0
+  },
+  "P_STAT_SUSPICIOUS": {
+   "4": 0.003223339999999982,
+   "5": 0.99991668,
+   "6": 0.0035874399999998915,
+   "7": 0.03396373999999844,
+   "8": 0.2783987999999981,
+   "13": 0.99991896,
+   "14": 0.6141534600000007,
+   "16": 0.9998788000000001,
+   "17": 0.6362992400000003,
+   "18": 0.99986738
+  }
+ },
+ "gate_pass_windows": 6363,
+ "windows_all": 7828,
+ "stationary_data_search": {
+  "dryad_events_columns": [
+   "signalStart",
+   "testStart",
+   "testEnd"
+  ],
+  "dryad_events_contain_standing_periods": false,
+  "fixes_before_testStart_minus_1s_calibration_tracks": 300,
+  "tracks_with_such_fixes": 61,
+  "of_which_valid_speed": 189,
+  "fixes_after_testEnd_plus_1s": 13,
+  "decision": "NOT used as stationary evidence: these are GNSS warm-up fixes before the walk starts, with no label that the phone was stationary (valid speeds up to about 5 m/s were seen in a pre-check of calibration tracks) and no matching stationary motion/pedometer record. Zero-step windows inside walks (pedometer latency) are also not stationary: their median GPS speed is above V_MOVE.",
+  "live_recordings": {
+   "calibration_dir_files": [],
+   "evaluation_dir_files": []
+  },
+  "conclusion": "No real stationary GPS or pedometer data available. Stationary-side thresholds are provisional (no live stationary calibration data)."
+ },
+ "persistence_table_in_sample": {
+  "1": {
+   "false_suspicious_episodes": 2,
+   "false_suspicious_episodes_per_walking_hour": 0.18395503321410323,
+   "false_suspicious_windows_reported": 3,
+   "false_suspicious_windows_raw": 3,
+   "median_time_to_first_GENUINE_WALKING_s": 20.0,
+   "tracks_never_GENUINE_WALKING": 4,
+   "tracks": 94,
+   "decision_latency_floor_s": 5.0
+  },
+  "2": {
+   "false_suspicious_episodes": 1,
+   "false_suspicious_episodes_per_walking_hour": 0.09197751660705161,
+   "false_suspicious_windows_reported": 1,
+   "false_suspicious_windows_raw": 3,
+   "median_time_to_first_GENUINE_WALKING_s": 35.0,
+   "tracks_never_GENUINE_WALKING": 18,
+   "tracks": 94,
+   "decision_latency_floor_s": 10.0
+  },
+  "3": {
+   "false_suspicious_episodes": 0,
+   "false_suspicious_episodes_per_walking_hour": 0.0,
+   "false_suspicious_windows_reported": 0,
+   "false_suspicious_windows_raw": 3,
+   "median_time_to_first_GENUINE_WALKING_s": 50.0,
+   "tracks_never_GENUINE_WALKING": 28,
+   "tracks": 94,
+   "decision_latency_floor_s": 15.0
+  },
+  "4": {
+   "false_suspicious_episodes": 0,
+   "false_suspicious_episodes_per_walking_hour": 0.0,
+   "false_suspicious_windows_reported": 0,
+   "false_suspicious_windows_raw": 3,
+   "median_time_to_first_GENUINE_WALKING_s": 55.0,
+   "tracks_never_GENUINE_WALKING": 36,
+   "tracks": 94,
+   "decision_latency_floor_s": 20.0
+  }
+ },
+ "persistence_chosen": 2,
+ "in_sample_state_distribution": {
+  "n_windows": 7828,
+  "raw_state_fractions": {
+   "GENUINE_WALKING": 0.35628513030148184,
+   "STATIONARY": 0.013030148185998978,
+   "SUSPICIOUS_GPS_MOVEMENT": 0.0003832396525293817,
+   "UNCERTAIN": 0.44315278487480836,
+   "INSUFFICIENT_DATA": 0.1871486969851814
+  },
+  "raw_state_counts": {
+   "GENUINE_WALKING": 2789,
+   "STATIONARY": 102,
+   "SUSPICIOUS_GPS_MOVEMENT": 3,
+   "UNCERTAIN": 3469,
+   "INSUFFICIENT_DATA": 1465
+  }
+ },
+ "note": "All calibration false-flag figures are in-sample (thresholds were computed from the same windows) and therefore optimistic."
+}

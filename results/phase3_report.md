@@ -1,6 +1,6 @@
 # Phase 3 report: Model B activity classifier, plus Model A follow-ups
 
-Branch `phase3-activity-classifier`. Nothing is committed. Status labels: **Verified** means checked against code or the stored JSON files in this repository. **Inferred** means reasoned, documented by a third party, or not testable here.
+Branch `phase3-activity-classifier`. The Phase 3 work is committed as `cb1de1a` on this branch (correction made in Phase 4; the original text said "Nothing is committed"). The Phase 2 artefacts and docs noted below as uncommitted were still uncommitted when this report was written. Status labels: **Verified** means checked against code or the stored JSON files in this repository. **Inferred** means reasoned, documented by a third party, or not testable here.
 
 **Scope statement.** Model B classifies physical activity (WALKING / STATIONARY / OTHER) from phone motion sensors. It was not trained or evaluated for GPS spoofing, and no result below says anything about spoofing detection. Spoofing detection is proposed for the later fusion stage (Section 14).
 

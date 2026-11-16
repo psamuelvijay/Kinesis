@@ -1,0 +1,1629 @@
+{
+ "description": "Golden vectors from real Dryad calibration-subject windows. input -> expected state. Regression/reimplementation targets only.",
+ "thresholds_sha256_note": "vectors are valid for ml/fusion_engine/thresholds.json as hashed in results/metrics/phase4_thresholds_hash.json",
+ "thresholds": {
+  "ACC_MAX_M": 16.37878999999999,
+  "COV_MIN": 0.7924,
+  "V_MOVE_MPS": 0.3207219,
+  "V_MOVE_DISP_MPS": 0.5454659957865169,
+  "V_WALK_MAX_MPS": 1.84561502,
+  "STEP_MIN": 2.0,
+  "STEP_ZERO_MAX": 1,
+  "P_STAT_STATIONARY": 0.5,
+  "P_STAT_SUSPICIOUS": 0.999866,
+  "MIN_IMU_WINDOWS": 1,
+  "PERSISTENCE_N": 2
+ },
+ "single_window_vectors": [
+  {
+   "id": "UNCERTAIN|imu_stationary_weak_probability|13_0#0",
+   "source": {
+    "track": "13_0",
+    "win_idx": 0,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 1.596393,
+    "gps_displacement_m": 10.624937,
+    "gps_covered_s": 4.038,
+    "gps_coverage_frac": 0.8076,
+    "gps_path_m": 10.634156,
+    "gps_conf_m": 10.6198,
+    "imu_n_windows": 2,
+    "p_stationary": 0.999805,
+    "p_walking": 0.000154,
+    "p_other": 4.1e-05,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "imu_stationary_weak_probability",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "UNCERTAIN|imu_walking_but_steps_not_increasing|13_0#1",
+   "source": {
+    "track": "13_0",
+    "win_idx": 1,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 1.065997,
+    "gps_displacement_m": 3.461859,
+    "gps_covered_s": 3.996,
+    "gps_coverage_frac": 0.7992,
+    "gps_path_m": 3.491199,
+    "gps_conf_m": 5.33,
+    "imu_n_windows": 2,
+    "p_stationary": 0.000232,
+    "p_walking": 0.869887,
+    "p_other": 0.129881,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "imu_walking_but_steps_not_increasing",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "GENUINE_WALKING|gps_moving_imu_walking_steps_increase|13_0#3",
+   "source": {
+    "track": "13_0",
+    "win_idx": 3,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.839514,
+    "gps_displacement_m": 3.286758,
+    "gps_covered_s": 4.009,
+    "gps_coverage_frac": 0.8018,
+    "gps_path_m": 3.28834,
+    "gps_conf_m": 3.9,
+    "imu_n_windows": 2,
+    "p_stationary": 0.00016,
+    "p_walking": 0.642034,
+    "p_other": 0.357806,
+    "physical_steps": 9
+   },
+   "expected": {
+    "state": "GENUINE_WALKING",
+    "reason": "gps_moving_imu_walking_steps_increase",
+    "movement_accepted": true,
+    "explanation": null
+   }
+  },
+  {
+   "id": "UNCERTAIN|imu_other_activity|13_0#4",
+   "source": {
+    "track": "13_0",
+    "win_idx": 4,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.884152,
+    "gps_displacement_m": 4.057832,
+    "gps_covered_s": 4.004,
+    "gps_coverage_frac": 0.8008,
+    "gps_path_m": 4.059085,
+    "gps_conf_m": 3.9,
+    "imu_n_windows": 2,
+    "p_stationary": 8.5e-05,
+    "p_walking": 0.203539,
+    "p_other": 0.796374,
+    "physical_steps": 9
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "imu_other_activity",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "UNCERTAIN|gps_speed_displacement_disagree|13_0#9",
+   "source": {
+    "track": "13_0",
+    "win_idx": 9,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.306734,
+    "gps_displacement_m": 4.595183,
+    "gps_covered_s": 4.019,
+    "gps_coverage_frac": 0.8038,
+    "gps_path_m": 4.817953,
+    "gps_conf_m": 3.9,
+    "imu_n_windows": 2,
+    "p_stationary": 0.000142,
+    "p_walking": 0.483662,
+    "p_other": 0.516196,
+    "physical_steps": 10
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "gps_speed_displacement_disagree",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "UNCERTAIN|gps_still_but_imu_or_steps_active|13_0#12",
+   "source": {
+    "track": "13_0",
+    "win_idx": 12,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.316445,
+    "gps_displacement_m": 1.300458,
+    "gps_covered_s": 4.011,
+    "gps_coverage_frac": 0.8022,
+    "gps_path_m": 2.219026,
+    "gps_conf_m": 3.9,
+    "imu_n_windows": 2,
+    "p_stationary": 0.004786,
+    "p_walking": 0.892394,
+    "p_other": 0.10282,
+    "physical_steps": 9
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "gps_still_but_imu_or_steps_active",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "GENUINE_WALKING|gps_moving_imu_walking_steps_increase|13_1#0",
+   "source": {
+    "track": "13_1",
+    "win_idx": 0,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 1.005,
+    "gps_displacement_m": 5.20905,
+    "gps_covered_s": 4.083,
+    "gps_coverage_frac": 0.8166,
+    "gps_path_m": 5.20905,
+    "gps_conf_m": 7.5,
+    "imu_n_windows": 2,
+    "p_stationary": 0.000219,
+    "p_walking": 0.873716,
+    "p_other": 0.126066,
+    "physical_steps": 5
+   },
+   "expected": {
+    "state": "GENUINE_WALKING",
+    "reason": "gps_moving_imu_walking_steps_increase",
+    "movement_accepted": true,
+    "explanation": null
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|missing:gps_speed_mps,gps_displacement_m,gps_covered_s,gps_coverage_frac,gps_conf_m|13_1#1",
+   "source": {
+    "track": "13_1",
+    "win_idx": 1,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": null,
+    "gps_displacement_m": null,
+    "gps_covered_s": null,
+    "gps_coverage_frac": null,
+    "gps_path_m": null,
+    "gps_conf_m": null,
+    "imu_n_windows": 2,
+    "p_stationary": 8e-05,
+    "p_walking": 0.213148,
+    "p_other": 0.786773,
+    "physical_steps": 4
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "missing:gps_speed_mps,gps_displacement_m,gps_covered_s,gps_coverage_frac,gps_conf_m",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|missing:gps_displacement_m|13_1#2",
+   "source": {
+    "track": "13_1",
+    "win_idx": 2,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 1.0,
+    "gps_displacement_m": null,
+    "gps_covered_s": 0.0,
+    "gps_coverage_frac": 0.0,
+    "gps_path_m": null,
+    "gps_conf_m": 5.0,
+    "imu_n_windows": 2,
+    "p_stationary": 8.4e-05,
+    "p_walking": 0.326164,
+    "p_other": 0.673752,
+    "physical_steps": 9
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "missing:gps_displacement_m",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|gps_coverage_low|13_1#23",
+   "source": {
+    "track": "13_1",
+    "win_idx": 23,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.98,
+    "gps_displacement_m": 6.043546,
+    "gps_covered_s": 3.811,
+    "gps_coverage_frac": 0.7622,
+    "gps_path_m": 6.043546,
+    "gps_conf_m": 5.0,
+    "imu_n_windows": 2,
+    "p_stationary": 0.000188,
+    "p_walking": 0.566282,
+    "p_other": 0.433531,
+    "physical_steps": 7
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "gps_coverage_low",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "UNCERTAIN|gps_speed_displacement_disagree|13_10#0",
+   "source": {
+    "track": "13_10",
+    "win_idx": 0,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.612311,
+    "gps_displacement_m": 1.80382,
+    "gps_covered_s": 4.023,
+    "gps_coverage_frac": 0.8046,
+    "gps_path_m": 2.183451,
+    "gps_conf_m": 6.5174,
+    "imu_n_windows": 2,
+    "p_stationary": 0.999828,
+    "p_walking": 4.4e-05,
+    "p_other": 0.000127,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "gps_speed_displacement_disagree",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "STATIONARY|gps_still_imu_stationary_steps_unchanged|13_10#1",
+   "source": {
+    "track": "13_10",
+    "win_idx": 1,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.252836,
+    "gps_displacement_m": 1.454555,
+    "gps_covered_s": 4.012,
+    "gps_coverage_frac": 0.8024,
+    "gps_path_m": 1.470826,
+    "gps_conf_m": 4.4226,
+    "imu_n_windows": 2,
+    "p_stationary": 0.999866,
+    "p_walking": 0.000113,
+    "p_other": 2.1e-05,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "STATIONARY",
+    "reason": "gps_still_imu_stationary_steps_unchanged",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "UNCERTAIN|imu_walking_but_steps_not_increasing|13_10#5",
+   "source": {
+    "track": "13_10",
+    "win_idx": 5,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.926171,
+    "gps_displacement_m": 11.10008,
+    "gps_covered_s": 4.866,
+    "gps_coverage_frac": 0.9732,
+    "gps_path_m": 13.603521,
+    "gps_conf_m": 6.16825,
+    "imu_n_windows": 2,
+    "p_stationary": 0.000193,
+    "p_walking": 0.873087,
+    "p_other": 0.126721,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "imu_walking_but_steps_not_increasing",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|gps_coverage_low|13_10#7",
+   "source": {
+    "track": "13_10",
+    "win_idx": 7,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.799887,
+    "gps_displacement_m": 6.562093,
+    "gps_covered_s": 3.88,
+    "gps_coverage_frac": 0.776,
+    "gps_path_m": 6.590613,
+    "gps_conf_m": 6.661111,
+    "imu_n_windows": 2,
+    "p_stationary": 0.000578,
+    "p_walking": 0.889914,
+    "p_other": 0.109507,
+    "physical_steps": 9
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "gps_coverage_low",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "UNCERTAIN|imu_other_activity|13_10#9",
+   "source": {
+    "track": "13_10",
+    "win_idx": 9,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.804641,
+    "gps_displacement_m": 7.221095,
+    "gps_covered_s": 4.695,
+    "gps_coverage_frac": 0.939,
+    "gps_path_m": 7.227299,
+    "gps_conf_m": 5.561222,
+    "imu_n_windows": 2,
+    "p_stationary": 9.2e-05,
+    "p_walking": 0.091969,
+    "p_other": 0.907939,
+    "physical_steps": 9
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "imu_other_activity",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "UNCERTAIN|imu_stationary_but_steps_present|13_11#44",
+   "source": {
+    "track": "13_11",
+    "win_idx": 44,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.982987,
+    "gps_displacement_m": 4.066935,
+    "gps_covered_s": 4.017,
+    "gps_coverage_frac": 0.8034,
+    "gps_path_m": 4.06787,
+    "gps_conf_m": 4.392833,
+    "imu_n_windows": 2,
+    "p_stationary": 0.937899,
+    "p_walking": 0.055364,
+    "p_other": 0.006738,
+    "physical_steps": 4
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "imu_stationary_but_steps_present",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "UNCERTAIN|imu_stationary_weak_probability|13_12#0",
+   "source": {
+    "track": "13_12",
+    "win_idx": 0,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.556203,
+    "gps_displacement_m": 2.598097,
+    "gps_covered_s": 4.029,
+    "gps_coverage_frac": 0.8058,
+    "gps_path_m": 2.634809,
+    "gps_conf_m": 7.3966,
+    "imu_n_windows": 2,
+    "p_stationary": 0.997483,
+    "p_walking": 0.001807,
+    "p_other": 0.00071,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "imu_stationary_weak_probability",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "STATIONARY|gps_still_imu_stationary_steps_unchanged|13_12#1",
+   "source": {
+    "track": "13_12",
+    "win_idx": 1,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.236387,
+    "gps_displacement_m": 0.453453,
+    "gps_covered_s": 4.0,
+    "gps_coverage_frac": 0.8,
+    "gps_path_m": 0.988199,
+    "gps_conf_m": 4.245,
+    "imu_n_windows": 2,
+    "p_stationary": 0.997979,
+    "p_walking": 0.000813,
+    "p_other": 0.001208,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "STATIONARY",
+    "reason": "gps_still_imu_stationary_steps_unchanged",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "UNCERTAIN|imu_stationary_but_steps_present|13_12#23",
+   "source": {
+    "track": "13_12",
+    "win_idx": 23,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.784321,
+    "gps_displacement_m": 2.796662,
+    "gps_covered_s": 3.989,
+    "gps_coverage_frac": 0.7978,
+    "gps_path_m": 2.79928,
+    "gps_conf_m": 3.6274,
+    "imu_n_windows": 2,
+    "p_stationary": 0.999759,
+    "p_walking": 0.000181,
+    "p_other": 5.9e-05,
+    "physical_steps": 2
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "imu_stationary_but_steps_present",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|missing:gps_speed_mps,gps_displacement_m,gps_covered_s,gps_coverage_frac,gps_conf_m|13_13#0",
+   "source": {
+    "track": "13_13",
+    "win_idx": 0,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": null,
+    "gps_displacement_m": null,
+    "gps_covered_s": null,
+    "gps_coverage_frac": null,
+    "gps_path_m": null,
+    "gps_conf_m": null,
+    "imu_n_windows": 2,
+    "p_stationary": 0.999878,
+    "p_walking": 7.4e-05,
+    "p_other": 4.8e-05,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "missing:gps_speed_mps,gps_displacement_m,gps_covered_s,gps_coverage_frac,gps_conf_m",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|missing:gps_displacement_m|13_13#1",
+   "source": {
+    "track": "13_13",
+    "win_idx": 1,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.92,
+    "gps_displacement_m": null,
+    "gps_covered_s": 0.0,
+    "gps_coverage_frac": 0.0,
+    "gps_path_m": null,
+    "gps_conf_m": 5.0,
+    "imu_n_windows": 2,
+    "p_stationary": 0.777172,
+    "p_walking": 0.215274,
+    "p_other": 0.007554,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "missing:gps_displacement_m",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "SUSPICIOUS_GPS_MOVEMENT|gps_moving_imu_stationary_no_steps|13_2#0",
+   "source": {
+    "track": "13_2",
+    "win_idx": 0,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.594569,
+    "gps_displacement_m": 5.714393,
+    "gps_covered_s": 4.012,
+    "gps_coverage_frac": 0.8024,
+    "gps_path_m": 6.126106,
+    "gps_conf_m": 10.1724,
+    "imu_n_windows": 2,
+    "p_stationary": 0.999891,
+    "p_walking": 7.6e-05,
+    "p_other": 3.3e-05,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "SUSPICIOUS_GPS_MOVEMENT",
+    "reason": "gps_moving_imu_stationary_no_steps",
+    "movement_accepted": false,
+    "explanation": {
+     "gps_speed_mps": 0.594569,
+     "gps_displacement_m": 5.714393,
+     "gps_distance_trend_m": 6.126106,
+     "gps_distance_trend_windows": 1,
+     "gps_accuracy_m": 10.1724,
+     "imu_activity": "STATIONARY",
+     "p_stationary": 0.999891,
+     "p_walking": 7.6e-05,
+     "physical_steps": 0,
+     "rule_triggered": "S1_GPS_MOVING_IMU_STATIONARY_NO_STEPS",
+     "thresholds": {
+      "V_MOVE_MPS": 0.3207219,
+      "V_MOVE_DISP_MPS": 0.5454659957865169,
+      "V_WALK_MAX_MPS": 1.84561502,
+      "P_STAT_SUSPICIOUS": 0.999866,
+      "STEP_ZERO_MAX": 1
+     },
+     "movement_accepted": false
+    }
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|gps_accuracy_poor|13_3#0",
+   "source": {
+    "track": "13_3",
+    "win_idx": 0,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.605,
+    "gps_displacement_m": 29.032308,
+    "gps_covered_s": 2.977,
+    "gps_coverage_frac": 0.5954,
+    "gps_path_m": 29.032308,
+    "gps_conf_m": 20.0,
+    "imu_n_windows": 2,
+    "p_stationary": 0.99985,
+    "p_walking": 0.000112,
+    "p_other": 3.9e-05,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "gps_accuracy_poor",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "UNCERTAIN|gps_still_but_imu_or_steps_active|13_7#2",
+   "source": {
+    "track": "13_7",
+    "win_idx": 2,
+    "subject": 13
+   },
+   "input": {
+    "gps_speed_mps": 0.000444,
+    "gps_displacement_m": 0.915362,
+    "gps_covered_s": 3.987,
+    "gps_coverage_frac": 0.7974,
+    "gps_path_m": 0.940229,
+    "gps_conf_m": 4.4546,
+    "imu_n_windows": 2,
+    "p_stationary": 0.243628,
+    "p_walking": 0.39089,
+    "p_other": 0.365482,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "gps_still_but_imu_or_steps_active",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|gps_accuracy_poor|14_0#0",
+   "source": {
+    "track": "14_0",
+    "win_idx": 0,
+    "subject": 14
+   },
+   "input": {
+    "gps_speed_mps": 0.42,
+    "gps_displacement_m": 25.935538,
+    "gps_covered_s": 4.634,
+    "gps_coverage_frac": 0.9268,
+    "gps_path_m": 25.935538,
+    "gps_conf_m": 32.429949,
+    "imu_n_windows": 2,
+    "p_stationary": 0.68835,
+    "p_walking": 0.162736,
+    "p_other": 0.148913,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "gps_accuracy_poor",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|missing:p_stationary,p_walking,p_other|14_1#109",
+   "source": {
+    "track": "14_1",
+    "win_idx": 109,
+    "subject": 14
+   },
+   "input": {
+    "gps_speed_mps": 1.2,
+    "gps_displacement_m": 4.620657,
+    "gps_covered_s": 4.0,
+    "gps_coverage_frac": 0.8,
+    "gps_path_m": 4.626887,
+    "gps_conf_m": 3.790092,
+    "imu_n_windows": 0,
+    "p_stationary": null,
+    "p_walking": null,
+    "p_other": null,
+    "physical_steps": 8
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "missing:p_stationary,p_walking,p_other",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "UNCERTAIN|gps_speed_above_walking_envelope|14_2#52",
+   "source": {
+    "track": "14_2",
+    "win_idx": 52,
+    "subject": 14
+   },
+   "input": {
+    "gps_speed_mps": 2.1,
+    "gps_displacement_m": 8.481442,
+    "gps_covered_s": 4.0,
+    "gps_coverage_frac": 0.8,
+    "gps_path_m": 8.49095,
+    "gps_conf_m": 3.790092,
+    "imu_n_windows": 2,
+    "p_stationary": 0.012358,
+    "p_walking": 0.851556,
+    "p_other": 0.136086,
+    "physical_steps": 8
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "gps_speed_above_walking_envelope",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|missing:p_stationary,p_walking,p_other|14_2#123",
+   "source": {
+    "track": "14_2",
+    "win_idx": 123,
+    "subject": 14
+   },
+   "input": {
+    "gps_speed_mps": 1.25,
+    "gps_displacement_m": 4.673084,
+    "gps_covered_s": 4.0,
+    "gps_coverage_frac": 0.8,
+    "gps_path_m": 4.77131,
+    "gps_conf_m": 3.790092,
+    "imu_n_windows": 0,
+    "p_stationary": null,
+    "p_walking": null,
+    "p_other": null,
+    "physical_steps": 8
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "missing:p_stationary,p_walking,p_other",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "UNCERTAIN|gps_speed_above_walking_envelope|14_4#15",
+   "source": {
+    "track": "14_4",
+    "win_idx": 15,
+    "subject": 14
+   },
+   "input": {
+    "gps_speed_mps": 2.2,
+    "gps_displacement_m": 7.836035,
+    "gps_covered_s": 4.0,
+    "gps_coverage_frac": 0.8,
+    "gps_path_m": 9.025357,
+    "gps_conf_m": 3.790092,
+    "imu_n_windows": 2,
+    "p_stationary": 5.4e-05,
+    "p_walking": 0.067746,
+    "p_other": 0.9322,
+    "physical_steps": 9
+   },
+   "expected": {
+    "state": "UNCERTAIN",
+    "reason": "gps_speed_above_walking_envelope",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "SUSPICIOUS_GPS_MOVEMENT|gps_moving_imu_stationary_no_steps|5_8#2",
+   "source": {
+    "track": "5_8",
+    "win_idx": 2,
+    "subject": 5
+   },
+   "input": {
+    "gps_speed_mps": 0.972453,
+    "gps_displacement_m": 2.812268,
+    "gps_covered_s": 3.966,
+    "gps_coverage_frac": 0.7932,
+    "gps_path_m": 3.924849,
+    "gps_conf_m": 12.4315,
+    "imu_n_windows": 2,
+    "p_stationary": 0.999902,
+    "p_walking": 6.4e-05,
+    "p_other": 3.4e-05,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "SUSPICIOUS_GPS_MOVEMENT",
+    "reason": "gps_moving_imu_stationary_no_steps",
+    "movement_accepted": false,
+    "explanation": {
+     "gps_speed_mps": 0.972453,
+     "gps_displacement_m": 2.812268,
+     "gps_distance_trend_m": 3.924849,
+     "gps_distance_trend_windows": 1,
+     "gps_accuracy_m": 12.4315,
+     "imu_activity": "STATIONARY",
+     "p_stationary": 0.999902,
+     "p_walking": 6.4e-05,
+     "physical_steps": 0,
+     "rule_triggered": "S1_GPS_MOVING_IMU_STATIONARY_NO_STEPS",
+     "thresholds": {
+      "V_MOVE_MPS": 0.3207219,
+      "V_MOVE_DISP_MPS": 0.5454659957865169,
+      "V_WALK_MAX_MPS": 1.84561502,
+      "P_STAT_SUSPICIOUS": 0.999866,
+      "STEP_ZERO_MAX": 1
+     },
+     "movement_accepted": false
+    }
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|missing:gps_displacement_m,p_stationary,p_walking,p_other|6_5#0",
+   "source": {
+    "track": "6_5",
+    "win_idx": 0,
+    "subject": 6
+   },
+   "input": {
+    "gps_speed_mps": 1.331334,
+    "gps_displacement_m": null,
+    "gps_covered_s": 0.0,
+    "gps_coverage_frac": 0.0,
+    "gps_path_m": null,
+    "gps_conf_m": 45.591,
+    "imu_n_windows": 0,
+    "p_stationary": null,
+    "p_walking": null,
+    "p_other": null,
+    "physical_steps": 0
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "missing:gps_displacement_m,p_stationary,p_walking,p_other",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|missing:gps_speed_mps,gps_displacement_m,gps_covered_s,gps_coverage_frac,gps_conf_m,p_stationary,p_walking,p_other|6_8#2",
+   "source": {
+    "track": "6_8",
+    "win_idx": 2,
+    "subject": 6
+   },
+   "input": {
+    "gps_speed_mps": null,
+    "gps_displacement_m": null,
+    "gps_covered_s": null,
+    "gps_coverage_frac": null,
+    "gps_path_m": null,
+    "gps_conf_m": null,
+    "imu_n_windows": 0,
+    "p_stationary": null,
+    "p_walking": null,
+    "p_other": null,
+    "physical_steps": 6
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "missing:gps_speed_mps,gps_displacement_m,gps_covered_s,gps_coverage_frac,gps_conf_m,p_stationary,p_walking,p_other",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|missing:gps_displacement_m,p_stationary,p_walking,p_other|7_1#1",
+   "source": {
+    "track": "7_1",
+    "win_idx": 1,
+    "subject": 7
+   },
+   "input": {
+    "gps_speed_mps": 0.822126,
+    "gps_displacement_m": null,
+    "gps_covered_s": 0.0,
+    "gps_coverage_frac": 0.0,
+    "gps_path_m": null,
+    "gps_conf_m": 4.819,
+    "imu_n_windows": 0,
+    "p_stationary": null,
+    "p_walking": null,
+    "p_other": null,
+    "physical_steps": 10
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "missing:gps_displacement_m,p_stationary,p_walking,p_other",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  },
+  {
+   "id": "INSUFFICIENT_DATA|missing:gps_speed_mps,gps_displacement_m,gps_covered_s,gps_coverage_frac,gps_conf_m,p_stationary,p_walking,p_other|8_0#1",
+   "source": {
+    "track": "8_0",
+    "win_idx": 1,
+    "subject": 8
+   },
+   "input": {
+    "gps_speed_mps": null,
+    "gps_displacement_m": null,
+    "gps_covered_s": null,
+    "gps_coverage_frac": null,
+    "gps_path_m": null,
+    "gps_conf_m": null,
+    "imu_n_windows": 0,
+    "p_stationary": null,
+    "p_walking": null,
+    "p_other": null,
+    "physical_steps": 10
+   },
+   "expected": {
+    "state": "INSUFFICIENT_DATA",
+    "reason": "missing:gps_speed_mps,gps_displacement_m,gps_covered_s,gps_coverage_frac,gps_conf_m,p_stationary,p_walking,p_other",
+    "movement_accepted": null,
+    "explanation": null
+   }
+  }
+ ],
+ "sequence_vectors": [
+  {
+   "source_track": "13_2",
+   "persistence_N": 2,
+   "inputs": [
+    {
+     "gps_speed_mps": 0.594569,
+     "gps_displacement_m": 5.714393,
+     "gps_covered_s": 4.012,
+     "gps_coverage_frac": 0.8024,
+     "gps_path_m": 6.126106,
+     "gps_conf_m": 10.1724,
+     "imu_n_windows": 2,
+     "p_stationary": 0.999891,
+     "p_walking": 7.6e-05,
+     "p_other": 3.3e-05,
+     "physical_steps": 0
+    },
+    {
+     "gps_speed_mps": 0.884772,
+     "gps_displacement_m": 4.476873,
+     "gps_covered_s": 3.999,
+     "gps_coverage_frac": 0.7998,
+     "gps_path_m": 4.884126,
+     "gps_conf_m": 6.0098,
+     "imu_n_windows": 2,
+     "p_stationary": 0.999884,
+     "p_walking": 8.2e-05,
+     "p_other": 3.4e-05,
+     "physical_steps": 0
+    },
+    {
+     "gps_speed_mps": 0.543663,
+     "gps_displacement_m": 6.378304,
+     "gps_covered_s": 3.981,
+     "gps_coverage_frac": 0.7962,
+     "gps_path_m": 6.378399,
+     "gps_conf_m": 6.505,
+     "imu_n_windows": 2,
+     "p_stationary": 0.999826,
+     "p_walking": 0.000144,
+     "p_other": 3.1e-05,
+     "physical_steps": 0
+    },
+    {
+     "gps_speed_mps": 0.329481,
+     "gps_displacement_m": 1.483404,
+     "gps_covered_s": 3.996,
+     "gps_coverage_frac": 0.7992,
+     "gps_path_m": 1.71004,
+     "gps_conf_m": 7.09,
+     "imu_n_windows": 2,
+     "p_stationary": 0.999408,
+     "p_walking": 0.000535,
+     "p_other": 5.8e-05,
+     "physical_steps": 0
+    },
+    {
+     "gps_speed_mps": 0.37759,
+     "gps_displacement_m": 5.193716,
+     "gps_covered_s": 4.446,
+     "gps_coverage_frac": 0.8892,
+     "gps_path_m": 5.322924,
+     "gps_conf_m": 5.6985,
+     "imu_n_windows": 2,
+     "p_stationary": 0.003953,
+     "p_walking": 0.919136,
+     "p_other": 0.07691,
+     "physical_steps": 0
+    },
+    {
+     "gps_speed_mps": 0.693498,
+     "gps_displacement_m": 3.452926,
+     "gps_covered_s": 4.693,
+     "gps_coverage_frac": 0.9386,
+     "gps_path_m": 3.79132,
+     "gps_conf_m": 6.118875,
+     "imu_n_windows": 2,
+     "p_stationary": 0.003668,
+     "p_walking": 0.966872,
+     "p_other": 0.02946,
+     "physical_steps": 1
+    },
+    {
+     "gps_speed_mps": 1.084461,
+     "gps_displacement_m": 9.550054,
+     "gps_covered_s": 4.735,
+     "gps_coverage_frac": 0.947,
+     "gps_path_m": 9.574491,
+     "gps_conf_m": 7.700667,
+     "imu_n_windows": 2,
+     "p_stationary": 0.002605,
+     "p_walking": 0.683798,
+     "p_other": 0.313598,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 1.172623,
+     "gps_displacement_m": 6.251446,
+     "gps_covered_s": 4.13,
+     "gps_coverage_frac": 0.826,
+     "gps_path_m": 6.390276,
+     "gps_conf_m": 6.758625,
+     "imu_n_windows": 2,
+     "p_stationary": 0.00288,
+     "p_walking": 0.932276,
+     "p_other": 0.064844,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 1.237766,
+     "gps_displacement_m": 10.420132,
+     "gps_covered_s": 4.734,
+     "gps_coverage_frac": 0.9468,
+     "gps_path_m": 10.684358,
+     "gps_conf_m": 6.487555,
+     "imu_n_windows": 2,
+     "p_stationary": 0.00025,
+     "p_walking": 0.887508,
+     "p_other": 0.112242,
+     "physical_steps": 8
+    },
+    {
+     "gps_speed_mps": 1.154289,
+     "gps_displacement_m": 6.329219,
+     "gps_covered_s": 4.506,
+     "gps_coverage_frac": 0.9012,
+     "gps_path_m": 6.371763,
+     "gps_conf_m": 6.075778,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000146,
+     "p_walking": 0.585,
+     "p_other": 0.414854,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 1.067512,
+     "gps_displacement_m": 4.180498,
+     "gps_covered_s": 3.737,
+     "gps_coverage_frac": 0.7474,
+     "gps_path_m": 4.566704,
+     "gps_conf_m": 6.401286,
+     "imu_n_windows": 1,
+     "p_stationary": 0.000147,
+     "p_walking": 0.287754,
+     "p_other": 0.712098,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 1.076933,
+     "gps_displacement_m": 4.792168,
+     "gps_covered_s": 4.967,
+     "gps_coverage_frac": 0.9934,
+     "gps_path_m": 4.816136,
+     "gps_conf_m": 6.352333,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000195,
+     "p_walking": 0.800169,
+     "p_other": 0.199636,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 0.983473,
+     "gps_displacement_m": 6.453956,
+     "gps_covered_s": 4.561,
+     "gps_coverage_frac": 0.9122,
+     "gps_path_m": 6.903453,
+     "gps_conf_m": 5.647778,
+     "imu_n_windows": 2,
+     "p_stationary": 0.00024,
+     "p_walking": 0.661605,
+     "p_other": 0.338155,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 0.763508,
+     "gps_displacement_m": 4.746633,
+     "gps_covered_s": 3.979,
+     "gps_coverage_frac": 0.7958,
+     "gps_path_m": 4.776737,
+     "gps_conf_m": 4.787125,
+     "imu_n_windows": 2,
+     "p_stationary": 0.00023,
+     "p_walking": 0.864417,
+     "p_other": 0.135354,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 0.835458,
+     "gps_displacement_m": 5.680139,
+     "gps_covered_s": 4.644,
+     "gps_coverage_frac": 0.9288,
+     "gps_path_m": 5.773758,
+     "gps_conf_m": 4.262333,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000415,
+     "p_walking": 0.851212,
+     "p_other": 0.148373,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 0.884829,
+     "gps_displacement_m": 6.328916,
+     "gps_covered_s": 4.613,
+     "gps_coverage_frac": 0.9226,
+     "gps_path_m": 6.342449,
+     "gps_conf_m": 3.954,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000192,
+     "p_walking": 0.667003,
+     "p_other": 0.332805,
+     "physical_steps": 8
+    },
+    {
+     "gps_speed_mps": 0.915231,
+     "gps_displacement_m": 5.890517,
+     "gps_covered_s": 4.139,
+     "gps_coverage_frac": 0.8278,
+     "gps_path_m": 6.226905,
+     "gps_conf_m": 4.332875,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000384,
+     "p_walking": 0.850448,
+     "p_other": 0.149168,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 0.962916,
+     "gps_displacement_m": 5.892869,
+     "gps_covered_s": 4.623,
+     "gps_coverage_frac": 0.9246,
+     "gps_path_m": 5.99768,
+     "gps_conf_m": 5.185667,
+     "imu_n_windows": 2,
+     "p_stationary": 0.0002,
+     "p_walking": 0.588971,
+     "p_other": 0.410829,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 0.986799,
+     "gps_displacement_m": 6.980835,
+     "gps_covered_s": 4.578,
+     "gps_coverage_frac": 0.9156,
+     "gps_path_m": 7.009805,
+     "gps_conf_m": 5.772,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000196,
+     "p_walking": 0.851447,
+     "p_other": 0.148357,
+     "physical_steps": 8
+    },
+    {
+     "gps_speed_mps": 1.000689,
+     "gps_displacement_m": 7.008604,
+     "gps_covered_s": 4.543,
+     "gps_coverage_frac": 0.9086,
+     "gps_path_m": 7.014024,
+     "gps_conf_m": 5.816889,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000166,
+     "p_walking": 0.574415,
+     "p_other": 0.425419,
+     "physical_steps": 7
+    },
+    {
+     "gps_speed_mps": 1.030598,
+     "gps_displacement_m": 7.097052,
+     "gps_covered_s": 3.983,
+     "gps_coverage_frac": 0.7966,
+     "gps_path_m": 7.18111,
+     "gps_conf_m": 5.323375,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000272,
+     "p_walking": 0.776944,
+     "p_other": 0.222784,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 0.914215,
+     "gps_displacement_m": 5.48686,
+     "gps_covered_s": 4.957,
+     "gps_coverage_frac": 0.9914,
+     "gps_path_m": 5.637471,
+     "gps_conf_m": 4.710556,
+     "imu_n_windows": 1,
+     "p_stationary": 0.000146,
+     "p_walking": 0.618171,
+     "p_other": 0.381683,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 0.946431,
+     "gps_displacement_m": 4.889401,
+     "gps_covered_s": 4.103,
+     "gps_coverage_frac": 0.8206,
+     "gps_path_m": 4.950331,
+     "gps_conf_m": 4.249,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000188,
+     "p_walking": 0.69492,
+     "p_other": 0.304892,
+     "physical_steps": 8
+    },
+    {
+     "gps_speed_mps": 0.972098,
+     "gps_displacement_m": 5.75583,
+     "gps_covered_s": 4.656,
+     "gps_coverage_frac": 0.9312,
+     "gps_path_m": 5.769689,
+     "gps_conf_m": 5.096444,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000151,
+     "p_walking": 0.626734,
+     "p_other": 0.373114,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 0.993029,
+     "gps_displacement_m": 4.412434,
+     "gps_covered_s": 3.852,
+     "gps_coverage_frac": 0.7704,
+     "gps_path_m": 4.610484,
+     "gps_conf_m": 5.56825,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000198,
+     "p_walking": 0.547634,
+     "p_other": 0.452168,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 0.964446,
+     "gps_displacement_m": 5.685872,
+     "gps_covered_s": 4.777,
+     "gps_coverage_frac": 0.9554,
+     "gps_path_m": 5.72548,
+     "gps_conf_m": 4.401,
+     "imu_n_windows": 2,
+     "p_stationary": 0.0002,
+     "p_walking": 0.716109,
+     "p_other": 0.283692,
+     "physical_steps": 8
+    },
+    {
+     "gps_speed_mps": 1.002349,
+     "gps_displacement_m": 4.91203,
+     "gps_covered_s": 4.502,
+     "gps_coverage_frac": 0.9004,
+     "gps_path_m": 4.922825,
+     "gps_conf_m": 3.86,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000201,
+     "p_walking": 0.686443,
+     "p_other": 0.313356,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 1.088588,
+     "gps_displacement_m": 6.044345,
+     "gps_covered_s": 4.649,
+     "gps_coverage_frac": 0.9298,
+     "gps_path_m": 6.047993,
+     "gps_conf_m": 4.009111,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000142,
+     "p_walking": 0.397946,
+     "p_other": 0.601913,
+     "physical_steps": 8
+    },
+    {
+     "gps_speed_mps": 1.131873,
+     "gps_displacement_m": 4.652645,
+     "gps_covered_s": 4.341,
+     "gps_coverage_frac": 0.8682,
+     "gps_path_m": 4.706807,
+     "gps_conf_m": 3.772,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000136,
+     "p_walking": 0.574883,
+     "p_other": 0.424982,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 1.141507,
+     "gps_displacement_m": 5.576957,
+     "gps_covered_s": 4.843,
+     "gps_coverage_frac": 0.9686,
+     "gps_path_m": 5.717803,
+     "gps_conf_m": 3.643778,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000134,
+     "p_walking": 0.708039,
+     "p_other": 0.291827,
+     "physical_steps": 8
+    },
+    {
+     "gps_speed_mps": 1.168493,
+     "gps_displacement_m": 5.344957,
+     "gps_covered_s": 4.738,
+     "gps_coverage_frac": 0.9476,
+     "gps_path_m": 5.388951,
+     "gps_conf_m": 4.262556,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000191,
+     "p_walking": 0.567821,
+     "p_other": 0.431988,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 1.184839,
+     "gps_displacement_m": 5.874038,
+     "gps_covered_s": 3.852,
+     "gps_coverage_frac": 0.7704,
+     "gps_path_m": 5.984986,
+     "gps_conf_m": 4.74825,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000154,
+     "p_walking": 0.417657,
+     "p_other": 0.58219,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 1.209496,
+     "gps_displacement_m": 6.227733,
+     "gps_covered_s": 4.92,
+     "gps_coverage_frac": 0.984,
+     "gps_path_m": 6.242775,
+     "gps_conf_m": 5.210667,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000158,
+     "p_walking": 0.522024,
+     "p_other": 0.477817,
+     "physical_steps": 8
+    },
+    {
+     "gps_speed_mps": 1.235342,
+     "gps_displacement_m": 6.778386,
+     "gps_covered_s": 4.181,
+     "gps_coverage_frac": 0.8362,
+     "gps_path_m": 6.920042,
+     "gps_conf_m": 6.343125,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000175,
+     "p_walking": 0.63009,
+     "p_other": 0.369734,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 1.240572,
+     "gps_displacement_m": 7.755153,
+     "gps_covered_s": 4.915,
+     "gps_coverage_frac": 0.983,
+     "gps_path_m": 7.829822,
+     "gps_conf_m": 7.869125,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000364,
+     "p_walking": 0.418893,
+     "p_other": 0.580743,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 1.200828,
+     "gps_displacement_m": 3.502651,
+     "gps_covered_s": 4.305,
+     "gps_coverage_frac": 0.861,
+     "gps_path_m": 3.92912,
+     "gps_conf_m": 7.475,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000161,
+     "p_walking": 0.455762,
+     "p_other": 0.544077,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 1.185195,
+     "gps_displacement_m": 5.757563,
+     "gps_covered_s": 4.825,
+     "gps_coverage_frac": 0.965,
+     "gps_path_m": 5.876561,
+     "gps_conf_m": 5.001556,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000152,
+     "p_walking": 0.589977,
+     "p_other": 0.409871,
+     "physical_steps": 8
+    },
+    {
+     "gps_speed_mps": 1.109807,
+     "gps_displacement_m": 4.30469,
+     "gps_covered_s": 3.883,
+     "gps_coverage_frac": 0.7766,
+     "gps_path_m": 4.49801,
+     "gps_conf_m": 4.453125,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000136,
+     "p_walking": 0.491971,
+     "p_other": 0.507894,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 1.15775,
+     "gps_displacement_m": 4.712757,
+     "gps_covered_s": 3.993,
+     "gps_coverage_frac": 0.7986,
+     "gps_path_m": 5.309751,
+     "gps_conf_m": 4.82075,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000144,
+     "p_walking": 0.73282,
+     "p_other": 0.267036,
+     "physical_steps": 9
+    },
+    {
+     "gps_speed_mps": 1.1951,
+     "gps_displacement_m": 6.798838,
+     "gps_covered_s": 4.761,
+     "gps_coverage_frac": 0.9522,
+     "gps_path_m": 6.885131,
+     "gps_conf_m": 5.851889,
+     "imu_n_windows": 2,
+     "p_stationary": 0.000138,
+     "p_walking": 0.766493,
+     "p_other": 0.233368,
+     "physical_steps": 8
+    }
+   ],
+   "expected_raw_states": [
+    "SUSPICIOUS_GPS_MOVEMENT",
+    "SUSPICIOUS_GPS_MOVEMENT",
+    "UNCERTAIN",
+    "UNCERTAIN",
+    "UNCERTAIN",
+    "UNCERTAIN",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "INSUFFICIENT_DATA",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "INSUFFICIENT_DATA",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "UNCERTAIN",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "INSUFFICIENT_DATA",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "UNCERTAIN",
+    "UNCERTAIN",
+    "GENUINE_WALKING",
+    "INSUFFICIENT_DATA",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING"
+   ],
+   "expected_reported_states": [
+    "UNCERTAIN",
+    "SUSPICIOUS_GPS_MOVEMENT",
+    "UNCERTAIN",
+    "UNCERTAIN",
+    "UNCERTAIN",
+    "UNCERTAIN",
+    "UNCERTAIN",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "INSUFFICIENT_DATA",
+    "UNCERTAIN",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "INSUFFICIENT_DATA",
+    "UNCERTAIN",
+    "GENUINE_WALKING",
+    "UNCERTAIN",
+    "UNCERTAIN",
+    "GENUINE_WALKING",
+    "GENUINE_WALKING",
+    "INSUFFICIENT_DATA",
+    "UNCERTAIN",
+    "GENUINE_WALKING",
+    "UNCERTAIN",
+    "UNCERTAIN",
+    "UNCERTAIN",
+    "INSUFFICIENT_DATA",
+    "UNCERTAIN",
+    "GENUINE_WALKING"
+   ],
+   "expected_movement_flagged": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  }
+ ]
+}

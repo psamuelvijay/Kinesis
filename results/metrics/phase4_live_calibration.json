@@ -1,0 +1,7 @@
+{
+ "status": "PENDING USER DATA",
+ "detail": "datasets/live_recordings/calibration/ has no valid session; thresholds stay provisional (no live stationary calibration data).",
+ "rejected_sessions": [],
+ "stationary_thresholds": "provisional (no live stationary calibration data)",
+ "thresholds_live_written": false
+}

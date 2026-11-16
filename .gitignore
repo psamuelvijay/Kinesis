@@ -30,3 +30,6 @@ android/**/*.aab
 Thumbs.db
 
 datasets/*/extracted/
+# Phase 4: raw live recordings contain personal GPS traces; keep only placeholders
+datasets/live_recordings/*/*
+!datasets/live_recordings/*/.gitkeep
