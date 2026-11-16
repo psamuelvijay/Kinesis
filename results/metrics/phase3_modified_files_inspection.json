@@ -1,0 +1,466 @@
+{
+ "python": "3.14.3",
+ "env_executing_this_script": {
+  "scikit-learn": "1.9.1",
+  "xgboost": "3.4.1",
+  "numpy": "2.5.5",
+  "pandas": "3.1.1",
+  "joblib": "1.6.0",
+  "executable": "E:\\My_Projects\\Major Project\\.venv\\Scripts\\python.exe"
+ },
+ "git_status_porcelain_modified": [
+  " M docs/Kinesis_Literature_Survey.pdf",
+  " M ml/models/best_model.joblib",
+  " M ml/models/evaluation_metrics.json",
+  " M ml/models/random_forest.joblib",
+  " M ml/models/training_config.json",
+  " M ml/models/xgboost.json",
+  " M results/metrics/phase2_model_metrics.json",
+  " M results/metrics/phase2_test_predictions.csv",
+  " M results/metrics/phase3_preservation_check.json",
+  " M results/plots/phase2_feature_importance.png",
+  " M results/plots/phase2_mae_by_speed_bin_test.png",
+  " M results/plots/phase2_pred_vs_actual_test.png",
+  " M results/plots/phase2_residuals_test.png"
+ ],
+ "git_diff_stat_all_tracked_modifications": [
+  " ml/models/best_model.joblib                    |  Bin 1262856 -> 1262851 bytes",
+  " ml/models/evaluation_metrics.json              |  878 ++---",
+  " ml/models/random_forest.joblib                 |  Bin 1262856 -> 1262851 bytes",
+  " ml/models/training_config.json                 |   10 +-",
+  " ml/models/xgboost.json                         |    2 +-",
+  " results/metrics/phase2_model_metrics.json      |  878 ++---",
+  " results/metrics/phase2_test_predictions.csv    | 4234 ++++++++++++------------",
+  " results/metrics/phase3_preservation_check.json |    2 +-",
+  " results/plots/phase2_feature_importance.png    |  Bin 77913 -> 70182 bytes",
+  " results/plots/phase2_mae_by_speed_bin_test.png |  Bin 30057 -> 26858 bytes",
+  " results/plots/phase2_pred_vs_actual_test.png   |  Bin 96477 -> 84886 bytes",
+  " results/plots/phase2_residuals_test.png        |  Bin 132478 -> 118461 bytes",
+  " 12 files changed, 3002 insertions(+), 3002 deletions(-)"
+ ],
+ "git_diff_stat_four_files": [
+  " ml/models/best_model.joblib                 |  Bin 1262856 -> 1262851 bytes",
+  " ml/models/random_forest.joblib              |  Bin 1262856 -> 1262851 bytes",
+  " ml/models/xgboost.json                      |    2 +-",
+  " results/metrics/phase2_test_predictions.csv | 4234 +++++++++++++--------------",
+  " 4 files changed, 2118 insertions(+), 2118 deletions(-)"
+ ],
+ "files": {
+  "ml/models/best_model.joblib": {
+   "in_requested_four": true,
+   "size_working_tree": 1262851,
+   "size_HEAD": 1262856,
+   "sha256_working_tree": "62ee54d48f1508673ad5caa6f98ea494e25aa7ec9457b1759252f6fc14557dff",
+   "sha256_HEAD": "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+   "identical_bytes": false
+  },
+  "ml/models/random_forest.joblib": {
+   "in_requested_four": true,
+   "size_working_tree": 1262851,
+   "size_HEAD": 1262856,
+   "sha256_working_tree": "62ee54d48f1508673ad5caa6f98ea494e25aa7ec9457b1759252f6fc14557dff",
+   "sha256_HEAD": "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+   "identical_bytes": false
+  },
+  "ml/models/xgboost.json": {
+   "in_requested_four": true,
+   "size_working_tree": 1002577,
+   "size_HEAD": 997048,
+   "sha256_working_tree": "5ae6795eb5d28ac3c26f0217daa6b226468ed1de927037e81e38b937a875062f",
+   "sha256_HEAD": "1b2f084c49dd40020a84363797ac732fdaf1783b947c8e7941534aab5aca5562",
+   "identical_bytes": false
+  },
+  "results/metrics/phase2_test_predictions.csv": {
+   "in_requested_four": true,
+   "size_working_tree": 213991,
+   "size_HEAD": 211901,
+   "sha256_working_tree": "05cce898117026a4881260ce49e1e86c042e274f5356d805f1eb24172a8d300a",
+   "sha256_HEAD": "c8c52be026406f9ea27542a0aa42d060a3a43306e5581f6d00ee3fced2dfe3f2",
+   "identical_bytes": false
+  },
+  "ml/models/evaluation_metrics.json": {
+   "in_requested_four": false,
+   "size_working_tree": 55892,
+   "size_HEAD": 53628,
+   "sha256_working_tree": "7e16b3c8c16c1fd66821b5bf4681fcfd35005281dd1dd38caa1fa09b5c9d485b",
+   "sha256_HEAD": "d9fe391b551a31baeaeace741c3e0963576bb03f048bbb4eeae5a5e8a659b2e6",
+   "identical_bytes": false
+  },
+  "ml/models/training_config.json": {
+   "in_requested_four": false,
+   "size_working_tree": 6516,
+   "size_HEAD": 6265,
+   "sha256_working_tree": "2ef8ffafffc48a70f5a607223824db8cb475b15e5d7f313c87e24ebb5296f8cb",
+   "sha256_HEAD": "79bccd508021bf802d4663dd5f7d4705e056e516683c25feb9b7d65ebf7723f8",
+   "identical_bytes": false
+  },
+  "results/metrics/phase2_model_metrics.json": {
+   "in_requested_four": false,
+   "size_working_tree": 55892,
+   "size_HEAD": 53628,
+   "sha256_working_tree": "7e16b3c8c16c1fd66821b5bf4681fcfd35005281dd1dd38caa1fa09b5c9d485b",
+   "sha256_HEAD": "d9fe391b551a31baeaeace741c3e0963576bb03f048bbb4eeae5a5e8a659b2e6",
+   "identical_bytes": false
+  },
+  "results/metrics/phase3_preservation_check.json": {
+   "in_requested_four": false,
+   "size_working_tree": 297683,
+   "size_HEAD": 295469,
+   "sha256_working_tree": "ef09b1be7837ff3bfbc4025a4def10aa9e826e44fd8e3107b407373b717bf1fa",
+   "sha256_HEAD": "790cfab4467f05dfdd85b08673daca37ae19546255561145e3b9b82a0a15902f",
+   "identical_bytes": false
+  }
+ },
+ "training_config_diff": {
+  "library_versions_working_tree": {
+   "python": "3.14.3",
+   "scikit-learn": "1.8.0",
+   "xgboost": "3.2.0",
+   "numpy": "2.4.3",
+   "pandas": "3.0.1",
+   "joblib": "1.5.3"
+  },
+  "library_versions_HEAD": {
+   "python": "3.14.3",
+   "scikit-learn": "1.9.1",
+   "xgboost": "3.4.1",
+   "numpy": "2.5.5",
+   "pandas": "3.1.1",
+   "joblib": "1.6.0"
+  },
+  "other_keys_identical": {
+   "seed": true,
+   "split_seed": true,
+   "split_ids": true,
+   "features": true,
+   "selected_model": true,
+   "selection_rule": true,
+   "search_grids": true,
+   "best_params": true,
+   "fixed_params": true,
+   "final_fit_data": true,
+   "nan_handling": true,
+   "baselines": true,
+   "alignment_decision": true,
+   "alignment_confidence": true,
+   "step_handling_decision": true,
+   "window_target": true,
+   "no_imu_or_step_features": true,
+   "test_scored_once_after_freeze": true
+  }
+ },
+ "joblib_models": {
+  "random_forest": {
+   "type": "RandomForestRegressor",
+   "get_params_equal": true,
+   "n_estimators": 300,
+   "sklearn_version_pickled_HEAD": null,
+   "sklearn_version_pickled_working_tree": null,
+   "max_abs_prediction_diff_on_all_phase2_windows": 7.105427357601002e-15,
+   "first_tree_identical_structure": true
+  },
+  "best_model": {
+   "type": "RandomForestRegressor",
+   "get_params_equal": true,
+   "n_estimators": 300,
+   "sklearn_version_pickled_HEAD": null,
+   "sklearn_version_pickled_working_tree": null,
+   "max_abs_prediction_diff_on_all_phase2_windows": 5.329070518200751e-15,
+   "first_tree_identical_structure": true
+  }
+ },
+ "xgboost_json": {
+  "HEAD": {
+   "version": [
+    3,
+    4,
+    1
+   ],
+   "n_trees": "300",
+   "learner_model_param": {
+    "base_score": "[8.588216E0]",
+    "boost_from_average": "1",
+    "num_class": "0",
+    "num_feature": "15",
+    "num_target": "1"
+   },
+   "objective": {
+    "name": "reg:squarederror",
+    "reg_loss_param": {
+     "scale_pos_weight": "1"
+    }
+   }
+  },
+  "working_tree": {
+   "version": [
+    3,
+    2,
+    0
+   ],
+   "n_trees": "300",
+   "learner_model_param": {
+    "base_score": "[8.588216E0]",
+    "boost_from_average": "1",
+    "num_class": "0",
+    "num_feature": "15",
+    "num_target": "1"
+   },
+   "objective": {
+    "name": "reg:squarederror",
+    "reg_loss_param": {
+     "scale_pos_weight": "1"
+    }
+   }
+  },
+  "trees_HEAD": 300,
+  "trees_working_tree": 300,
+  "trees_with_identical_topology_and_split_features": 0,
+  "trees_with_bitwise_identical_thresholds_and_weights": 0,
+  "max_abs_prediction_diff_on_all_phase2_windows": 1.7144558429718018,
+  "params_equal": {
+   "objective": true,
+   "base_score": true,
+   "booster": true,
+   "callbacks": true,
+   "colsample_bylevel": true,
+   "colsample_bynode": true,
+   "colsample_bytree": true,
+   "device": true,
+   "early_stopping_rounds": true,
+   "enable_categorical": true,
+   "eval_metric": true,
+   "feature_types": true,
+   "feature_weights": true,
+   "gamma": true,
+   "grow_policy": true,
+   "importance_type": true,
+   "interaction_constraints": true,
+   "learning_rate": true,
+   "max_bin": true,
+   "max_cat_threshold": true,
+   "max_cat_to_onehot": true,
+   "max_delta_step": true,
+   "max_depth": true,
+   "max_leaves": true,
+   "min_child_weight": true,
+   "missing": false,
+   "monotone_constraints": true,
+   "multi_strategy": true,
+   "n_estimators": true,
+   "n_jobs": true,
+   "num_parallel_tree": true,
+   "random_state": true,
+   "reg_alpha": true,
+   "reg_lambda": true,
+   "sampling_method": true,
+   "scale_pos_weight": true,
+   "subsample": true,
+   "tree_method": true,
+   "validate_parameters": true,
+   "verbosity": true
+  },
+  "features_equal": true
+ },
+ "predictions_csv": {
+  "rows_HEAD": 2117,
+  "rows_working_tree": 2117,
+  "columns_equal": true,
+  "key_columns_and_order_identical": true,
+  "steps_target_identical": true,
+  "row_wise_max_abs_diff": {
+   "pred_baseline_train_mean": 0.0,
+   "pred_baseline_linear_distance": 3.552713678800501e-15,
+   "pred_random_forest": 5.329070518200751e-15,
+   "pred_xgboost": 1.7144559
+  },
+  "n_rows_differing_gt_1e-9": {
+   "pred_baseline_train_mean": 0,
+   "pred_baseline_linear_distance": 0,
+   "pred_random_forest": 0,
+   "pred_xgboost": 2117
+  },
+  "metrics_recomputed_HEAD": {
+   "pred_baseline_train_mean": {
+    "n": 2117,
+    "MAE": 1.7910013964452502,
+    "RMSE": 2.595399882856496,
+    "R2": -0.026743033568292773
+   },
+   "pred_baseline_linear_distance": {
+    "n": 2117,
+    "MAE": 1.9106217585509242,
+    "RMSE": 2.7272444803800955,
+    "R2": -0.13370835281025562
+   },
+   "pred_random_forest": {
+    "n": 2117,
+    "MAE": 1.4027958249106454,
+    "RMSE": 2.069268895746267,
+    "R2": 0.34733990046825236
+   },
+   "pred_xgboost": {
+    "n": 2117,
+    "MAE": 1.3989203743093999,
+    "RMSE": 2.041136105689345,
+    "R2": 0.36496577296170996
+   }
+  },
+  "metrics_recomputed_working_tree": {
+   "pred_baseline_train_mean": {
+    "n": 2117,
+    "MAE": 1.7910013964452502,
+    "RMSE": 2.595399882856496,
+    "R2": -0.026743033568292773
+   },
+   "pred_baseline_linear_distance": {
+    "n": 2117,
+    "MAE": 1.9106217585509244,
+    "RMSE": 2.7272444803800955,
+    "R2": -0.13370835281025562
+   },
+   "pred_random_forest": {
+    "n": 2117,
+    "MAE": 1.4027958249106454,
+    "RMSE": 2.069268895746267,
+    "R2": 0.34733990046825236
+   },
+   "pred_xgboost": {
+    "n": 2117,
+    "MAE": 1.40457263309778,
+    "RMSE": 2.0433409148301123,
+    "R2": 0.3635931202851518
+   }
+  },
+  "metrics_abs_diff": {
+   "pred_baseline_train_mean": {
+    "MAE": 0.0,
+    "RMSE": 0.0,
+    "R2": 0.0
+   },
+   "pred_baseline_linear_distance": {
+    "MAE": 2.220446049250313e-16,
+    "RMSE": 0.0,
+    "R2": 0.0
+   },
+   "pred_random_forest": {
+    "MAE": 0.0,
+    "RMSE": 0.0,
+    "R2": 0.0
+   },
+   "pred_xgboost": {
+    "MAE": 0.005652258788380049,
+    "RMSE": 0.00220480914076715,
+    "R2": 0.0013726526765581726
+   }
+  },
+  "csv_text_diff_note": "git diff reports ~4234 changed lines because float digits differ; compare numerically above"
+ },
+ "stored_headline_metrics_HEAD_vs_working_tree": {
+  "validation": {
+   "random_forest": {
+    "MAE": {
+     "HEAD": 2.01582727843526,
+     "working_tree": 2.01582727843526
+    },
+    "RMSE": {
+     "HEAD": 2.8933366695129106,
+     "working_tree": 2.8933366695129106
+    },
+    "R2": {
+     "HEAD": 0.23120664773082056,
+     "working_tree": 0.23120664773082056
+    }
+   },
+   "xgboost": {
+    "MAE": {
+     "HEAD": 2.031769004617991,
+     "working_tree": 2.0263643016982003
+    },
+    "RMSE": {
+     "HEAD": 2.894476432038521,
+     "working_tree": 2.893421519313506
+    },
+    "R2": {
+     "HEAD": 0.23060083199591896,
+     "working_tree": 0.23116155590322884
+    }
+   }
+  },
+  "test": {
+   "random_forest": {
+    "MAE": {
+     "HEAD": 1.4027958249106454,
+     "working_tree": 1.4027958249106454
+    },
+    "RMSE": {
+     "HEAD": 2.069268895746267,
+     "working_tree": 2.069268895746267
+    },
+    "R2": {
+     "HEAD": 0.34733990046825236,
+     "working_tree": 0.34733990046825236
+    }
+   },
+   "xgboost": {
+    "MAE": {
+     "HEAD": 1.398920371172968,
+     "working_tree": 1.4045726358573787
+    },
+    "RMSE": {
+     "HEAD": 2.0411361057960664,
+     "working_tree": 2.0433409175368653
+    },
+    "R2": {
+     "HEAD": 0.3649657728953042,
+     "working_tree": 0.36359311859909316
+    }
+   }
+  }
+ },
+ "environments_found": {
+  "note": "two interpreters exist; see below",
+  "system_python_is_what_overwrote_the_files": {
+   "python": "3.14.3",
+   "scikit-learn": "1.8.0",
+   "xgboost": "3.2.0",
+   "numpy": "2.4.3",
+   "pandas": "3.0.1",
+   "joblib": "1.5.3"
+  },
+  "project_venv_.venv_versions": "see env_executing_this_script when this script is run with .venv (recorded Phase 2 versions)"
+ },
+ "assessment": {
+  "cause": "The working-tree files were regenerated by running train_eval.py (or equivalent) with the system Python (scikit-learn 1.8.0 / xgboost 3.2.0) instead of the project .venv (scikit-learn 1.9.1 / xgboost 3.4.1 = the versions recorded in the committed training_config.json). training_config.json library_versions in the working tree shows the old stack. Same seeds, split and hyper-parameters; the differences come from library behaviour/serialization, not from a changed experiment.",
+  "randomforest_parameters_equal": true,
+  "randomforest_first_tree_identical": true,
+  "random_forest_conclusion": "random_forest.joblib and best_model.joblib (same RandomForest; identical SHA-256 to each other in both versions) differ from HEAD only in serialization/library version: identical get_params, identical first tree, max abs prediction difference ~1e-14.",
+  "xgboost_conclusion": "xgboost.json has the same hyper-parameters and features but different trees (0 of 300 identical) and predictions differ up to ~1.7 steps per window: an xgboost 3.2.0 vs 3.4.1 numerical difference, not a changed experiment. Stored test metrics for XGBoost move by about 0.006 MAE.",
+  "recommendation": "RESTORE the four files (and the other four modified Phase 2 artefacts) from HEAD ONLY AFTER USER APPROVAL: the committed versions were produced with the recorded .venv stack and reproduce exactly when re-run in .venv (see phase3_modelA_sensitivity H0 rerun, abs diff 0.0). Keep is not recommended because the working tree mixes library versions with committed docs/reports quoting the HEAD numbers. Regenerate is unnecessary. Nothing was restored, discarded or staged by this inspection. Future Phase 2/3 scripts should be run with .venv."
+ },
+ "restore_record": {
+  "approved_by_user": true,
+  "approval_source": "user chat message answering the modela-followups approval request (confirmed by the workflow orchestrator)",
+  "note_on_hashes": "sha256_after_restore_equals_HEAD values are the worktree hashes of the restored files. The predictions CSV worktree hash differs from the raw HEAD blob hash only by CRLF line endings (core.autocrlf=true); see phase3_verification.json.",
+  "approval_quote": "\"Restore only those four exact paths. Do not use git restore . or reset the entire working tree. Leave the other eight modified tracked files untouched. Preserve all uncommitted documentation and .agents/ files. Yes, approve restoring only those four files from HEAD: best_model.joblib, random_forest.joblib, xgboost.json, phase2_test_predictions.csv",
+  "command": "git restore -- ml/models/best_model.joblib ml/models/random_forest.joblib ml/models/xgboost.json results/metrics/phase2_test_predictions.csv",
+  "sha256_after_restore_equals_HEAD": {
+   "ml/models/best_model.joblib": "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+   "ml/models/random_forest.joblib": "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+   "ml/models/xgboost.json": "1b2f084c49dd40020a84363797ac732fdaf1783b947c8e7941534aab5aca5562",
+   "results/metrics/phase2_test_predictions.csv": "2c336e6d623a13378a0fa0c1d2a72e03a594eea7298cd3189d6bc0d534cde25e"
+  },
+  "other_modified_tracked_files_left_untouched_hashes_unchanged": [
+   "docs/Kinesis_Literature_Survey.pdf",
+   "ml/models/evaluation_metrics.json",
+   "ml/models/training_config.json",
+   "results/metrics/phase2_model_metrics.json",
+   "results/metrics/phase3_preservation_check.json",
+   "results/plots/phase2_feature_importance.png",
+   "results/plots/phase2_mae_by_speed_bin_test.png",
+   "results/plots/phase2_pred_vs_actual_test.png",
+   "results/plots/phase2_residuals_test.png"
+  ],
+  "preservation_compare": "read-only comparison against the saved before-snapshot (1099 entries): only the four restored files differ; docs/ and .agents/ untouched. preservation_hash.py compare was not run because it rewrites phase3_preservation_check.json, one of the modified files.",
+  "note": "The 5 other regenerated Phase 2 artefacts (evaluation_metrics.json, training_config.json, phase2_model_metrics.json, 4 plots) still carry system-Python outputs; restoring them needs separate approval. The now-restored predictions/models are consistent with HEAD but not with these remaining files."
+ }
+}

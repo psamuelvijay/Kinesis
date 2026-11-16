@@ -1,0 +1,208 @@
+{
+  "checks": {
+    "model_b_rerun_identical": {
+      "run1_returncode": 0,
+      "run2_returncode": 0,
+      "run1_equals_run2": true,
+      "run1_equals_outputs_existing_before_rerun": true,
+      "differing_files_run1_vs_run2": [],
+      "differing_files_vs_existing": [],
+      "sha256_run2": {
+        "results/metrics/activity_within_dataset_metrics.json": "c3d271118932194dbf23529400535b2dc8d313f1150dc671b13151e242747a80",
+        "results/metrics/activity_generalisation_metrics.json": "69561e4b2d8c0d11c81edffd9216468f3686515e4f8ab538ba37947b3105aaa0",
+        "results/metrics/activity_test_predictions.csv": "62c306f1059d982d835a31653578257454664e7ff2b72560b957495c88a3da33",
+        "results/metrics/activity_splits.json": "65a8d99647c8b571672740f8e9a889ba8925a4d7e6d476f36543e81a3b73c8d1",
+        "results/metrics/activity_preparation_report.json": "42078625d2874d5b4676d7acefca81ea23049826fef7c96fac1149d90f27694d",
+        "results/metrics/activity_feature_scale_comparison.json": "1f90966b2cfca526264418329979966b09391ceaba159e9154c885954a85f764",
+        "ml/models/activity_feature_list.json": "657eba773c3bdbd4326a131592de05344669acac53a73c5e1a63bc63c58c6f5d",
+        "ml/models/activity_combined_xgboost.json": "798deaad42cc52f0eef6e3ddaf527ae907d345d29dbc82c7ec1f8392706b90f3",
+        "ml/models/activity_motionsense_xgboost.json": "7cc94835fe3a7b562bc3c85cc1483fef8f99786e2f88d38a7347bd51465f9908",
+        "ml/models/activity_uci_xgboost.json": "9b46497bbcb4b904d6fefe6cbcc72b3127fce788c912bd5ca915c10518a00a6d"
+      },
+      "python": "C:\\Program Files\\Python314\\python.exe",
+      "passed": true
+    },
+    "zero_subject_leakage": {
+      "overlaps": {
+        "motionsense": {
+          "train&val": [],
+          "train&test": [],
+          "val&test": []
+        },
+        "uci_har": {
+          "train&val": [],
+          "train&test": [],
+          "val&test": []
+        }
+      },
+      "passed": true
+    },
+    "no_jog_stairs_mapped_to_stationary": {
+      "stationary_sources": {
+        "MotionSense": [
+          "sit",
+          "std"
+        ],
+        "UCI_HAR": [
+          "LAYING",
+          "SITTING",
+          "STANDING"
+        ]
+      },
+      "violations": {
+        "MotionSense": [],
+        "UCI_HAR": []
+      },
+      "passed": true
+    },
+    "jog_stairs_predicted_stationary_diagnostic": {
+      "selected_xgboost_test": {
+        "MotionSense": {
+          "jog_stairs_windows": 1033,
+          "predicted_STATIONARY": 0
+        },
+        "UCI_HAR": {
+          "jog_stairs_windows": 891,
+          "predicted_STATIONARY": 2
+        }
+      },
+      "note": "model errors, not label mapping; informational"
+    },
+    "no_gps_or_step_features_in_model_b": {
+      "n_features": 11,
+      "features": [
+        "acc_mag_mean",
+        "acc_mag_std",
+        "acc_mag_rms",
+        "acc_mag_var",
+        "acc_mag_energy",
+        "gyro_mag_mean",
+        "gyro_mag_var",
+        "acc_peak_count",
+        "acc_dominant_freq_hz",
+        "acc_spectral_energy",
+        "acc_spectral_entropy"
+      ],
+      "forbidden_name_hits": [],
+      "passed": true
+    },
+    "raw_dataset_hashes_unchanged": {
+      "files": {
+        "datasets/uci_har/raw/human_activity_recognition_using_smartphones.zip": {
+          "before_in_snapshot": true,
+          "equal": true
+        },
+        "datasets/motionsense/raw/A_DeviceMotion_data.zip": {
+          "before_in_snapshot": true,
+          "equal": true
+        },
+        "datasets/motionsense/raw/B_Accelerometer_data.zip": {
+          "before_in_snapshot": true,
+          "equal": true
+        },
+        "datasets/motionsense/raw/C_Gyroscope_data.zip": {
+          "before_in_snapshot": true,
+          "equal": true
+        },
+        "datasets/dryad/raw/Data.zip": {
+          "before_in_snapshot": true,
+          "equal": true
+        }
+      },
+      "passed": true
+    },
+    "report_numbers_match_json": {
+      "n_values_checked": 61,
+      "not_found_in_report": [],
+      "note": "each expected string is generated from the JSON files and searched in results/phase3_report.md",
+      "passed": true
+    },
+    "four_phase2_files_vs_git_HEAD": {
+      "files": {
+        "ml/models/best_model.joblib": {
+          "head_sha256": "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+          "worktree_sha256": "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+          "equal_bytes": true,
+          "equal_after_CRLF_to_LF": false,
+          "equal": true
+        },
+        "ml/models/random_forest.joblib": {
+          "head_sha256": "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+          "worktree_sha256": "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+          "equal_bytes": true,
+          "equal_after_CRLF_to_LF": false,
+          "equal": true
+        },
+        "ml/models/xgboost.json": {
+          "head_sha256": "1b2f084c49dd40020a84363797ac732fdaf1783b947c8e7941534aab5aca5562",
+          "worktree_sha256": "1b2f084c49dd40020a84363797ac732fdaf1783b947c8e7941534aab5aca5562",
+          "equal_bytes": true,
+          "equal_after_CRLF_to_LF": true,
+          "equal": true
+        },
+        "results/metrics/phase2_test_predictions.csv": {
+          "head_sha256": "c8c52be026406f9ea27542a0aa42d060a3a43306e5581f6d00ee3fced2dfe3f2",
+          "worktree_sha256": "2c336e6d623a13378a0fa0c1d2a72e03a594eea7298cd3189d6bc0d534cde25e",
+          "equal_bytes": false,
+          "equal_after_CRLF_to_LF": true,
+          "equal": true
+        }
+      },
+      "passed": true,
+      "note": "informational: shows whether the four files currently equal HEAD (restored by an earlier step)"
+    },
+    "preservation_byte_identical_to_before": {
+      "compare_exit_code": 1,
+      "summary_by_group": {
+        "docs_pptx_pdf_md": {
+          "n": 7,
+          "changed_or_missing": []
+        },
+        "agents_dir": {
+          "n": 6,
+          "changed_or_missing": []
+        },
+        "four_modified_phase2_files": {
+          "n": 4,
+          "changed_or_missing": [
+            "ml/models/best_model.joblib",
+            "ml/models/random_forest.joblib",
+            "ml/models/xgboost.json",
+            "results/metrics/phase2_test_predictions.csv"
+          ]
+        }
+      },
+      "changed_or_missing": [
+        "ml/models/best_model.joblib",
+        "ml/models/random_forest.joblib",
+        "ml/models/xgboost.json",
+        "results/metrics/phase2_test_predictions.csv"
+      ],
+      "added_files_count": 8,
+      "added_files": [
+        "datasets/dryad/processed/phase3_modelA_sensitivity/windows_H0_headline.csv",
+        "datasets/dryad/processed/phase3_modelA_sensitivity/windows_H1_positions_relative_to_testStart.csv",
+        "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_minus1s.csv",
+        "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_minus2s.csv",
+        "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_minus5s.csv",
+        "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_plus1s.csv",
+        "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_plus2s.csv",
+        "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_plus5s.csv"
+      ],
+      "strict_identical_including_approved_exception": false,
+      "approved_exception": {
+        "files": [
+          "ml/models/best_model.joblib",
+          "ml/models/random_forest.joblib",
+          "ml/models/xgboost.json",
+          "results/metrics/phase2_test_predictions.csv"
+        ],
+        "expected_state": "equals git HEAD",
+        "all_equal_HEAD": true
+      },
+      "added_files_all_phase3_modelA_sensitivity_outputs": true,
+      "passed": true,
+      "explanation": "Restoring exactly these four files from HEAD was approved_by_user=true (user chat message answering the modela-followups approval request, confirmed by the orchestrator). Expected state = equals HEAD. docs/ and .agents/ must be byte-identical, every other file unchanged vs its before-hash. Added files are new Model A sensitivity window CSVs (Phase 3 outputs)."
+    }
+  }
+}

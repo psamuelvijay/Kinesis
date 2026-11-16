@@ -1,0 +1,33 @@
+{
+  "features": [
+    "acc_mag_mean",
+    "acc_mag_std",
+    "acc_mag_rms",
+    "acc_mag_var",
+    "acc_mag_energy",
+    "gyro_mag_mean",
+    "gyro_mag_var",
+    "acc_peak_count",
+    "acc_dominant_freq_hz",
+    "acc_spectral_energy",
+    "acc_spectral_entropy"
+  ],
+  "channels_in_window": [
+    "acc_x_g",
+    "acc_y_g",
+    "acc_z_g",
+    "gyro_x_rads",
+    "gyro_y_rads",
+    "gyro_z_rads"
+  ],
+  "n_features": 11,
+  "orientation_independent": true,
+  "excluded": [
+    "total_acc",
+    "gravity",
+    "attitude",
+    "561 UCI features",
+    "GPS",
+    "step features"
+  ]
+}

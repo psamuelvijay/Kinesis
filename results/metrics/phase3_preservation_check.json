@@ -1104,7 +1104,7 @@
     }
   },
   "after": {
-    "timestamp_utc": "2026-11-16T14:16:43.290387+00:00",
+    "timestamp_utc": "2026-11-16T15:40:40.349850+00:00",
     "sha256": {
       ".agents/tasks/phase2/git_status_after.txt": "b320ac53fbb2cc18c37c75b82722c1bf4893fb08cf4a23c91298e09f4f45fe6b",
       ".agents/tasks/phase2/git_status_before.txt": "1e77cae0a2b26541ab9cc420c32b6d3b1117cea74535a6b52a175161b6d0cc47",
@@ -2174,6 +2174,14 @@
       "datasets/dryad/extracted/data/subject_9/9_9/orientation.csv": "91a4e2f100227487a802ac040b85700f03520b347fbfe4c23b7bf2d97b43d9fa",
       "datasets/dryad/extracted/data/subject_9/9_9/positions.csv": "18020cfeabd52f9b4ca4f7783934b34cfad0e5d442576b891f2757ee42fd7d99",
       "datasets/dryad/extracted/data/subject_9/9_9/steps.csv": "dd29130948e47db990d5daf3f337f31cdcaa4688d86dacf0d53661cc27dd1a3a",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_H0_headline.csv": "cd237b79fa80a044262cb4bfbe450e7ffc59720425469c098d569123a42089e4",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_H1_positions_relative_to_testStart.csv": "1e7aad81571c84c28f1d03f8cec470422e125d96b270dcf2e40c136ddddd97b3",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_minus1s.csv": "50dcbe14a1bebff858eb84c381d4b5770e1d78b2d8cca3d9ef812c82d21c9bd9",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_minus2s.csv": "f7ba4b291a73bee450b8278888b1c57447c3a5c69b499b55d3e6faf07bf807ef",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_minus5s.csv": "3d4561ca2a848a7cb927ad1c9503c857976943e23e26baeb2511e91532c7e6c1",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_plus1s.csv": "26dae3a9c520156a433f5a89c3e6d9bff91c488f2322221b529b1a3246153ef1",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_plus2s.csv": "085fb42fc374b47dbae71702a8602aef86a1c30237e5e08e7c812fe3c23c72dc",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_plus5s.csv": "3f1ac162823a6f2d5ae3e7dcc7b7ad8576781b3230977865b48d9bf9009db41a",
       "datasets/dryad/processed/windows_5s.csv": "39f0d6def15ac945a5c3d7b3dbcadf5694630cb6de9b7a91f4938db541cf4d73",
       "datasets/dryad/raw/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "datasets/dryad/raw/Data.zip": "6b99cfd72b4917ac38464186d6b0ce1ad11a6c9da2709602993d2f5d2bbcee63",
@@ -2201,15 +2209,29 @@
       "docs/Kinesis_Progress_Review_2.pptx": "3cd720bc9451c90601fbc98a59846693c42bc07778884d9e13fc4df67e5c66b0",
       "docs/Kinesis_Progress_Review_2_Final.pptx": "998645bdd64517709287239d2457658ea27a59cc8bf6f72981492ea6c4ff3143",
       "docs/Review.pptx": "110590ee4d624eee1c2b708aa711fd159e55c128b81dcaba19b79cfe62e42bd4",
-      "ml/models/best_model.joblib": "62ee54d48f1508673ad5caa6f98ea494e25aa7ec9457b1759252f6fc14557dff",
-      "ml/models/random_forest.joblib": "62ee54d48f1508673ad5caa6f98ea494e25aa7ec9457b1759252f6fc14557dff",
-      "ml/models/xgboost.json": "5ae6795eb5d28ac3c26f0217daa6b226468ed1de927037e81e38b937a875062f",
-      "results/metrics/phase2_test_predictions.csv": "05cce898117026a4881260ce49e1e86c042e274f5356d805f1eb24172a8d300a"
+      "ml/models/best_model.joblib": "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+      "ml/models/random_forest.joblib": "942518c7b4d7841611e84b67b68559aba265a0c21723e162a174437069d8262c",
+      "ml/models/xgboost.json": "1b2f084c49dd40020a84363797ac732fdaf1783b947c8e7941534aab5aca5562",
+      "results/metrics/phase2_test_predictions.csv": "2c336e6d623a13378a0fa0c1d2a72e03a594eea7298cd3189d6bc0d534cde25e"
     }
   },
   "comparison": {
-    "identical": true,
-    "changed_or_missing": [],
-    "added": []
+    "identical": false,
+    "changed_or_missing": [
+      "ml/models/best_model.joblib",
+      "ml/models/random_forest.joblib",
+      "ml/models/xgboost.json",
+      "results/metrics/phase2_test_predictions.csv"
+    ],
+    "added": [
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_H0_headline.csv",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_H1_positions_relative_to_testStart.csv",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_minus1s.csv",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_minus2s.csv",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_minus5s.csv",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_plus1s.csv",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_plus2s.csv",
+      "datasets/dryad/processed/phase3_modelA_sensitivity/windows_lag_plus5s.csv"
+    ]
   }
 }

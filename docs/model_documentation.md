@@ -49,3 +49,24 @@ Test MAE by GPS speed range (Random Forest / XGBoost): <0.5 m/s 2.196 / 2.156 (n
 
 ## Reproducibility
 Seed 42; versions: Python 3.14.3, scikit-learn 1.9.1, xgboost 3.4.1, numpy 2.5.5, pandas 3.1.1. Model files are in `ml/models/`.
+
+## Model B: activity classifier (Phase 3)
+All numbers are copied from `results/metrics/activity_within_dataset_metrics.json`, `activity_generalisation_metrics.json`, `activity_preparation_report.json`, `activity_splits.json` and `ml/models/activity_training_config.json`. Full discussion, status labels and limitations are in `results/phase3_report.md`.
+### Task and scope
+Classify a 2.56 s window (128 samples at 50 Hz, 50% overlap) of phone motion into WALKING, STATIONARY or OTHER. Inputs are gravity-removed linear acceleration (MotionSense `userAcceleration`, UCI HAR `body_acc`, in g) and gyroscope (rad/s). It was not trained or evaluated for GPS spoofing. Spoofing detection is meant to come from later fusion logic.
+### Data and labels
+MotionSense `A_DeviceMotion` (24 subjects, 21,539 windows) and UCI HAR Inertial Signals (30 subjects, 10,299 windows). Mapping: walking to WALKING; sitting, standing, laying to STATIONARY; jogging, upstairs, downstairs to OTHER. Jogging and stairs are never STATIONARY.
+### Features (11, magnitude-based, no GPS or step inputs)
+Acceleration-magnitude mean, std, RMS, variance, energy; gyro-magnitude mean and variance; peak count; dominant frequency, spectral energy, spectral entropy (list in `ml/models/activity_feature_list.json`).
+### Methodology
+Subject-independent splits, seed 42, zero overlap asserted (MotionSense 16/4/4 subjects, UCI 16/5/9). Majority, logistic regression, Random Forest and XGBoost compared; selection and tuning on validation macro-F1; test scored once for the headline. XGBoost was selected for each dataset.
+### Headline results (within-dataset, test)
+| Dataset | Accuracy | Macro-F1 | Weighted-F1 |
+|---|---|---|---|
+| MotionSense (4 test subjects) | 0.9378 | 0.9207 | 0.9373 |
+| UCI HAR (9 test subjects) | 0.9206 | 0.8835 | 0.9220 |
+Cross-dataset macro-F1 is separate and much lower: MotionSense to UCI test 0.5805, UCI to MotionSense test 0.5539. A model trained on both (candidate deployed model, `ml/models/activity_combined_xgboost.*`) scores 0.9319 (MotionSense test) and 0.8832 (UCI test) but has never been evaluated on Android data.
+### Limitations
+MotionSense has no timestamps (50 Hz assumed); pocket versus waist placement; STATIONARY merges sitting, standing and laying; a phone resting on a surface is not represented; only 4 and 9 test subjects; large cross-dataset drop. See `results/phase3_report.md` Section 12.
+### Reproducibility
+Seed 42; `python ml/activity_classifier/run_pipeline.py`. Run with Python 3.14.3, scikit-learn 1.8.0, xgboost 3.2.0, numpy 2.4.3, pandas 3.0.1 (see `ml/models/activity_training_config.json`). Two consecutive reruns produced byte-identical metrics files.

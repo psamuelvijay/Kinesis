@@ -1,0 +1,2014 @@
+{
+  "headline": false,
+  "label": "GENERALISATION EXPERIMENT (cross-dataset / combined); not the headline. Activity classification only; NOT trained or evaluated for GPS spoofing.",
+  "seed": 42,
+  "macro_f1_summary": {
+    "within_MotionSense_test": 0.9206667582478122,
+    "within_UCI_test": 0.8834519924927363,
+    "MotionSense_to_UCI_test": 0.5805388525389757,
+    "UCI_to_MotionSense_test": 0.5539484825897937,
+    "combined_on_MotionSense_test": 0.9319052177175386,
+    "combined_on_UCI_test": 0.8831872048732485
+  },
+  "domain_shift_note": "MotionSense: iPhone 6s, front trouser pocket, Core Motion userAcceleration (sensor-fusion gravity removal). UCI HAR: Samsung Galaxy S II, waist, body_acc by 0.3 Hz Butterworth gravity separation after median + 20 Hz Butterworth filtering.",
+  "experiments": {
+    "train_MotionSense_test_UCI": {
+      "model": "xgboost",
+      "params": {
+        "max_depth": 3,
+        "learning_rate": 0.05,
+        "n_estimators": 300
+      },
+      "n_train_windows": 14239,
+      "tests": {
+        "UCI_test": {
+          "model": "xgboost",
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "n_estimators": 300
+          },
+          "n_windows": 2947,
+          "accuracy": 0.8055649813369529,
+          "macro_f1": 0.5805388525389757,
+          "weighted_f1": 0.7390149231240458,
+          "per_class": {
+            "WALKING": {
+              "precision": 0.058823529411764705,
+              "recall": 0.004032258064516129,
+              "f1": 0.007547169811320755,
+              "support": 496
+            },
+            "STATIONARY": {
+              "precision": 0.8873720136518771,
+              "recall": 1.0,
+              "f1": 0.9403254972875226,
+              "support": 1560
+            },
+            "OTHER": {
+              "precision": 0.703030303030303,
+              "recall": 0.9113355780022446,
+              "f1": 0.793743890518084,
+              "support": 891
+            }
+          },
+          "confusion_matrix_counts": [
+            [
+              2,
+              151,
+              343
+            ],
+            [
+              0,
+              1560,
+              0
+            ],
+            [
+              32,
+              47,
+              812
+            ]
+          ],
+          "confusion_matrix_row_normalised": [
+            [
+              0.004032,
+              0.304435,
+              0.691532
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.035915,
+              0.05275,
+              0.911336
+            ]
+          ],
+          "confusion_rows_true_cols_pred": [
+            "WALKING",
+            "STATIONARY",
+            "OTHER"
+          ],
+          "per_subject": {
+            "2": {
+              "n_windows": 302,
+              "accuracy": 0.8013245033112583,
+              "macro_f1_over_present_classes": 0.5961203347312384,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "4": {
+              "n_windows": 317,
+              "accuracy": 0.8012618296529969,
+              "macro_f1_over_present_classes": 0.5933823884303685,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "9": {
+              "n_windows": 288,
+              "accuracy": 0.7673611111111112,
+              "macro_f1_over_present_classes": 0.5589924787172493,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "10": {
+              "n_windows": 294,
+              "accuracy": 0.7789115646258503,
+              "macro_f1_over_present_classes": 0.5639810426540285,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "12": {
+              "n_windows": 320,
+              "accuracy": 0.821875,
+              "macro_f1_over_present_classes": 0.5823932095287193,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "13": {
+              "n_windows": 327,
+              "accuracy": 0.8195718654434251,
+              "macro_f1_over_present_classes": 0.5897444710501091,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "18": {
+              "n_windows": 364,
+              "accuracy": 0.7664835164835165,
+              "macro_f1_over_present_classes": 0.5443469785575049,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "20": {
+              "n_windows": 354,
+              "accuracy": 0.844632768361582,
+              "macro_f1_over_present_classes": 0.6112513523260007,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "24": {
+              "n_windows": 381,
+              "accuracy": 0.8372703412073491,
+              "macro_f1_over_present_classes": 0.5979009272602879,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            }
+          },
+          "diagnostic_by_original_activity": {
+            "dws": {
+              "n": 420,
+              "pred_WALKING": 17,
+              "pred_STATIONARY": 12,
+              "pred_OTHER": 391,
+              "rate_WALKING": 0.04047619047619048,
+              "rate_STATIONARY": 0.02857142857142857,
+              "rate_OTHER": 0.930952380952381
+            },
+            "lay": {
+              "n": 537,
+              "pred_WALKING": 0,
+              "pred_STATIONARY": 537,
+              "pred_OTHER": 0,
+              "rate_WALKING": 0.0,
+              "rate_STATIONARY": 1.0,
+              "rate_OTHER": 0.0
+            },
+            "sit": {
+              "n": 491,
+              "pred_WALKING": 0,
+              "pred_STATIONARY": 491,
+              "pred_OTHER": 0,
+              "rate_WALKING": 0.0,
+              "rate_STATIONARY": 1.0,
+              "rate_OTHER": 0.0
+            },
+            "std": {
+              "n": 532,
+              "pred_WALKING": 0,
+              "pred_STATIONARY": 532,
+              "pred_OTHER": 0,
+              "rate_WALKING": 0.0,
+              "rate_STATIONARY": 1.0,
+              "rate_OTHER": 0.0
+            },
+            "ups": {
+              "n": 471,
+              "pred_WALKING": 15,
+              "pred_STATIONARY": 35,
+              "pred_OTHER": 421,
+              "rate_WALKING": 0.03184713375796178,
+              "rate_STATIONARY": 0.07430997876857749,
+              "rate_OTHER": 0.8938428874734607
+            },
+            "wlk": {
+              "n": 496,
+              "pred_WALKING": 2,
+              "pred_STATIONARY": 151,
+              "pred_OTHER": 343,
+              "rate_WALKING": 0.004032258064516129,
+              "rate_STATIONARY": 0.30443548387096775,
+              "rate_OTHER": 0.6915322580645161
+            }
+          },
+          "key_error_rates": {
+            "jog_ups_dws_predicted_STATIONARY": {
+              "n": 891,
+              "n_pred": 47,
+              "rate": 0.052749719416386086
+            },
+            "sit_std_lay_predicted_WALKING": {
+              "n": 1560,
+              "n_pred": 0,
+              "rate": 0.0
+            }
+          }
+        },
+        "UCI_all": {
+          "model": "xgboost",
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "n_estimators": 300
+          },
+          "n_windows": 10299,
+          "accuracy": 0.8122147781337994,
+          "macro_f1": 0.5921560295630167,
+          "weighted_f1": 0.7546303987762036,
+          "per_class": {
+            "WALKING": {
+              "precision": 0.211340206185567,
+              "recall": 0.023809523809523808,
+              "f1": 0.04279749478079332,
+              "support": 1722
+            },
+            "STATIONARY": {
+              "precision": 0.9337209302325581,
+              "recall": 0.9989337124577928,
+              "f1": 0.9652270971065511,
+              "support": 5627
+            },
+            "OTHER": {
+              "precision": 0.6616891064871481,
+              "recall": 0.916271186440678,
+              "f1": 0.7684434968017058,
+              "support": 2950
+            }
+          },
+          "confusion_matrix_counts": [
+            [
+              41,
+              301,
+              1380
+            ],
+            [
+              4,
+              5621,
+              2
+            ],
+            [
+              149,
+              98,
+              2703
+            ]
+          ],
+          "confusion_matrix_row_normalised": [
+            [
+              0.02381,
+              0.174797,
+              0.801394
+            ],
+            [
+              0.000711,
+              0.998934,
+              0.000355
+            ],
+            [
+              0.050508,
+              0.03322,
+              0.916271
+            ]
+          ],
+          "confusion_rows_true_cols_pred": [
+            "WALKING",
+            "STATIONARY",
+            "OTHER"
+          ],
+          "per_subject": {
+            "1": {
+              "n_windows": 347,
+              "accuracy": 0.7089337175792507,
+              "macro_f1_over_present_classes": 0.5572877107530573,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "2": {
+              "n_windows": 302,
+              "accuracy": 0.8013245033112583,
+              "macro_f1_over_present_classes": 0.5961203347312384,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "3": {
+              "n_windows": 341,
+              "accuracy": 0.8093841642228738,
+              "macro_f1_over_present_classes": 0.5838142820225687,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "4": {
+              "n_windows": 317,
+              "accuracy": 0.8012618296529969,
+              "macro_f1_over_present_classes": 0.5933823884303685,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "5": {
+              "n_windows": 302,
+              "accuracy": 0.804635761589404,
+              "macro_f1_over_present_classes": 0.5850899130641896,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "6": {
+              "n_windows": 325,
+              "accuracy": 0.8061538461538461,
+              "macro_f1_over_present_classes": 0.5830716528689694,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "7": {
+              "n_windows": 308,
+              "accuracy": 0.814935064935065,
+              "macro_f1_over_present_classes": 0.6107357482098447,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "8": {
+              "n_windows": 281,
+              "accuracy": 0.8398576512455516,
+              "macro_f1_over_present_classes": 0.6688396349413299,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "9": {
+              "n_windows": 288,
+              "accuracy": 0.7673611111111112,
+              "macro_f1_over_present_classes": 0.5589924787172493,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "10": {
+              "n_windows": 294,
+              "accuracy": 0.7789115646258503,
+              "macro_f1_over_present_classes": 0.5639810426540285,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "11": {
+              "n_windows": 316,
+              "accuracy": 0.810126582278481,
+              "macro_f1_over_present_classes": 0.5933602386681435,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "12": {
+              "n_windows": 320,
+              "accuracy": 0.821875,
+              "macro_f1_over_present_classes": 0.5823932095287193,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "13": {
+              "n_windows": 327,
+              "accuracy": 0.8195718654434251,
+              "macro_f1_over_present_classes": 0.5897444710501091,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "14": {
+              "n_windows": 323,
+              "accuracy": 0.8328173374613003,
+              "macro_f1_over_present_classes": 0.698728813559322,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "15": {
+              "n_windows": 328,
+              "accuracy": 0.823170731707317,
+              "macro_f1_over_present_classes": 0.582608695652174,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "16": {
+              "n_windows": 366,
+              "accuracy": 0.8442622950819673,
+              "macro_f1_over_present_classes": 0.5893351486271841,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "17": {
+              "n_windows": 368,
+              "accuracy": 0.8288043478260869,
+              "macro_f1_over_present_classes": 0.5818751864333631,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "18": {
+              "n_windows": 364,
+              "accuracy": 0.7664835164835165,
+              "macro_f1_over_present_classes": 0.5443469785575049,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "19": {
+              "n_windows": 360,
+              "accuracy": 0.7916666666666666,
+              "macro_f1_over_present_classes": 0.5329768270944741,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "20": {
+              "n_windows": 354,
+              "accuracy": 0.844632768361582,
+              "macro_f1_over_present_classes": 0.6112513523260007,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "21": {
+              "n_windows": 408,
+              "accuracy": 0.8676470588235294,
+              "macro_f1_over_present_classes": 0.5902139432243199,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "22": {
+              "n_windows": 321,
+              "accuracy": 0.8255451713395638,
+              "macro_f1_over_present_classes": 0.5694444444444445,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "23": {
+              "n_windows": 372,
+              "accuracy": 0.8279569892473119,
+              "macro_f1_over_present_classes": 0.5953427403809083,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "24": {
+              "n_windows": 381,
+              "accuracy": 0.8372703412073491,
+              "macro_f1_over_present_classes": 0.5979009272602879,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "25": {
+              "n_windows": 409,
+              "accuracy": 0.7163814180929096,
+              "macro_f1_over_present_classes": 0.5129717514124293,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "26": {
+              "n_windows": 392,
+              "accuracy": 0.8494897959183674,
+              "macro_f1_over_present_classes": 0.5987137402023179,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "27": {
+              "n_windows": 376,
+              "accuracy": 0.8430851063829787,
+              "macro_f1_over_present_classes": 0.5879874908020604,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "28": {
+              "n_windows": 382,
+              "accuracy": 0.8403141361256544,
+              "macro_f1_over_present_classes": 0.5826814428509344,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "29": {
+              "n_windows": 344,
+              "accuracy": 0.8313953488372093,
+              "macro_f1_over_present_classes": 0.5867768595041323,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "30": {
+              "n_windows": 383,
+              "accuracy": 0.7989556135770235,
+              "macro_f1_over_present_classes": 0.6674651641418402,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            }
+          },
+          "diagnostic_by_original_activity": {
+            "dws": {
+              "n": 1406,
+              "pred_WALKING": 83,
+              "pred_STATIONARY": 16,
+              "pred_OTHER": 1307,
+              "rate_WALKING": 0.05903271692745377,
+              "rate_STATIONARY": 0.011379800853485065,
+              "rate_OTHER": 0.9295874822190612
+            },
+            "lay": {
+              "n": 1944,
+              "pred_WALKING": 3,
+              "pred_STATIONARY": 1939,
+              "pred_OTHER": 2,
+              "rate_WALKING": 0.0015432098765432098,
+              "rate_STATIONARY": 0.9974279835390947,
+              "rate_OTHER": 0.00102880658436214
+            },
+            "sit": {
+              "n": 1777,
+              "pred_WALKING": 1,
+              "pred_STATIONARY": 1776,
+              "pred_OTHER": 0,
+              "rate_WALKING": 0.0005627462014631402,
+              "rate_STATIONARY": 0.9994372537985369,
+              "rate_OTHER": 0.0
+            },
+            "std": {
+              "n": 1906,
+              "pred_WALKING": 0,
+              "pred_STATIONARY": 1906,
+              "pred_OTHER": 0,
+              "rate_WALKING": 0.0,
+              "rate_STATIONARY": 1.0,
+              "rate_OTHER": 0.0
+            },
+            "ups": {
+              "n": 1544,
+              "pred_WALKING": 66,
+              "pred_STATIONARY": 82,
+              "pred_OTHER": 1396,
+              "rate_WALKING": 0.042746113989637305,
+              "rate_STATIONARY": 0.05310880829015544,
+              "rate_OTHER": 0.9041450777202072
+            },
+            "wlk": {
+              "n": 1722,
+              "pred_WALKING": 41,
+              "pred_STATIONARY": 301,
+              "pred_OTHER": 1380,
+              "rate_WALKING": 0.023809523809523808,
+              "rate_STATIONARY": 0.17479674796747968,
+              "rate_OTHER": 0.8013937282229965
+            }
+          },
+          "key_error_rates": {
+            "jog_ups_dws_predicted_STATIONARY": {
+              "n": 2950,
+              "n_pred": 98,
+              "rate": 0.033220338983050844
+            },
+            "sit_std_lay_predicted_WALKING": {
+              "n": 5627,
+              "n_pred": 4,
+              "rate": 0.0007108583614714769
+            }
+          }
+        }
+      }
+    },
+    "train_UCI_test_MotionSense": {
+      "model": "xgboost",
+      "params": {
+        "max_depth": 3,
+        "learning_rate": 0.15,
+        "n_estimators": 300
+      },
+      "n_train_windows": 5551,
+      "tests": {
+        "MotionSense_test": {
+          "model": "xgboost",
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.15,
+            "n_estimators": 300
+          },
+          "n_windows": 3587,
+          "accuracy": 0.7253972679119041,
+          "macro_f1": 0.5539484825897937,
+          "weighted_f1": 0.6572956561757947,
+          "per_class": {
+            "WALKING": {
+              "precision": 0.03418803418803419,
+              "recall": 0.0045662100456621,
+              "f1": 0.008056394763343404,
+              "support": 876
+            },
+            "STATIONARY": {
+              "precision": 1.0,
+              "recall": 0.9916567342073898,
+              "f1": 0.9958108916816277,
+              "support": 1678
+            },
+            "OTHER": {
+              "precision": 0.5171650055370985,
+              "recall": 0.904162633107454,
+              "f1": 0.65797816132441,
+              "support": 1033
+            }
+          },
+          "confusion_matrix_counts": [
+            [
+              4,
+              0,
+              872
+            ],
+            [
+              14,
+              1664,
+              0
+            ],
+            [
+              99,
+              0,
+              934
+            ]
+          ],
+          "confusion_matrix_row_normalised": [
+            [
+              0.004566,
+              0.0,
+              0.995434
+            ],
+            [
+              0.008343,
+              0.991657,
+              0.0
+            ],
+            [
+              0.095837,
+              0.0,
+              0.904163
+            ]
+          ],
+          "confusion_rows_true_cols_pred": [
+            "WALKING",
+            "STATIONARY",
+            "OTHER"
+          ],
+          "per_subject": {
+            "7": {
+              "n_windows": 936,
+              "accuracy": 0.6677350427350427,
+              "macro_f1_over_present_classes": 0.5223975489695433,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "11": {
+              "n_windows": 904,
+              "accuracy": 0.7754424778761062,
+              "macro_f1_over_present_classes": 0.567883211678832,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "15": {
+              "n_windows": 907,
+              "accuracy": 0.7364939360529217,
+              "macro_f1_over_present_classes": 0.5572012675069358,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "20": {
+              "n_windows": 840,
+              "accuracy": 0.7238095238095238,
+              "macro_f1_over_present_classes": 0.56526261746914,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            }
+          },
+          "diagnostic_by_original_activity": {
+            "dws": {
+              "n": 313,
+              "pred_WALKING": 5,
+              "pred_STATIONARY": 0,
+              "pred_OTHER": 308,
+              "rate_WALKING": 0.01597444089456869,
+              "rate_STATIONARY": 0.0,
+              "rate_OTHER": 0.9840255591054313
+            },
+            "jog": {
+              "n": 315,
+              "pred_WALKING": 0,
+              "pred_STATIONARY": 0,
+              "pred_OTHER": 315,
+              "rate_WALKING": 0.0,
+              "rate_STATIONARY": 0.0,
+              "rate_OTHER": 1.0
+            },
+            "sit": {
+              "n": 896,
+              "pred_WALKING": 6,
+              "pred_STATIONARY": 890,
+              "pred_OTHER": 0,
+              "rate_WALKING": 0.006696428571428571,
+              "rate_STATIONARY": 0.9933035714285714,
+              "rate_OTHER": 0.0
+            },
+            "std": {
+              "n": 782,
+              "pred_WALKING": 8,
+              "pred_STATIONARY": 774,
+              "pred_OTHER": 0,
+              "rate_WALKING": 0.010230179028132993,
+              "rate_STATIONARY": 0.989769820971867,
+              "rate_OTHER": 0.0
+            },
+            "ups": {
+              "n": 405,
+              "pred_WALKING": 94,
+              "pred_STATIONARY": 0,
+              "pred_OTHER": 311,
+              "rate_WALKING": 0.23209876543209876,
+              "rate_STATIONARY": 0.0,
+              "rate_OTHER": 0.7679012345679013
+            },
+            "wlk": {
+              "n": 876,
+              "pred_WALKING": 4,
+              "pred_STATIONARY": 0,
+              "pred_OTHER": 872,
+              "rate_WALKING": 0.0045662100456621,
+              "rate_STATIONARY": 0.0,
+              "rate_OTHER": 0.9954337899543378
+            }
+          },
+          "key_error_rates": {
+            "jog_ups_dws_predicted_STATIONARY": {
+              "n": 1033,
+              "n_pred": 0,
+              "rate": 0.0
+            },
+            "sit_std_lay_predicted_WALKING": {
+              "n": 1678,
+              "n_pred": 14,
+              "rate": 0.00834326579261025
+            }
+          }
+        },
+        "MotionSense_all": {
+          "model": "xgboost",
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.15,
+            "n_estimators": 300
+          },
+          "n_windows": 21539,
+          "accuracy": 0.7244068898277543,
+          "macro_f1": 0.5578508003651722,
+          "weighted_f1": 0.6577445936041417,
+          "per_class": {
+            "WALKING": {
+              "precision": 0.06928104575163399,
+              "recall": 0.01004739336492891,
+              "f1": 0.017549668874172187,
+              "support": 5275
+            },
+            "STATIONARY": {
+              "precision": 1.0,
+              "recall": 0.9928549864144108,
+              "f1": 0.9964146846437408,
+              "support": 9937
+            },
+            "OTHER": {
+              "precision": 0.521085441877521,
+              "recall": 0.8983720562667931,
+              "f1": 0.6595880475776037,
+              "support": 6327
+            }
+          },
+          "confusion_matrix_counts": [
+            [
+              53,
+              0,
+              5222
+            ],
+            [
+              69,
+              9866,
+              2
+            ],
+            [
+              643,
+              0,
+              5684
+            ]
+          ],
+          "confusion_matrix_row_normalised": [
+            [
+              0.010047,
+              0.0,
+              0.989953
+            ],
+            [
+              0.006944,
+              0.992855,
+              0.000201
+            ],
+            [
+              0.101628,
+              0.0,
+              0.898372
+            ]
+          ],
+          "confusion_rows_true_cols_pred": [
+            "WALKING",
+            "STATIONARY",
+            "OTHER"
+          ],
+          "per_subject": {
+            "1": {
+              "n_windows": 950,
+              "accuracy": 0.7852631578947369,
+              "macro_f1_over_present_classes": 0.5655193816492585,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "2": {
+              "n_windows": 953,
+              "accuracy": 0.6841552990556139,
+              "macro_f1_over_present_classes": 0.5579228812045268,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "3": {
+              "n_windows": 957,
+              "accuracy": 0.735632183908046,
+              "macro_f1_over_present_classes": 0.5655714700875991,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "4": {
+              "n_windows": 854,
+              "accuracy": 0.7224824355971897,
+              "macro_f1_over_present_classes": 0.5719883237094899,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "5": {
+              "n_windows": 795,
+              "accuracy": 0.7421383647798742,
+              "macro_f1_over_present_classes": 0.5556279969128837,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "6": {
+              "n_windows": 872,
+              "accuracy": 0.7442660550458715,
+              "macro_f1_over_present_classes": 0.5679927962312393,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "7": {
+              "n_windows": 936,
+              "accuracy": 0.6677350427350427,
+              "macro_f1_over_present_classes": 0.5223975489695433,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "8": {
+              "n_windows": 926,
+              "accuracy": 0.6771058315334774,
+              "macro_f1_over_present_classes": 0.5316201812271721,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "9": {
+              "n_windows": 871,
+              "accuracy": 0.746268656716418,
+              "macro_f1_over_present_classes": 0.5704765073648655,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "10": {
+              "n_windows": 912,
+              "accuracy": 0.7456140350877193,
+              "macro_f1_over_present_classes": 0.5781504871963925,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "11": {
+              "n_windows": 904,
+              "accuracy": 0.7754424778761062,
+              "macro_f1_over_present_classes": 0.567883211678832,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "12": {
+              "n_windows": 808,
+              "accuracy": 0.7165841584158416,
+              "macro_f1_over_present_classes": 0.5583898033636587,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "13": {
+              "n_windows": 777,
+              "accuracy": 0.7812097812097812,
+              "macro_f1_over_present_classes": 0.552557279109615,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "14": {
+              "n_windows": 860,
+              "accuracy": 0.7348837209302326,
+              "macro_f1_over_present_classes": 0.5503304425668301,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "15": {
+              "n_windows": 907,
+              "accuracy": 0.7364939360529217,
+              "macro_f1_over_present_classes": 0.5572012675069358,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "16": {
+              "n_windows": 999,
+              "accuracy": 0.7497497497497497,
+              "macro_f1_over_present_classes": 0.5727760357354507,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "17": {
+              "n_windows": 846,
+              "accuracy": 0.74822695035461,
+              "macro_f1_over_present_classes": 0.5684647302904565,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "18": {
+              "n_windows": 959,
+              "accuracy": 0.6475495307612096,
+              "macro_f1_over_present_classes": 0.5500345856725044,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "19": {
+              "n_windows": 1101,
+              "accuracy": 0.737511353315168,
+              "macro_f1_over_present_classes": 0.5471709548999736,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "20": {
+              "n_windows": 840,
+              "accuracy": 0.7238095238095238,
+              "macro_f1_over_present_classes": 0.56526261746914,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "21": {
+              "n_windows": 1054,
+              "accuracy": 0.6574952561669829,
+              "macro_f1_over_present_classes": 0.534012815430427,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "22": {
+              "n_windows": 854,
+              "accuracy": 0.752927400468384,
+              "macro_f1_over_present_classes": 0.5710562373095365,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "23": {
+              "n_windows": 830,
+              "accuracy": 0.6277108433734939,
+              "macro_f1_over_present_classes": 0.5382652957262031,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "24": {
+              "n_windows": 774,
+              "accuracy": 0.7700258397932817,
+              "macro_f1_over_present_classes": 0.5498710661055645,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            }
+          },
+          "diagnostic_by_original_activity": {
+            "dws": {
+              "n": 1952,
+              "pred_WALKING": 67,
+              "pred_STATIONARY": 0,
+              "pred_OTHER": 1885,
+              "rate_WALKING": 0.03432377049180328,
+              "rate_STATIONARY": 0.0,
+              "rate_OTHER": 0.9656762295081968
+            },
+            "jog": {
+              "n": 2025,
+              "pred_WALKING": 1,
+              "pred_STATIONARY": 0,
+              "pred_OTHER": 2024,
+              "rate_WALKING": 0.0004938271604938272,
+              "rate_STATIONARY": 0.0,
+              "rate_OTHER": 0.9995061728395062
+            },
+            "sit": {
+              "n": 5221,
+              "pred_WALKING": 20,
+              "pred_STATIONARY": 5200,
+              "pred_OTHER": 1,
+              "rate_WALKING": 0.003830683777054204,
+              "rate_STATIONARY": 0.995977782034093,
+              "rate_OTHER": 0.0001915341888527102
+            },
+            "std": {
+              "n": 4716,
+              "pred_WALKING": 49,
+              "pred_STATIONARY": 4666,
+              "pred_OTHER": 1,
+              "rate_WALKING": 0.010390161153519931,
+              "rate_STATIONARY": 0.9893977947413062,
+              "rate_OTHER": 0.00021204410517387616
+            },
+            "ups": {
+              "n": 2350,
+              "pred_WALKING": 575,
+              "pred_STATIONARY": 0,
+              "pred_OTHER": 1775,
+              "rate_WALKING": 0.24468085106382978,
+              "rate_STATIONARY": 0.0,
+              "rate_OTHER": 0.7553191489361702
+            },
+            "wlk": {
+              "n": 5275,
+              "pred_WALKING": 53,
+              "pred_STATIONARY": 0,
+              "pred_OTHER": 5222,
+              "rate_WALKING": 0.01004739336492891,
+              "rate_STATIONARY": 0.0,
+              "rate_OTHER": 0.9899526066350711
+            }
+          },
+          "key_error_rates": {
+            "jog_ups_dws_predicted_STATIONARY": {
+              "n": 6327,
+              "n_pred": 0,
+              "rate": 0.0
+            },
+            "sit_std_lay_predicted_WALKING": {
+              "n": 9937,
+              "n_pred": 69,
+              "rate": 0.006943745597262755
+            }
+          }
+        }
+      }
+    },
+    "combined_train_MotionSense_plus_UCI": {
+      "model": "xgboost",
+      "params": {
+        "max_depth": 3,
+        "learning_rate": 0.05,
+        "n_estimators": 300
+      },
+      "n_train_windows": 19790,
+      "tests": {
+        "MotionSense_test": {
+          "model": "xgboost",
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "n_estimators": 300
+          },
+          "n_windows": 3587,
+          "accuracy": 0.9464733760802899,
+          "macro_f1": 0.9319052177175386,
+          "weighted_f1": 0.9461539103198014,
+          "per_class": {
+            "WALKING": {
+              "precision": 0.9318181818181818,
+              "recall": 0.8424657534246576,
+              "f1": 0.8848920863309353,
+              "support": 876
+            },
+            "STATIONARY": {
+              "precision": 0.9994044073853484,
+              "recall": 1.0,
+              "f1": 0.9997021149836163,
+              "support": 1678
+            },
+            "OTHER": {
+              "precision": 0.8772401433691757,
+              "recall": 0.9477250726040658,
+              "f1": 0.9111214518380643,
+              "support": 1033
+            }
+          },
+          "confusion_matrix_counts": [
+            [
+              738,
+              1,
+              137
+            ],
+            [
+              0,
+              1678,
+              0
+            ],
+            [
+              54,
+              0,
+              979
+            ]
+          ],
+          "confusion_matrix_row_normalised": [
+            [
+              0.842466,
+              0.001142,
+              0.156393
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.052275,
+              0.0,
+              0.947725
+            ]
+          ],
+          "confusion_rows_true_cols_pred": [
+            "WALKING",
+            "STATIONARY",
+            "OTHER"
+          ],
+          "per_subject": {
+            "7": {
+              "n_windows": 936,
+              "accuracy": 0.9049145299145299,
+              "macro_f1_over_present_classes": 0.8757303048888184,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "11": {
+              "n_windows": 904,
+              "accuracy": 0.963495575221239,
+              "macro_f1_over_present_classes": 0.9499813095597762,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "15": {
+              "n_windows": 907,
+              "accuracy": 0.9360529217199559,
+              "macro_f1_over_present_classes": 0.9163334683987959,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "20": {
+              "n_windows": 840,
+              "accuracy": 0.9857142857142858,
+              "macro_f1_over_present_classes": 0.9838036889786874,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            }
+          },
+          "diagnostic_by_original_activity": {
+            "dws": {
+              "n": 313,
+              "pred_WALKING": 21,
+              "pred_STATIONARY": 0,
+              "pred_OTHER": 292,
+              "rate_WALKING": 0.0670926517571885,
+              "rate_STATIONARY": 0.0,
+              "rate_OTHER": 0.9329073482428115
+            },
+            "jog": {
+              "n": 315,
+              "pred_WALKING": 1,
+              "pred_STATIONARY": 0,
+              "pred_OTHER": 314,
+              "rate_WALKING": 0.0031746031746031746,
+              "rate_STATIONARY": 0.0,
+              "rate_OTHER": 0.9968253968253968
+            },
+            "sit": {
+              "n": 896,
+              "pred_WALKING": 0,
+              "pred_STATIONARY": 896,
+              "pred_OTHER": 0,
+              "rate_WALKING": 0.0,
+              "rate_STATIONARY": 1.0,
+              "rate_OTHER": 0.0
+            },
+            "std": {
+              "n": 782,
+              "pred_WALKING": 0,
+              "pred_STATIONARY": 782,
+              "pred_OTHER": 0,
+              "rate_WALKING": 0.0,
+              "rate_STATIONARY": 1.0,
+              "rate_OTHER": 0.0
+            },
+            "ups": {
+              "n": 405,
+              "pred_WALKING": 32,
+              "pred_STATIONARY": 0,
+              "pred_OTHER": 373,
+              "rate_WALKING": 0.07901234567901234,
+              "rate_STATIONARY": 0.0,
+              "rate_OTHER": 0.9209876543209876
+            },
+            "wlk": {
+              "n": 876,
+              "pred_WALKING": 738,
+              "pred_STATIONARY": 1,
+              "pred_OTHER": 137,
+              "rate_WALKING": 0.8424657534246576,
+              "rate_STATIONARY": 0.001141552511415525,
+              "rate_OTHER": 0.15639269406392695
+            }
+          },
+          "key_error_rates": {
+            "jog_ups_dws_predicted_STATIONARY": {
+              "n": 1033,
+              "n_pred": 0,
+              "rate": 0.0
+            },
+            "sit_std_lay_predicted_WALKING": {
+              "n": 1678,
+              "n_pred": 0,
+              "rate": 0.0
+            }
+          }
+        },
+        "UCI_test": {
+          "model": "xgboost",
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "n_estimators": 300
+          },
+          "n_windows": 2947,
+          "accuracy": 0.9212758737699356,
+          "macro_f1": 0.8831872048732485,
+          "weighted_f1": 0.9222644892429253,
+          "per_class": {
+            "WALKING": {
+              "precision": 0.7326388888888888,
+              "recall": 0.8508064516129032,
+              "f1": 0.7873134328358209,
+              "support": 496
+            },
+            "STATIONARY": {
+              "precision": 0.9980793854033291,
+              "recall": 0.9993589743589744,
+              "f1": 0.9987187700192185,
+              "support": 1560
+            },
+            "OTHER": {
+              "precision": 0.907292954264524,
+              "recall": 0.8237934904601572,
+              "f1": 0.8635294117647059,
+              "support": 891
+            }
+          },
+          "confusion_matrix_counts": [
+            [
+              422,
+              0,
+              74
+            ],
+            [
+              0,
+              1559,
+              1
+            ],
+            [
+              154,
+              3,
+              734
+            ]
+          ],
+          "confusion_matrix_row_normalised": [
+            [
+              0.850806,
+              0.0,
+              0.149194
+            ],
+            [
+              0.0,
+              0.999359,
+              0.000641
+            ],
+            [
+              0.17284,
+              0.003367,
+              0.823793
+            ]
+          ],
+          "confusion_rows_true_cols_pred": [
+            "WALKING",
+            "STATIONARY",
+            "OTHER"
+          ],
+          "per_subject": {
+            "2": {
+              "n_windows": 302,
+              "accuracy": 0.9437086092715232,
+              "macro_f1_over_present_classes": 0.9252693927067724,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "4": {
+              "n_windows": 317,
+              "accuracy": 0.9747634069400631,
+              "macro_f1_over_present_classes": 0.9648297491039427,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "9": {
+              "n_windows": 288,
+              "accuracy": 0.8333333333333334,
+              "macro_f1_over_present_classes": 0.7782893847194051,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "10": {
+              "n_windows": 294,
+              "accuracy": 0.8877551020408163,
+              "macro_f1_over_present_classes": 0.8368005160457992,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "12": {
+              "n_windows": 320,
+              "accuracy": 0.925,
+              "macro_f1_over_present_classes": 0.8766666666666666,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "13": {
+              "n_windows": 327,
+              "accuracy": 0.926605504587156,
+              "macro_f1_over_present_classes": 0.89424675756568,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "18": {
+              "n_windows": 364,
+              "accuracy": 0.9230769230769231,
+              "macro_f1_over_present_classes": 0.8883593402226942,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "20": {
+              "n_windows": 354,
+              "accuracy": 0.8926553672316384,
+              "macro_f1_over_present_classes": 0.7625000000000001,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            },
+            "24": {
+              "n_windows": 381,
+              "accuracy": 0.968503937007874,
+              "macro_f1_over_present_classes": 0.9502314814814815,
+              "classes_present": [
+                "WALKING",
+                "STATIONARY",
+                "OTHER"
+              ]
+            }
+          },
+          "diagnostic_by_original_activity": {
+            "dws": {
+              "n": 420,
+              "pred_WALKING": 23,
+              "pred_STATIONARY": 0,
+              "pred_OTHER": 397,
+              "rate_WALKING": 0.05476190476190476,
+              "rate_STATIONARY": 0.0,
+              "rate_OTHER": 0.9452380952380952
+            },
+            "lay": {
+              "n": 537,
+              "pred_WALKING": 0,
+              "pred_STATIONARY": 537,
+              "pred_OTHER": 0,
+              "rate_WALKING": 0.0,
+              "rate_STATIONARY": 1.0,
+              "rate_OTHER": 0.0
+            },
+            "sit": {
+              "n": 491,
+              "pred_WALKING": 0,
+              "pred_STATIONARY": 490,
+              "pred_OTHER": 1,
+              "rate_WALKING": 0.0,
+              "rate_STATIONARY": 0.9979633401221996,
+              "rate_OTHER": 0.002036659877800407
+            },
+            "std": {
+              "n": 532,
+              "pred_WALKING": 0,
+              "pred_STATIONARY": 532,
+              "pred_OTHER": 0,
+              "rate_WALKING": 0.0,
+              "rate_STATIONARY": 1.0,
+              "rate_OTHER": 0.0
+            },
+            "ups": {
+              "n": 471,
+              "pred_WALKING": 131,
+              "pred_STATIONARY": 3,
+              "pred_OTHER": 337,
+              "rate_WALKING": 0.2781316348195329,
+              "rate_STATIONARY": 0.006369426751592357,
+              "rate_OTHER": 0.7154989384288747
+            },
+            "wlk": {
+              "n": 496,
+              "pred_WALKING": 422,
+              "pred_STATIONARY": 0,
+              "pred_OTHER": 74,
+              "rate_WALKING": 0.8508064516129032,
+              "rate_STATIONARY": 0.0,
+              "rate_OTHER": 0.14919354838709678
+            }
+          },
+          "key_error_rates": {
+            "jog_ups_dws_predicted_STATIONARY": {
+              "n": 891,
+              "n_pred": 3,
+              "rate": 0.003367003367003367
+            },
+            "sit_std_lay_predicted_WALKING": {
+              "n": 1560,
+              "n_pred": 0,
+              "rate": 0.0
+            }
+          }
+        }
+      },
+      "selected_model_by_combined_validation_macro_f1": "xgboost",
+      "tuning": {
+        "logistic_regression": {
+          "best_params": {
+            "C": 0.1
+          },
+          "val_macro_f1": 0.7738154913458541,
+          "grid": [
+            {
+              "params": {
+                "C": 0.01
+              },
+              "val_macro_f1": 0.7700320457472171
+            },
+            {
+              "params": {
+                "C": 0.1
+              },
+              "val_macro_f1": 0.7738154913458541
+            },
+            {
+              "params": {
+                "C": 1.0
+              },
+              "val_macro_f1": 0.7604057055132701
+            },
+            {
+              "params": {
+                "C": 10.0
+              },
+              "val_macro_f1": 0.7590101506360298
+            }
+          ]
+        },
+        "random_forest": {
+          "best_params": {
+            "max_depth": 8,
+            "min_samples_leaf": 1
+          },
+          "val_macro_f1": 0.7795501347411368,
+          "grid": [
+            {
+              "params": {
+                "max_depth": 8,
+                "min_samples_leaf": 1
+              },
+              "val_macro_f1": 0.7795501347411368
+            },
+            {
+              "params": {
+                "max_depth": 8,
+                "min_samples_leaf": 5
+              },
+              "val_macro_f1": 0.7757585243007377
+            },
+            {
+              "params": {
+                "max_depth": 16,
+                "min_samples_leaf": 1
+              },
+              "val_macro_f1": 0.7701295854469051
+            },
+            {
+              "params": {
+                "max_depth": 16,
+                "min_samples_leaf": 5
+              },
+              "val_macro_f1": 0.7694620326720559
+            },
+            {
+              "params": {
+                "max_depth": null,
+                "min_samples_leaf": 1
+              },
+              "val_macro_f1": 0.7723672070666242
+            },
+            {
+              "params": {
+                "max_depth": null,
+                "min_samples_leaf": 5
+              },
+              "val_macro_f1": 0.771537510879118
+            }
+          ]
+        },
+        "xgboost": {
+          "best_params": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "n_estimators": 300
+          },
+          "val_macro_f1": 0.8085736587112399,
+          "grid": [
+            {
+              "params": {
+                "max_depth": 3,
+                "learning_rate": 0.05,
+                "n_estimators": 150
+              },
+              "val_macro_f1": 0.789501172799877
+            },
+            {
+              "params": {
+                "max_depth": 3,
+                "learning_rate": 0.05,
+                "n_estimators": 300
+              },
+              "val_macro_f1": 0.8085736587112399
+            },
+            {
+              "params": {
+                "max_depth": 3,
+                "learning_rate": 0.15,
+                "n_estimators": 150
+              },
+              "val_macro_f1": 0.8001844396992893
+            },
+            {
+              "params": {
+                "max_depth": 3,
+                "learning_rate": 0.15,
+                "n_estimators": 300
+              },
+              "val_macro_f1": 0.7956807812921999
+            },
+            {
+              "params": {
+                "max_depth": 6,
+                "learning_rate": 0.05,
+                "n_estimators": 150
+              },
+              "val_macro_f1": 0.7864248397379798
+            },
+            {
+              "params": {
+                "max_depth": 6,
+                "learning_rate": 0.05,
+                "n_estimators": 300
+              },
+              "val_macro_f1": 0.7784170715591797
+            },
+            {
+              "params": {
+                "max_depth": 6,
+                "learning_rate": 0.15,
+                "n_estimators": 150
+              },
+              "val_macro_f1": 0.7746057631412023
+            },
+            {
+              "params": {
+                "max_depth": 6,
+                "learning_rate": 0.15,
+                "n_estimators": 300
+              },
+              "val_macro_f1": 0.7778756754325142
+            }
+          ]
+        }
+      },
+      "role": "candidate deployed activity model; trained on MotionSense train + UCI train subjects"
+    },
+    "combined_all_models_summary": {
+      "logistic_regression": {
+        "MotionSense_test": {
+          "accuracy": 0.8862559241706162,
+          "macro_f1": 0.8569847651775498,
+          "weighted_f1": 0.886359163824506,
+          "per_class": {
+            "WALKING": {
+              "precision": 0.7602663706992231,
+              "recall": 0.7819634703196348,
+              "f1": 0.770962296004502,
+              "support": 876
+            },
+            "STATIONARY": {
+              "precision": 0.9994040524433849,
+              "recall": 0.9994040524433849,
+              "f1": 0.9994040524433849,
+              "support": 1678
+            },
+            "OTHER": {
+              "precision": 0.810515873015873,
+              "recall": 0.7909002904162633,
+              "f1": 0.8005879470847623,
+              "support": 1033
+            }
+          }
+        },
+        "UCI_test": {
+          "accuracy": 0.8154054971157109,
+          "macro_f1": 0.6614228135027965,
+          "weighted_f1": 0.792799983456398,
+          "per_class": {
+            "WALKING": {
+              "precision": 0.40358744394618834,
+              "recall": 0.1814516129032258,
+              "f1": 0.25034770514603616,
+              "support": 496
+            },
+            "STATIONARY": {
+              "precision": 0.9967989756722151,
+              "recall": 0.9980769230769231,
+              "f1": 0.9974375400384369,
+              "support": 1560
+            },
+            "OTHER": {
+              "precision": 0.6506024096385542,
+              "recall": 0.8484848484848485,
+              "f1": 0.7364831953239163,
+              "support": 891
+            }
+          }
+        }
+      },
+      "random_forest": {
+        "MotionSense_test": {
+          "accuracy": 0.9303038751045442,
+          "macro_f1": 0.9105680777940689,
+          "weighted_f1": 0.92942436516168,
+          "per_class": {
+            "WALKING": {
+              "precision": 0.9264305177111717,
+              "recall": 0.776255707762557,
+              "f1": 0.84472049689441,
+              "support": 876
+            },
+            "STATIONARY": {
+              "precision": 0.9988095238095238,
+              "recall": 1.0,
+              "f1": 0.9994044073853484,
+              "support": 1678
+            },
+            "OTHER": {
+              "precision": 0.83461210571185,
+              "recall": 0.9477250726040658,
+              "f1": 0.8875793291024479,
+              "support": 1033
+            }
+          }
+        },
+        "UCI_test": {
+          "accuracy": 0.9066847641669494,
+          "macro_f1": 0.859533494072557,
+          "weighted_f1": 0.9074652698381935,
+          "per_class": {
+            "WALKING": {
+              "precision": 0.7094972067039106,
+              "recall": 0.7681451612903226,
+              "f1": 0.7376573088092934,
+              "support": 496
+            },
+            "STATIONARY": {
+              "precision": 0.9993581514762516,
+              "recall": 0.9980769230769231,
+              "f1": 0.9987171263630532,
+              "support": 1560
+            },
+            "OTHER": {
+              "precision": 0.8615023474178404,
+              "recall": 0.8237934904601572,
+              "f1": 0.8422260470453241,
+              "support": 891
+            }
+          }
+        }
+      },
+      "xgboost": {
+        "MotionSense_test": {
+          "accuracy": 0.9464733760802899,
+          "macro_f1": 0.9319052177175386,
+          "weighted_f1": 0.9461539103198014,
+          "per_class": {
+            "WALKING": {
+              "precision": 0.9318181818181818,
+              "recall": 0.8424657534246576,
+              "f1": 0.8848920863309353,
+              "support": 876
+            },
+            "STATIONARY": {
+              "precision": 0.9994044073853484,
+              "recall": 1.0,
+              "f1": 0.9997021149836163,
+              "support": 1678
+            },
+            "OTHER": {
+              "precision": 0.8772401433691757,
+              "recall": 0.9477250726040658,
+              "f1": 0.9111214518380643,
+              "support": 1033
+            }
+          }
+        },
+        "UCI_test": {
+          "accuracy": 0.9212758737699356,
+          "macro_f1": 0.8831872048732485,
+          "weighted_f1": 0.9222644892429253,
+          "per_class": {
+            "WALKING": {
+              "precision": 0.7326388888888888,
+              "recall": 0.8508064516129032,
+              "f1": 0.7873134328358209,
+              "support": 496
+            },
+            "STATIONARY": {
+              "precision": 0.9980793854033291,
+              "recall": 0.9993589743589744,
+              "f1": 0.9987187700192185,
+              "support": 1560
+            },
+            "OTHER": {
+              "precision": 0.907292954264524,
+              "recall": 0.8237934904601572,
+              "f1": 0.8635294117647059,
+              "support": 891
+            }
+          }
+        }
+      }
+    }
+  }
+}

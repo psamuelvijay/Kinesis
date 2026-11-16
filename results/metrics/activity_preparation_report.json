@@ -1,0 +1,310 @@
+{
+  "motionsense": {
+    "n_recordings": 360,
+    "rows_total": 1412865,
+    "rows_in_windows_first_to_last_sample": 1401536,
+    "rows_dropped_trailing_partial": 11329,
+    "recordings_shorter_than_window": 0,
+    "rows_reconcile": true,
+    "n_windows": 21539,
+    "windowing": "128 samples, stride 64 (50% overlap), by sample count within one recording; trailing partial dropped",
+    "streams_used": [
+      "A_DeviceMotion"
+    ],
+    "columns_used": [
+      "userAcceleration.x",
+      "userAcceleration.y",
+      "userAcceleration.z",
+      "rotationRate.x",
+      "rotationRate.y",
+      "rotationRate.z"
+    ],
+    "sampling_rate_hz": 50,
+    "sampling_rate_status": "documented, assumed; not measurable (no timestamp column)"
+  },
+  "uci_har": {
+    "n_windows": 10299,
+    "windows_used_as_provided": true,
+    "resampled": false,
+    "columns_used": [
+      "body_acc_x",
+      "body_acc_y",
+      "body_acc_z",
+      "body_gyro_x",
+      "body_gyro_y",
+      "body_gyro_z"
+    ],
+    "sampling_rate_hz": 50,
+    "sampling_rate_status": "documented 50 Hz per README; windows have no timestamps",
+    "consecutive_same_subject_activity_row_pairs_checked": 9899,
+    "pairs_with_exact_50pct_overlap_second_half_equals_next_first_half": 9442,
+    "note": "Only the pairs where the exact overlap holds are verified overlapping; windows from the original ordering are otherwise treated as overlapping within subject, so window counts overstate independent samples."
+  },
+  "class_balance_after_mapping": {
+    "MotionSense": {
+      "windows_by_class": {
+        "test": {
+          "WALKING": 876,
+          "STATIONARY": 1678,
+          "OTHER": 1033
+        },
+        "train": {
+          "WALKING": 3505,
+          "STATIONARY": 6556,
+          "OTHER": 4178
+        },
+        "val": {
+          "WALKING": 894,
+          "STATIONARY": 1703,
+          "OTHER": 1116
+        }
+      },
+      "subjects": {
+        "test": 4,
+        "train": 16,
+        "val": 4
+      },
+      "windows_by_original_activity_and_class": {
+        "test|dws": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 313
+        },
+        "test|jog": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 315
+        },
+        "test|sit": {
+          "WALKING": 0,
+          "STATIONARY": 896,
+          "OTHER": 0
+        },
+        "test|std": {
+          "WALKING": 0,
+          "STATIONARY": 782,
+          "OTHER": 0
+        },
+        "test|ups": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 405
+        },
+        "test|wlk": {
+          "WALKING": 876,
+          "STATIONARY": 0,
+          "OTHER": 0
+        },
+        "train|dws": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 1280
+        },
+        "train|jog": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 1361
+        },
+        "train|sit": {
+          "WALKING": 0,
+          "STATIONARY": 3457,
+          "OTHER": 0
+        },
+        "train|std": {
+          "WALKING": 0,
+          "STATIONARY": 3099,
+          "OTHER": 0
+        },
+        "train|ups": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 1537
+        },
+        "train|wlk": {
+          "WALKING": 3505,
+          "STATIONARY": 0,
+          "OTHER": 0
+        },
+        "val|dws": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 359
+        },
+        "val|jog": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 349
+        },
+        "val|sit": {
+          "WALKING": 0,
+          "STATIONARY": 868,
+          "OTHER": 0
+        },
+        "val|std": {
+          "WALKING": 0,
+          "STATIONARY": 835,
+          "OTHER": 0
+        },
+        "val|ups": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 408
+        },
+        "val|wlk": {
+          "WALKING": 894,
+          "STATIONARY": 0,
+          "OTHER": 0
+        }
+      }
+    },
+    "UCI_HAR": {
+      "windows_by_class": {
+        "test": {
+          "WALKING": 496,
+          "STATIONARY": 1560,
+          "OTHER": 891
+        },
+        "train": {
+          "WALKING": 888,
+          "STATIONARY": 3122,
+          "OTHER": 1541
+        },
+        "val": {
+          "WALKING": 338,
+          "STATIONARY": 945,
+          "OTHER": 518
+        }
+      },
+      "subjects": {
+        "test": 9,
+        "train": 16,
+        "val": 5
+      },
+      "windows_by_original_activity_and_class": {
+        "test|dws": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 420
+        },
+        "test|lay": {
+          "WALKING": 0,
+          "STATIONARY": 537,
+          "OTHER": 0
+        },
+        "test|sit": {
+          "WALKING": 0,
+          "STATIONARY": 491,
+          "OTHER": 0
+        },
+        "test|std": {
+          "WALKING": 0,
+          "STATIONARY": 532,
+          "OTHER": 0
+        },
+        "test|ups": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 471
+        },
+        "test|wlk": {
+          "WALKING": 496,
+          "STATIONARY": 0,
+          "OTHER": 0
+        },
+        "train|dws": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 744
+        },
+        "train|lay": {
+          "WALKING": 0,
+          "STATIONARY": 1076,
+          "OTHER": 0
+        },
+        "train|sit": {
+          "WALKING": 0,
+          "STATIONARY": 993,
+          "OTHER": 0
+        },
+        "train|std": {
+          "WALKING": 0,
+          "STATIONARY": 1053,
+          "OTHER": 0
+        },
+        "train|ups": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 797
+        },
+        "train|wlk": {
+          "WALKING": 888,
+          "STATIONARY": 0,
+          "OTHER": 0
+        },
+        "val|dws": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 242
+        },
+        "val|lay": {
+          "WALKING": 0,
+          "STATIONARY": 331,
+          "OTHER": 0
+        },
+        "val|sit": {
+          "WALKING": 0,
+          "STATIONARY": 293,
+          "OTHER": 0
+        },
+        "val|std": {
+          "WALKING": 0,
+          "STATIONARY": 321,
+          "OTHER": 0
+        },
+        "val|ups": {
+          "WALKING": 0,
+          "STATIONARY": 0,
+          "OTHER": 276
+        },
+        "val|wlk": {
+          "WALKING": 338,
+          "STATIONARY": 0,
+          "OTHER": 0
+        }
+      }
+    }
+  },
+  "label_map": {
+    "MotionSense": {
+      "wlk": "WALKING",
+      "sit": "STATIONARY",
+      "std": "STATIONARY",
+      "jog": "OTHER",
+      "ups": "OTHER",
+      "dws": "OTHER"
+    },
+    "UCI_HAR": {
+      "WALKING": "WALKING",
+      "SITTING": "STATIONARY",
+      "STANDING": "STATIONARY",
+      "LAYING": "STATIONARY",
+      "WALKING_UPSTAIRS": "OTHER",
+      "WALKING_DOWNSTAIRS": "OTHER"
+    }
+  },
+  "class_codes": {
+    "WALKING": 0,
+    "STATIONARY": 1,
+    "OTHER": 2
+  },
+  "window": {
+    "samples": 128,
+    "stride_motionsense": 64,
+    "seconds_at_50hz": 2.56,
+    "overlap": "50%"
+  },
+  "peak_params": {
+    "prominence_g": 0.1,
+    "distance_samples": 10
+  }
+}
