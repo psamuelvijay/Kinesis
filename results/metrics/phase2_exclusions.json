@@ -1,0 +1,289 @@
+{
+ "pre_phase2_excluded_tracks": {
+  "15_0..15_4": "subject 15 has no GNSS",
+  "8_10": "no metadata row"
+ },
+ "track_level_exclusions": [],
+ "window_level": {
+  "generated": 14480,
+  "kept": 13466,
+  "excluded_by_reason": {
+   "long_gap_overlap": 688,
+   "no_fix": 221,
+   "no_valid_speed": 105
+  },
+  "reasons": {
+   "long_gap_overlap": "window overlaps a gap between consecutive kept fixes > 10.0 s (includes GPS stopping early or starting late)",
+   "no_fix": "no kept fix in window (sparse-fix tracks and short dropouts)",
+   "no_valid_speed": "no fix with valid GPS speed (-1/NaN)"
+  },
+  "not_generated": "windows beyond min(testEnd, last steps ms) or before max(testStart,0) are never created (no step data / outside test period)"
+ },
+ "fix_level": {
+  "c1_nonfinite": 0,
+  "c2_dup": 44,
+  "c3_conf": 169,
+  "c4_teleport": 73
+ },
+ "distance_anomaly_tracks": {
+  "definition": "raw GPS path / distanceReference outside 0.8-1.25 (from phase2_alignment_check.json)",
+  "tracks": [
+   "0_6",
+   "0_11",
+   "2_6",
+   "3_2",
+   "3_5",
+   "3_8",
+   "4_7",
+   "5_5",
+   "5_8",
+   "7_5",
+   "8_6",
+   "11_0",
+   "11_4",
+   "10_8",
+   "10_9",
+   "10_10",
+   "10_11",
+   "11_9",
+   "10_13",
+   "11_11",
+   "11_12",
+   "10_16",
+   "12_12",
+   "11_15",
+   "14_8"
+  ],
+  "n": 25,
+  "n_still_anomalous_after_cleaning": 20,
+  "decision": "KEPT in train/eval and flagged (windows.distance_anomaly). Window-level cleaning (gap/conf/teleport rules) already removes the corrupted fixes, targets come from steps.csv independent of reference distance, and the ratio is also affected by distanceReference itself. Metrics to be reported both with and without these tracks.",
+  "per_track": {
+   "0_6": {
+    "raw": 0.7877808098591549,
+    "clean": 0.7877807513385967,
+    "long_gaps": 6,
+    "long_gap_total_s": 92.009,
+    "teleport_dropped": 1,
+    "conf_dropped": 3,
+    "kept_window_frac": 0.6142857142857143
+   },
+   "0_11": {
+    "raw": 0.7223746086956522,
+    "clean": 0.7223746843052101,
+    "long_gaps": 4,
+    "long_gap_total_s": 48.393,
+    "teleport_dropped": 0,
+    "conf_dropped": 0,
+    "kept_window_frac": 0.7536231884057971
+   },
+   "2_6": {
+    "raw": 2.3858472014925374,
+    "clean": 1.0257589136657026,
+    "long_gaps": 0,
+    "long_gap_total_s": 0.0,
+    "teleport_dropped": 0,
+    "conf_dropped": 2,
+    "kept_window_frac": 1.0
+   },
+   "3_2": {
+    "raw": 1.9652825670498086,
+    "clean": 1.0391458777659421,
+    "long_gaps": 1,
+    "long_gap_total_s": 28.977,
+    "teleport_dropped": 0,
+    "conf_dropped": 2,
+    "kept_window_frac": 0.9014084507042254
+   },
+   "3_5": {
+    "raw": 0.7145977777777778,
+    "clean": 0.7145978711726714,
+    "long_gaps": 4,
+    "long_gap_total_s": 46.011,
+    "teleport_dropped": 0,
+    "conf_dropped": 0,
+    "kept_window_frac": 0.6527777777777778
+   },
+   "3_8": {
+    "raw": 0.3357173752310536,
+    "clean": 0.33571738481423213,
+    "long_gaps": 3,
+    "long_gap_total_s": 35.001,
+    "teleport_dropped": 0,
+    "conf_dropped": 0,
+    "kept_window_frac": 0.28378378378378377
+   },
+   "4_7": {
+    "raw": 0.7795441805225654,
+    "clean": 0.7795442722750201,
+    "long_gaps": 1,
+    "long_gap_total_s": 15.209,
+    "teleport_dropped": 0,
+    "conf_dropped": 0,
+    "kept_window_frac": 1.0
+   },
+   "5_5": {
+    "raw": 18.195674825174823,
+    "clean": 1.148067643946801,
+    "long_gaps": 0,
+    "long_gap_total_s": 0.0,
+    "teleport_dropped": 2,
+    "conf_dropped": 1,
+    "kept_window_frac": 1.0
+   },
+   "5_8": {
+    "raw": 1.775279679144385,
+    "clean": 1.7752109079246476,
+    "long_gaps": 0,
+    "long_gap_total_s": 0.0,
+    "teleport_dropped": 1,
+    "conf_dropped": 0,
+    "kept_window_frac": 1.0
+   },
+   "7_5": {
+    "raw": 0.7729248344370862,
+    "clean": 0.7729247553049106,
+    "long_gaps": 0,
+    "long_gap_total_s": 0.0,
+    "teleport_dropped": 0,
+    "conf_dropped": 1,
+    "kept_window_frac": 1.0
+   },
+   "8_6": {
+    "raw": 0.7822746887966805,
+    "clean": 0.7821871423632573,
+    "long_gaps": 1,
+    "long_gap_total_s": 216.136,
+    "teleport_dropped": 0,
+    "conf_dropped": 4,
+    "kept_window_frac": 0.3380281690140845
+   },
+   "11_0": {
+    "raw": 1.3468961538461537,
+    "clean": 1.346896156034137,
+    "long_gaps": 0,
+    "long_gap_total_s": 0.0,
+    "teleport_dropped": 1,
+    "conf_dropped": 0,
+    "kept_window_frac": 1.0
+   },
+   "11_4": {
+    "raw": 1.3781844827586207,
+    "clean": 1.17571469252422,
+    "long_gaps": 0,
+    "long_gap_total_s": 0.0,
+    "teleport_dropped": 0,
+    "conf_dropped": 3,
+    "kept_window_frac": 0.9577464788732394
+   },
+   "10_8": {
+    "raw": 0.794308108108108,
+    "clean": 0.7943082716919742,
+    "long_gaps": 0,
+    "long_gap_total_s": 0.0,
+    "teleport_dropped": 1,
+    "conf_dropped": 0,
+    "kept_window_frac": 1.0
+   },
+   "10_9": {
+    "raw": 0.7784560810810811,
+    "clean": 0.7784560454859283,
+    "long_gaps": 2,
+    "long_gap_total_s": 27.995,
+    "teleport_dropped": 0,
+    "conf_dropped": 3,
+    "kept_window_frac": 0.717391304347826
+   },
+   "10_10": {
+    "raw": 0.6666050724637681,
+    "clean": 0.6666052213705437,
+    "long_gaps": 0,
+    "long_gap_total_s": 0.0,
+    "teleport_dropped": 0,
+    "conf_dropped": 0,
+    "kept_window_frac": 1.0
+   },
+   "10_11": {
+    "raw": 0.6079224637681159,
+    "clean": 0.585751382040248,
+    "long_gaps": 4,
+    "long_gap_total_s": 48.01,
+    "teleport_dropped": 0,
+    "conf_dropped": 1,
+    "kept_window_frac": 0.4782608695652174
+   },
+   "11_9": {
+    "raw": 0.5474873188405798,
+    "clean": 0.521609231266197,
+    "long_gaps": 7,
+    "long_gap_total_s": 102.02,
+    "teleport_dropped": 0,
+    "conf_dropped": 0,
+    "kept_window_frac": 0.32608695652173914
+   },
+   "10_13": {
+    "raw": 0.3933054744525547,
+    "clean": 0.3933053050126716,
+    "long_gaps": 6,
+    "long_gap_total_s": 145.012,
+    "teleport_dropped": 1,
+    "conf_dropped": 3,
+    "kept_window_frac": 0.22727272727272727
+   },
+   "11_11": {
+    "raw": 0.24016642335766422,
+    "clean": 0.24016641261186872,
+    "long_gaps": 7,
+    "long_gap_total_s": 191.995,
+    "teleport_dropped": 0,
+    "conf_dropped": 1,
+    "kept_window_frac": 0.0425531914893617
+   },
+   "11_12": {
+    "raw": 1.2934411111111113,
+    "clean": 1.2934411710567917,
+    "long_gaps": 0,
+    "long_gap_total_s": 0.0,
+    "teleport_dropped": 1,
+    "conf_dropped": 0,
+    "kept_window_frac": 1.0
+   },
+   "10_16": {
+    "raw": 1.2739795620437957,
+    "clean": 1.273979370870657,
+    "long_gaps": 0,
+    "long_gap_total_s": 0.0,
+    "teleport_dropped": 0,
+    "conf_dropped": 0,
+    "kept_window_frac": 1.0
+   },
+   "12_12": {
+    "raw": 1.3363357664233577,
+    "clean": 1.3363355043234262,
+    "long_gaps": 0,
+    "long_gap_total_s": 0.0,
+    "teleport_dropped": 1,
+    "conf_dropped": 0,
+    "kept_window_frac": 1.0
+   },
+   "11_15": {
+    "raw": 1.3107321167883212,
+    "clean": 1.3107322706787783,
+    "long_gaps": 5,
+    "long_gap_total_s": 97.997,
+    "teleport_dropped": 0,
+    "conf_dropped": 2,
+    "kept_window_frac": 0.4888888888888889
+   },
+   "14_8": {
+    "raw": 1.3904485514485514,
+    "clean": 1.1323144913792755,
+    "long_gaps": 0,
+    "long_gap_total_s": 0.0,
+    "teleport_dropped": 1,
+    "conf_dropped": 6,
+    "kept_window_frac": 0.9950738916256158
+   }
+  }
+ },
+ "large_end_mismatch_tracks_note": "Tracks where one stream stops early (alignment check) lose those windows via long_gap_overlap / no_fix."
+}
