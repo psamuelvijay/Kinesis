@@ -106,7 +106,9 @@ Source: `results/metrics/phase4_dryad_eval.json`. Held-out subjects 3, 10, 11, 1
 
 Reading: on genuine hand-held walking the engine raised no sustained flag, but it accepted movement in only about a third of all windows. The cost of the Model B domain gap is lost coverage (UNCERTAIN), not false flags. Four held-out subjects limit how far this generalises.
 
-## 8. Live evaluation: PENDING USER DATA
+## 8. Live evaluation: NOT PERFORMED
+
+**Live evaluation not performed; pending logger validation and S1-S5 collection.** At the live-data gate the user chose SKIP: Phase 4 closes with the provisional thresholds, and no live calibration or live evaluation was run. `thresholds.json` (SHA-256 `5184189b...b639725`) is unchanged and still marks the stationary-side thresholds provisional. `ml/fusion_engine/live_split.json` was not created because no live recordings exist. (Verified.)
 
 Verified: `datasets/live_recordings/calibration/` and `evaluation/` contained no recordings. `phase4_live_calibration.json` and `phase4_live_eval.json` both have status `PENDING USER DATA`. No log was fabricated. The only test input is a placeholder fixture marked "format test only" that the parser refuses for calibration and evaluation.
 There is therefore **no** live detection rate, latency, false-positive rate or accepted-distance figure. Tooling exists and is tested only for file format (`ingest_live_logs.py`, `calibrate_live.py`, `evaluate_live.py`, `docs/recording_protocol.md`). The S5 branch of `evaluate_live.py` and the calibrated branch of `calibrate_live.py` were never run on real data. (Verified.)
@@ -115,7 +117,7 @@ Mock apps that report no accuracy field lose every fix to the accuracy filter an
 
 ## 9. Stationary-on-table scenario (separate section)
 
-Status: **PENDING USER DATA.** No stationary-on-table recording exists, so nothing is measured for it. Model B's behaviour on a phone resting on a surface is untested (Phase 3 limitation; Dryad has no stationary data). Three things stay unknown until the S2 and S3 recordings exist: GPS jitter speed and displacement of a still phone, step-counter noise at rest, and Model B's P(STATIONARY) on a table. The stationary-side thresholds (`V_MOVE_MPS`, `V_MOVE_DISP_MPS`, `STEP_ZERO_MAX`, `P_STAT_STATIONARY`) remain provisional until then. This scenario is reported on its own, apart from walking sessions, and with calibration sessions kept apart from evaluation sessions.
+Status: **NOT PERFORMED** (live evaluation not performed; pending logger validation and S1-S5 collection). No stationary-on-table recording exists, so nothing is measured for it. Model B's behaviour on a phone resting on a surface is untested (Phase 3 limitation; Dryad has no stationary data). Three things stay unknown until the S2 and S3 recordings exist: GPS jitter speed and displacement of a still phone, step-counter noise at rest, and Model B's P(STATIONARY) on a table. The stationary-side thresholds (`V_MOVE_MPS`, `V_MOVE_DISP_MPS`, `STEP_ZERO_MAX`, `P_STAT_STATIONARY`) remain provisional until then. This scenario is reported on its own, apart from walking sessions, and with calibration sessions kept apart from evaluation sessions.
 
 ## 10. Limitations
 
@@ -132,7 +134,7 @@ Status: **PENDING USER DATA.** No stationary-on-table recording exists, so nothi
 
 ## 11. Verified / Inferred summary
 
-- **Verified:** restore and correction records; IMU check numbers; Model B class shares on Dryad; thresholds and hashes; held-out state counts; live status PENDING; 56 tests passing; no stationary data found.
+- **Verified:** restore and correction records; IMU check numbers; Model B class shares on Dryad; thresholds and hashes; held-out state counts; live evaluation not performed (user SKIP at the live-data gate); 56 tests passing; no stationary data found; final re-run of the Dryad pipeline deterministic and Model A/B files unchanged (`phase4_preservation_check.json`, `verification_live_gate_skip`).
 - **Inferred:** Dryad unit text (m/s², deg/s); effect of resampling on features; that the Model B gap is caused by placement and hardware; behaviour of Android `TYPE_STEP_COUNTER` relative to Dryad's pedometer; behaviour in vehicles; the hand-shake attack.
 
 ## 12. PROPOSED ANDROID DEVELOPMENT PLAN (not started)
@@ -181,7 +183,7 @@ No Android code exists and none was written. This is a proposal for review. The 
 - Small number of devices and sessions for evaluation.
 
 ### 12.9 Milestones
-1. User records calibration and evaluation sessions; `calibrate_live.py` and `evaluate_live.py` run; thresholds revised once and frozen (decision point before any app work).
+1. (Not performed in Phase 4; user SKIP.) Validate the logger, then user records calibration and evaluation sessions (S1-S5); `calibrate_live.py` and `evaluate_live.py` run; thresholds revised once and frozen (decision point before any app work).
 2. Shared Compose module, design system, Reset Steps and step-counter service.
 3. Logging and export module.
 4. App A (Model A export, parity tests).
@@ -190,4 +192,4 @@ No Android code exists and none was written. This is a proposal for review. The 
 
 ## 13. Files and reproducibility
 
-Code: `ml/fusion_engine/`. Specs: `docs/fusion_engine_spec.md`, `docs/recording_protocol.md`. Metrics: `results/metrics/phase4_*.json` and CSVs. A full re-run of the five pipeline scripts gave identical SHA-256 for 8 output files (run log). Committed on `phase4-fusion-engine`.
+Code: `ml/fusion_engine/`. Specs: `docs/fusion_engine_spec.md`, `docs/recording_protocol.md`. Metrics: `results/metrics/phase4_*.json` and CSVs. A full re-run of the five pipeline scripts gave identical SHA-256 for 9 output files (run log; repeated at the final live-gate pass, two runs, 10 exits 0). Committed on `phase4-fusion-engine`.

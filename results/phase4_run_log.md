@@ -112,3 +112,10 @@ Re-ran: 5 pipeline scripts twice (all 10 exits 0), python -m pytest ml/fusion_en
 6. Model A and B unchanged: PASS (15 of 15 hashes match frozen_models_before).
 7. User docs preserved: PASS (PDF still ' M', 7 doc hashes equal, 6 .agents files equal).
 8. Report vs JSON: PASS. Outputs are byte-identical to those the report was checked against; no numeric edits.
+
+## Work item 4 (final part): live-data gate, user reply SKIP
+Decision: user replied SKIP. Live evaluation not performed; pending logger validation and S1-S5 collection. Phase 4 closes with the provisional thresholds. Android development not started.
+Not run: calibrate_live.py and evaluate_live.py (no real recordings; datasets/live_recordings/{calibration,evaluation}/ still hold only .gitkeep). ml/fusion_engine/live_split.json not created. thresholds.json unchanged (SHA-256 5184189b...b639725, stationary-side thresholds V_MOVE_MPS, V_MOVE_DISP_MPS, STEP_ZERO_MAX, P_STAT_STATIONARY still provisional). phase4_live_calibration.json and phase4_live_eval.json unchanged (status PENDING USER DATA, no metrics). Stationary-on-table scenario: not performed.
+Re-ran: 5 Dryad pipeline scripts twice (10 exits 0); 9 outputs hash-identical before, after run 1 and after run 2. python -m pytest ml/fusion_engine -q: 56 passed.
+Preservation: 15 of 15 Model A/B files match frozen_models_before; 7 doc hashes and 6 .agents hashes unchanged; Literature Survey PDF still ' M'. Recorded in phase4_preservation_check.json (verification_live_gate_skip).
+Report: phase4_report.md sections 8, 9, 11, 12.9 and 13 updated to "not performed". Nothing staged or committed in this step.

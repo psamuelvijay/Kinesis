@@ -177,5 +177,20 @@
                                                                      "sha256_now":  "c88ccdc7b335ce6512b0185cb16a3188e7942221806ca0495f5f64ff2723d799",
                                                                      "cr_bytes_now":  0
                                                                  }
-                                  }
+                                  },
+    "verification_live_gate_skip":  {
+                                        "checked_utc":  "2026-11-17T14:17:53.1214840Z",
+                                        "pass":  "live-gate SKIP final pass",
+                                        "all_frozen_models_unchanged":  true,
+                                        "frozen_models_checked":  15,
+                                        "all_untracked_docs_and_pdf_hash_unchanged":  true,
+                                        "docs_checked":  7,
+                                        "all_agents_files_hash_unchanged":  true,
+                                        "agents_checked":  6,
+                                        "literature_survey_pdf_git_status":  "M docs/Kinesis_Literature_Survey.pdf",
+                                        "dryad_determinism":  "5 pipeline scripts run twice (10 exits 0); 9 outputs hash-identical before, after run 1, after run 2",
+                                        "thresholds_sha256":  "5184189b40f914a07c62c68d29b459cfe74e2eae40c2099d1a8950316b639725",
+                                        "pytest":  "56 passed",
+                                        "live_evaluation":  "not performed; pending logger validation and S1-S5 collection"
+                                    }
 }
