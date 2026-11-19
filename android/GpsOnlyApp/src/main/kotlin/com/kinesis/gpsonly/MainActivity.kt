@@ -1,6 +1,17 @@
 package com.kinesis.gpsonly
 
-import android.app.Activity
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import com.kinesis.ui.shared.KinesisApp
+import com.kinesis.ui.shared.preview.NoOpPermissionBridge
 
-/** Placeholder; replaced by the shared UI host in a later feature. */
-class MainActivity : Activity()
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        val container = (application as GpsOnlyApplication).container
+        setContent { KinesisApp(container.controller, NoOpPermissionBridge) }
+    }
+}

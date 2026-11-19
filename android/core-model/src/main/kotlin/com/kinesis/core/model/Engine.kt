@@ -39,6 +39,8 @@ interface CountingEngine {
 
 /** What the UI talks to. */
 interface CountingController {
+    /** Static description of the method; the UI uses it for the banner and field policies. */
+    val profile: MethodProfile
     val state: StateFlow<CountingUiState>
     fun start()
     fun stop()
