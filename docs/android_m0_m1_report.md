@@ -7,7 +7,17 @@ Evidence labels used below:
 - **adb-verified**: checked over adb on a physical phone (OPPO CPH2213, Android 13, App A only).
 - **Manually verified by user**: confirmed by the user on a phone. Originally this covered only the in-app permission grants and Start taps needed for the adb checks.
 
-**Update (user report after the report was written):** the user walked with App A on Phone A (OPPO CPH2213, Android 13) and reported that the GPS-estimated step count kept increasing with the phone screen off. This is the only walking result. No step count, distance or accuracy values were recorded, so it shows that background counting continued, not that the estimate is accurate. Reset Steps, close-and-reopen, stationary phantom steps and long screen-off runs on the phone are still not user-verified. App B has not been installed on a phone.
+**Update (user reports after the report was written; supersedes the "App B not installed" statements below):**
+
+- **App A, Phone A (OPPO CPH2213, Android 13, serial `9DXGAUMRYDOV69L7`), manually verified by user:** walking outdoors, the GPS-estimated step count kept increasing with the screen off. The user then reported the manual checklist as "all tested and fine". No step counts, distances or accuracy values were recorded, so this shows the counting pipeline behaves correctly, not that the placeholder estimate is accurate.
+- **App B, Phone B (OnePlus Nord 2T 5G, CPH2401, Android 14 / API 34, serial `UOBACMH6US6DFABY`), adb-verified:**
+  - The phone has a hardware `TYPE_STEP_COUNTER` (MTK, on-change, non-wake-up, no batching).
+  - `adb -s UOBACMH6US6DFABY install -r app-fusion-debug.apk` succeeded, and the app launched with no crash in the logcat crash buffer.
+  - After the user granted the permissions in the app and tapped Start: `SensorFusionCountingService` was foreground (id 1001, type `health`), the notification was posted, and `ACTIVITY_RECOGNITION` and `POST_NOTIFICATIONS` were granted.
+  - `SensorStepCounterFeed` (pid 9911) was registered on `STEP_COUNTER` with 0 dropped events.
+  - With the screen off for 30 s, the phone reached the `Dozing` state. The same pid stayed alive and the service stayed foreground.
+- **App B, Phone B, manually verified by user:** the user walked with App B and reported "counting good". No counted-versus-displayed step numbers were recorded, so physical step-count accuracy is not quantified.
+- **Still unverified:** long screen-off runs under OEM battery management, reboot handling on a real phone, Android 10–12, and quantified step accuracy for both apps.
 
 ## 1. Architecture and implementation summary
 
