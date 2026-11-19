@@ -104,6 +104,44 @@ class GpsCountingEngineTest {
     }
 }
 
+class RealPipelineRestartTest {
+    private val model by lazy {
+        RandomForestModel.parse(java.io.File("src/main/assets/gps_rf_model.bin").readBytes())
+    }
+
+    private fun walk(source: FakeSource, fromSec: Int, toSec: Int) {
+        for (t in fromSec..toSec) {
+            source.onFix!!(GpsFix(t * SECOND, 10.0 + (t - fromSec) * 1.4 / 111_195.0, 20.0, 1.4, 5.0))
+        }
+    }
+
+    @Test
+    fun restartWithRestoredCursorStillCountsNewWindowsAndNeverRecounts() {
+        val source = FakeSource()
+        val engine = GpsCountingEngine(source, { GpsWindowPipeline.clockAligned(model) })
+        val rec1 = Recorder()
+        engine.start(rec1)
+        walk(source, 500, 560)
+        assertTrue(rec1.windows.isNotEmpty())
+        assertEquals(rec1.windows.sorted(), rec1.windows)
+        assertEquals(rec1.windows.size, rec1.windows.toSet().size)
+        assertTrue(rec1.windows.all { it >= 100L })
+        val cursor = rec1.windows.last()
+        engine.stop()
+
+        // Process death: a fresh engine restored from the persisted cursor, later on the same clock.
+        val source2 = FakeSource()
+        val engine2 = GpsCountingEngine(source2, { GpsWindowPipeline.clockAligned(model) })
+        engine2.restoreCountedWindow(cursor)
+        val rec2 = Recorder()
+        engine2.start(rec2)
+        walk(source2, 600, 660)
+        assertTrue(rec2.windows.isNotEmpty())
+        assertTrue(rec2.windows.all { it > cursor })
+        assertTrue(rec2.steps.last().second > 0.0)
+    }
+}
+
 class WindowCountingTest {
     @Test
     fun aWindowIsCountedOnceEvenWhenTheServiceRestarts() {

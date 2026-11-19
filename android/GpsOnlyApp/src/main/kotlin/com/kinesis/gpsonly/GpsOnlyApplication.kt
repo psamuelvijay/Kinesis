@@ -26,7 +26,7 @@ class GpsOnlyContainer(app: Application) {
     private val model by lazy {
         app.assets.open("gps_rf_model.bin").use { RandomForestModel.load(it) }
     }
-    private val engine = GpsCountingEngine(PlatformLocationSource(app), estimatorFactory = { GpsWindowPipeline(model) })
+    private val engine = GpsCountingEngine(PlatformLocationSource(app), estimatorFactory = { GpsWindowPipeline.clockAligned(model) })
     val runtime = CountingRuntime(
         engine = engine,
         store = store,

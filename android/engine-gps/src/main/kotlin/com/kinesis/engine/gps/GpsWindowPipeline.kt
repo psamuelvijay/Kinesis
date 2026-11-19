@@ -200,6 +200,12 @@ class GpsWindowPipeline(
     }
 
     companion object {
+        /**
+         * Production pipeline: window index = floor(elapsedRealtimeMs / 5 s), so indices keep their meaning across
+         * service restarts and match the persisted counted-window cursor.
+         */
+        fun clockAligned(model: RandomForestModel) = GpsWindowPipeline(model, anchorMs = 0.0)
+
         /** Kept fixes required at or after a window's end before it is closed. */
         const val CLOSE_LOOKAHEAD = 2
         /** Kept-fix history retained before the next open window for teleport and gap checks. */
