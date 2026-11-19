@@ -7,6 +7,8 @@ data class PersistedCounting(
     val monitoringRequested: Boolean = false,
     val resetCount: Int = 0,
     val lastResetElapsedMs: Long? = null,
+    /** GPS engine only: index of the last 5 s window whose prediction was counted. */
+    val lastCountedWindow: Long? = null,
 ) {
     fun onSteps(epoch: Long, cumulative: Double) = copy(steps = steps.onReading(epoch, cumulative))
 
@@ -33,6 +35,7 @@ data class PersistedCounting(
         put("monitoring_requested", monitoringRequested.toString())
         put("reset_count", resetCount.toString())
         lastResetElapsedMs?.let { put("last_reset_elapsed_ms", it.toString()) }
+        lastCountedWindow?.let { put("last_counted_window", it.toString()) }
     }
 
     companion object {
@@ -43,6 +46,7 @@ data class PersistedCounting(
             monitoringRequested = map["monitoring_requested"]?.toBooleanStrictOrNull() ?: false,
             resetCount = map["reset_count"]?.toIntOrNull() ?: 0,
             lastResetElapsedMs = map["last_reset_elapsed_ms"]?.toLongOrNull(),
+            lastCountedWindow = map["last_counted_window"]?.toLongOrNull(),
         )
 
         private fun MutableMap<String, String>.putChannel(name: String, c: CounterState) {

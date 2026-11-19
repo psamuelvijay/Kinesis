@@ -24,4 +24,6 @@ data class CountingUiState(
     val movementVerdict: FieldState<String>,
     val requirements: List<RequirementStatus> = emptyList(),
     val canStart: Boolean = false,
+    /** "GPS gap / insufficient data" while the latest GPS window could not be predicted; else null. Not rendered. */
+    val gpsDataNote: String? = null,
 )

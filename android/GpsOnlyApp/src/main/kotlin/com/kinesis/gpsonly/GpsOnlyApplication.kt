@@ -7,7 +7,9 @@ import com.kinesis.core.runtime.CountingStore
 import com.kinesis.core.runtime.RuntimeProvider
 import com.kinesis.core.runtime.androidRequirementEvaluator
 import com.kinesis.engine.gps.GpsCountingEngine
+import com.kinesis.engine.gps.GpsWindowPipeline
 import com.kinesis.engine.gps.PlatformLocationSource
+import com.kinesis.engine.gps.RandomForestModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -21,7 +23,10 @@ class GpsOnlyContainer(app: Application) {
         File(app.filesDir, "datastore/" + CountingStore.FILE_NAME),
         scope,
     )
-    private val engine = GpsCountingEngine(PlatformLocationSource(app))
+    private val model by lazy {
+        app.assets.open("gps_rf_model.bin").use { RandomForestModel.load(it) }
+    }
+    private val engine = GpsCountingEngine(PlatformLocationSource(app), estimatorFactory = { GpsWindowPipeline(model) })
     val runtime = CountingRuntime(
         engine = engine,
         store = store,

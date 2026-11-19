@@ -103,8 +103,8 @@ class PlatformLocationSource(context: Context) : GpsFixSource {
         elapsedRealtimeNanos = elapsedRealtimeNanos,
         latitude = latitude,
         longitude = longitude,
-        accuracyM = if (hasAccuracy()) accuracy else null,
-        speedMps = if (hasSpeed()) speed else null,
+        accuracyM = if (hasAccuracy()) accuracy.toDouble() else null,
+        speedMps = if (hasSpeed()) speed.toDouble() else null,
     )
 
     private companion object {

@@ -20,6 +20,12 @@ interface EngineListener {
     fun onDistance(epoch: Long, cumulativeM: Double)
     fun onFix(speedMps: Float?, accuracyM: Float?)
     fun onUnavailable(reason: UnavailableReason)
+
+    /** GPS engine: a window was counted. Persisted so a restart cannot count it twice. */
+    fun onWindowCounted(index: Long) = Unit
+
+    /** GPS engine: true when the latest closed window had a gap or too little data to predict. */
+    fun onGpsDataStatus(insufficient: Boolean) = Unit
 }
 
 /**
@@ -35,6 +41,9 @@ interface CountingEngine {
     fun stop()
     /** Called after a session reset; the engine must not reset its source. */
     fun onReset()
+
+    /** Hands the persisted last counted window index to the engine before it starts. */
+    fun restoreCountedWindow(index: Long?) = Unit
 }
 
 /** What the UI talks to. */

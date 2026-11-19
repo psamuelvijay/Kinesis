@@ -50,6 +50,7 @@ class CountingRuntime(
         val availability: EngineAvailability = EngineAvailability.Available,
         val engineUnavailable: UnavailableReason? = null,
         val failure: UnavailableReason? = null,
+        val gpsDataInsufficient: Boolean = false,
         val evaluation: RequirementEvaluation,
     )
 
@@ -60,12 +61,14 @@ class CountingRuntime(
         Live(availability = engine.availability(), evaluation = evaluator()),
     )
     private val engineActive = AtomicBoolean(false)
+    @Volatile private var persistedCountedWindow: Long? = null
 
     val state: StateFlow<CountingUiState> = combine(store.data, live) { persisted, l ->
         buildState(persisted, l)
     }.stateIn(scope, SharingStarted.Eagerly, buildState(PersistedCounting(), live.value))
 
     init {
+        scope.launch { store.data.collect { persistedCountedWindow = it.lastCountedWindow } }
         scope.launch {
             for (first in mutations) {
                 // Apply everything already queued in one transaction, in arrival order.
@@ -121,7 +124,7 @@ class CountingRuntime(
     /** The user pressed Stop: steps taken while stopped are excluded on the next start. */
     fun stop() {
         stopEngine()
-        live.update { it.copy(starting = false, speedMps = null, accuracyM = null, engineUnavailable = null) }
+        live.update { it.copy(starting = false, speedMps = null, accuracyM = null, engineUnavailable = null, gpsDataInsufficient = false) }
         mutate { it.onUserStop() }
     }
 
@@ -135,7 +138,10 @@ class CountingRuntime(
     /** The foreground service is up. Starts the engine once; repeated calls are no-ops. */
     fun onServiceStarted() {
         live.update { it.copy(serviceRunning = true, starting = false) }
-        if (engineActive.compareAndSet(false, true)) engine.start(this)
+        if (engineActive.compareAndSet(false, true)) {
+            engine.restoreCountedWindow(persistedCountedWindow)
+            engine.start(this)
+        }
     }
 
     /** The service is gone for any reason. Does not clear the monitoring request. */
@@ -172,6 +178,13 @@ class CountingRuntime(
 
     override fun onFix(speedMps: Float?, accuracyM: Float?) {
         live.update { it.copy(speedMps = speedMps, accuracyM = accuracyM, engineUnavailable = null) }
+    }
+
+    override fun onWindowCounted(index: Long) =
+        mutate { it.copy(lastCountedWindow = index) }
+
+    override fun onGpsDataStatus(insufficient: Boolean) {
+        live.update { it.copy(gpsDataInsufficient = insufficient) }
     }
 
     override fun onUnavailable(reason: UnavailableReason) {
@@ -217,10 +230,12 @@ class CountingRuntime(
             movementVerdict = field(profile.movementVerdict, null as String?),
             requirements = l.evaluation.statuses,
             canStart = l.evaluation.canStart && l.availability is EngineAvailability.Available,
+            gpsDataNote = if (l.serviceRunning && l.gpsDataInsufficient) GPS_GAP_NOTE else null,
         )
     }
 
     private companion object {
+        const val GPS_GAP_NOTE = "GPS gap / insufficient data"
         const val WRITE_ATTEMPTS = 3
         const val WRITE_RETRY_DELAY_MS = 50L
     }

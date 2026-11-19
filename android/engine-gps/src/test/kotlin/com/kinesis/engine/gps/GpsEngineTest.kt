@@ -10,99 +10,26 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 private const val SECOND = 1_000_000_000L
-private const val METRE_IN_DEG_LAT = 1.0 / 111_195.0
 
-private fun fix(t: Int, northM: Double, accuracy: Float? = 5f, eastM: Double = 0.0) = GpsFix(
-    elapsedRealtimeNanos = t * SECOND,
-    latitude = 10.0 + northM * METRE_IN_DEG_LAT,
-    longitude = 20.0 + eastM * METRE_IN_DEG_LAT / cos(Math.toRadians(10.0)),
-    accuracyM = accuracy,
-    speedMps = null,
-)
+private fun fix(t: Int) = GpsFix(t * SECOND, 10.0, 20.0, 5.0, 1.0)
 
-class GpsStepEstimatorTest {
-    @Test
-    fun oneDegreeOfLatitudeIsAbout111195Metres() {
-        val d = haversineM(0.0, 0.0, 1.0, 0.0)
-        assertEquals(111_195.0, d, 111_195.0 * 0.001)
-    }
-
-    @Test
-    fun walkingAtSevenMetresPerSecondAccumulatesPathAndSteps() {
-        val e = GpsStepEstimator()
-        for (t in 0..10) e.onFix(fix(t, northM = t * 7.0))
-        // The newest fix is held back one step, so 9 of the 10 segments are committed.
-        assertEquals(63.0, e.cumulativeDistanceM, 0.5)
-        assertEquals(e.cumulativeDistanceM / PROVISIONAL_STRIDE_M, e.cumulativeSteps, 1e-9)
-    }
-
-    @Test
-    fun fixesWithPoorAccuracyAreDropped() {
-        val e = GpsStepEstimator()
-        e.onFix(fix(0, 0.0))
-        e.onFix(fix(1, 5.0, accuracy = 80f)) // dropped
-        e.onFix(fix(2, 10.0))
-        e.onFix(fix(3, 15.0))
-        assertEquals(10.0, e.cumulativeDistanceM, 0.1)
-    }
-
-    @Test
-    fun invalidCoordinatesAreDropped() {
-        val e = GpsStepEstimator()
-        e.onFix(fix(0, 0.0))
-        e.onFix(GpsFix(1 * SECOND, Double.NaN, 20.0, 5f, null))
-        e.onFix(GpsFix(2 * SECOND, 95.0, 20.0, 5f, null))
-        e.onFix(fix(3, 3.0))
-        e.onFix(fix(4, 4.0))
-        assertEquals(3.0, e.cumulativeDistanceM, 0.1)
-    }
-
-    @Test
-    fun singleTeleportFixIsDroppedAndAddsNothing() {
-        val e = GpsStepEstimator()
-        e.onFix(fix(0, 0.0))
-        e.onFix(fix(1, 2.0))
-        e.onFix(fix(2, 5_000.0)) // implies 4998 m/s to both neighbours
-        e.onFix(fix(3, 6.0))
-        e.onFix(fix(4, 8.0))
-        e.onFix(fix(5, 10.0))
-        assertTrue(e.cumulativeDistanceM < 20.0, "was ${e.cumulativeDistanceM}")
-        assertEquals(8.0, e.cumulativeDistanceM, 0.3)
-    }
-
-    @Test
-    fun gapsLongerThanTenSecondsAreNotBridged() {
-        val e = GpsStepEstimator()
-        e.onFix(fix(0, 0.0))
-        e.onFix(fix(1, 5.0))
-        e.onFix(fix(20, 500.0)) // 19 s later, 495 m away
-        e.onFix(fix(21, 505.0))
-        e.onFix(fix(22, 510.0))
-        assertEquals(10.0, e.cumulativeDistanceM, 0.3) // 5 m before the gap + 5 m after it
-    }
-
-    @Test
-    fun outOfOrderFixIsIgnored() {
-        val e = GpsStepEstimator()
-        e.onFix(fix(5, 0.0))
-        e.onFix(fix(4, 100.0))
-        e.onFix(fix(6, 4.0))
-        e.onFix(fix(7, 8.0))
-        assertEquals(4.0, e.cumulativeDistanceM, 0.3) // 5 to 6 committed; the newest fix is held back
-    }
-
-    /** Documents the known weakness: no jitter gate, so stationary GPS noise creates phantom steps. */
-    @Test
-    fun stationaryJitterProducesPhantomSteps() {
-        val e = GpsStepEstimator()
-        for (t in 0..60) {
-            val wobble = if (t % 2 == 0) 0.0 else 3.0
-            e.onFix(fix(t, wobble))
-        }
-        assertTrue(e.cumulativeSteps > 100.0, "phantom steps expected, was ${e.cumulativeSteps}")
+/** Closes window t for a fix at t seconds; raw null means an excluded window. */
+private class FakeEstimator(private val raw: Double? = 7.0) : WindowEstimator {
+    override fun onFix(fix: GpsFix): List<WindowResult> {
+        val k = windowIndexOf(fix.elapsedRealtimeNanos / 1e6)
+        return listOf(
+            if (raw == null) WindowResult(k, 0.0, WindowStatus.LONG_GAP_OVERLAP, null, null, 0.0, 0.0)
+            else WindowResult(k, 0.0, WindowStatus.PREDICTED, null, raw, raw.coerceAtLeast(0.0), 1.0),
+        )
     }
 }
 
+class HaversineTest {
+    @Test
+    fun oneDegreeOfLatitudeIsAbout111195Metres() {
+        assertEquals(111_195.0, haversineM(0.0, 0.0, 1.0, 0.0), 111_195.0 * 0.001)
+    }
+}
 private class FakeSource(var availability: EngineAvailability = EngineAvailability.Available) : GpsFixSource {
     var onFix: ((GpsFix) -> Unit)? = null
     var onProblem: ((UnavailableReason) -> Unit)? = null
@@ -124,21 +51,25 @@ private class Recorder : EngineListener {
     val distances = mutableListOf<Pair<Long, Double>>()
     var fixes = 0
     var unavailable: UnavailableReason? = null
+    val windows = mutableListOf<Long>()
+    val status = mutableListOf<Boolean>()
     override fun onSteps(epoch: Long, cumulative: Double) { steps += epoch to cumulative }
     override fun onDistance(epoch: Long, cumulativeM: Double) { distances += epoch to cumulativeM }
     override fun onFix(speedMps: Float?, accuracyM: Float?) { fixes++ }
     override fun onUnavailable(reason: UnavailableReason) { unavailable = reason }
+    override fun onWindowCounted(index: Long) { windows += index }
+    override fun onGpsDataStatus(insufficient: Boolean) { status += insufficient }
 }
 
 class GpsCountingEngineTest {
     @Test
     fun startEmitsZeroForTheNewEpochThenFollowsFixes() {
         val source = FakeSource()
-        val engine: CountingEngine = GpsCountingEngine(source, epochProvider = { 99L })
+        val engine: CountingEngine = GpsCountingEngine(source, { FakeEstimator() }, epochProvider = { 99L })
         val rec = Recorder()
         engine.start(rec)
         assertEquals(listOf(99L to 0.0), rec.steps)
-        for (t in 0..5) source.onFix!!(fix(t, t * 5.0))
+        for (t in 0..5) source.onFix!!(fix(t * 5))
         assertEquals(6, rec.fixes)
         assertTrue(rec.steps.last().second > 0.0)
         assertTrue(rec.steps.all { it.first == 99L })
@@ -147,7 +78,7 @@ class GpsCountingEngineTest {
     @Test
     fun repeatedStartRegistersTheSourceOnce() {
         val source = FakeSource()
-        val engine = GpsCountingEngine(source)
+        val engine = GpsCountingEngine(source, { FakeEstimator() })
         engine.start(Recorder())
         engine.start(Recorder())
         assertEquals(1, source.starts)
@@ -159,7 +90,7 @@ class GpsCountingEngineTest {
     @Test
     fun sourceProblemIsForwarded() {
         val source = FakeSource()
-        val engine = GpsCountingEngine(source)
+        val engine = GpsCountingEngine(source, { FakeEstimator() })
         val rec = Recorder()
         engine.start(rec)
         source.onProblem!!(UnavailableReason.LOCATION_SERVICES_OFF)
@@ -169,6 +100,58 @@ class GpsCountingEngineTest {
     @Test
     fun availabilityComesFromTheSource() {
         val source = FakeSource(EngineAvailability.Unavailable(UnavailableReason.PRECISE_LOCATION_REQUIRED))
-        assertEquals(source.availability, GpsCountingEngine(source).availability())
+        assertEquals(source.availability, GpsCountingEngine(source, { FakeEstimator() }).availability())
+    }
+}
+
+class WindowCountingTest {
+    @Test
+    fun aWindowIsCountedOnceEvenWhenTheServiceRestarts() {
+        val source = FakeSource()
+        val engine = GpsCountingEngine(source, { FakeEstimator() })
+        val rec = Recorder()
+        engine.start(rec)
+        source.onFix!!(fix(500)); source.onFix!!(fix(500)); source.onFix!!(fix(505))
+        assertEquals(listOf(100L, 101L), rec.windows)
+        assertEquals(14.0, rec.steps.last().second, 1e-9)
+        engine.stop()
+        val rec2 = Recorder()
+        engine.start(rec2) // same process: cursor kept
+        source.onFix!!(fix(505)); source.onFix!!(fix(510))
+        assertEquals(listOf(102L), rec2.windows)
+    }
+
+    @Test
+    fun persistedCursorSuppressesRecountAfterProcessDeath() {
+        val source = FakeSource()
+        val engine = GpsCountingEngine(source, { FakeEstimator() })
+        engine.restoreCountedWindow(101L)
+        val rec = Recorder()
+        engine.start(rec)
+        source.onFix!!(fix(505)); source.onFix!!(fix(510))
+        assertEquals(listOf(102L), rec.windows)
+    }
+
+    @Test
+    fun cursorAheadOfTheClockMeansRebootAndIsCleared() {
+        val source = FakeSource()
+        val engine = GpsCountingEngine(source, { FakeEstimator() })
+        engine.restoreCountedWindow(5_000_000L)
+        val rec = Recorder()
+        engine.start(rec)
+        source.onFix!!(fix(50))
+        assertEquals(listOf(10L), rec.windows)
+    }
+
+    @Test
+    fun excludedWindowCountsZeroAndFlagsInsufficientData() {
+        val source = FakeSource()
+        val engine = GpsCountingEngine(source, { FakeEstimator(raw = null) })
+        val rec = Recorder()
+        engine.start(rec)
+        source.onFix!!(fix(15))
+        assertEquals(emptyList(), rec.windows)
+        assertEquals(0.0, rec.steps.last().second)
+        assertEquals(listOf(true), rec.status)
     }
 }
