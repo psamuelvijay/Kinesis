@@ -91,7 +91,8 @@ OnePlus CPH2401 (App B, Android 14, serial UOBACMH6US6DFABY):
 - One `SensorFusionCountingService` record, foreground, type health (0x100), notification id 1001.
 - `STEP_COUNTER` (type 0x13) connection held for pid 11655 at 200000 µs, so there is no regression in sensor registration.
 - 0 crash or ANR entries.
-- Screen-off survival, partial: the screen woke at about 40 s, so continuous 30 s screen-off was not confirmed. Pid, service and sensor registration were unchanged. Counting continuity was not read.
+- Screen-off survival, first attempt partial: the user was handling the phone, and the screen woke at about 40 s.
+- Screen-off survival, re-run (adb-verified, phone left untouched): after `input keyevent 223` the phone stayed in `Dozing` at all six 5 s samples, which is at least 30 s. Pid 11655 was unchanged. The service was still foreground (id 1001, type 0x100 health). `SensorStepCounterFeed` was a single registration on STEP_COUNTER for pid 11655 with 0 dropped events. The crash buffer showed nothing for the app. The phone was stationary, so counting continuity during screen-off is still not read.
 - Counting after one Start tap: user-reported.
 
 ### Verified emulator or automated
