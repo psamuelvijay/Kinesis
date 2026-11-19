@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_channel_name">Counting status</string>
+    <string name="notification_title">Counting is running</string>
+    <string name="notification_text">Counting steps: %1$d</string>
+</resources>

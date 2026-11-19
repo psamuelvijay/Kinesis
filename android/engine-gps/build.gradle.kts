@@ -5,11 +5,9 @@ plugins {
 android {
     namespace = "com.kinesis.engine.gps"
     compileSdk = libs.versions.compileSdk.get().toInt()
-
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -24,4 +22,9 @@ kotlin {
 
 dependencies {
     implementation(project(":core-model"))
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.kotlinx.coroutines.core)
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlin.test)
+
 }

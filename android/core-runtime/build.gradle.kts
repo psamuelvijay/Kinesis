@@ -5,11 +5,9 @@ plugins {
 android {
     namespace = "com.kinesis.core.runtime"
     compileSdk = libs.versions.compileSdk.get().toInt()
-
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -23,5 +21,12 @@ kotlin {
 }
 
 dependencies {
-    implementation(project(":core-model"))
+    api(project(":core-model"))
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.okio)
+    implementation(libs.kotlinx.coroutines.android)
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlin.test)
+    testImplementation(libs.kotlinx.coroutines.test)
 }

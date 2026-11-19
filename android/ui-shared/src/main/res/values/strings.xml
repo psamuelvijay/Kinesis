@@ -19,7 +19,7 @@
     <string name="status_blocked_detail">Fix the problem above or in Settings, then try again.</string>
 
     <!-- Unavailable reasons -->
-    <string name="reason_sensor_missing">required sensor not available on this phone</string>
+    <string name="reason_sensor_missing">Step counter not available on this device</string>
     <string name="reason_permission_denied">permission denied</string>
     <string name="reason_precise_location">precise location is required</string>
     <string name="reason_location_services_off">location services are off</string>
