@@ -5,7 +5,9 @@ Branch: `android-m0-m1` (based on `logger-audit` at `96fb035`). Scope is M0 (sha
 Evidence labels used below:
 - **Build/JVM/emulator-verified**: run on this machine (Gradle, JVM unit tests, Pixel_9 AVD API 35).
 - **adb-verified**: checked over adb on a physical phone (OPPO CPH2213, Android 13, App A only).
-- **Manually verified by user**: confirmed by the user on a phone. At the time of writing, nothing is in this category except the in-app permission grants and Start taps that were needed for the adb checks. Walking tests have not been done.
+- **Manually verified by user**: confirmed by the user on a phone. Originally this covered only the in-app permission grants and Start taps needed for the adb checks.
+
+**Update (user report after the report was written):** the user walked with App A on Phone A (OPPO CPH2213, Android 13) and reported that the GPS-estimated step count kept increasing with the phone screen off. This is the only walking result. No step count, distance or accuracy values were recorded, so it shows that background counting continued, not that the estimate is accurate. Reset Steps, close-and-reopen, stationary phantom steps and long screen-off runs on the phone are still not user-verified. App B has not been installed on a phone.
 
 ## 1. Architecture and implementation summary
 
