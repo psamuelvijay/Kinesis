@@ -12,6 +12,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -57,6 +58,10 @@ fun KinesisApp(controller: CountingController, permissionBridge: PermissionBridg
     val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
 
     LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { viewModel.refreshAvailability() }
+    DisposableEffect(permissionBridge, viewModel) {
+        permissionBridge.setPermissionResultListener { viewModel.onPermissionResult() }
+        onDispose { permissionBridge.setPermissionResultListener(null) }
+    }
 
     KinesisTheme {
         Surface {
@@ -89,7 +94,7 @@ fun KinesisApp(controller: CountingController, permissionBridge: PermissionBridg
                             bridge = permissionBridge,
                             batteryHintDismissed = batteryHintDismissed,
                             onDismissBatteryHint = { batteryHintDismissed = true },
-                            onStart = viewModel::start,
+                            onStart = { viewModel.startWithPermissions(permissionBridge) },
                             onStop = viewModel::stop,
                             onReset = viewModel::resetSteps,
                         )

@@ -9,4 +9,7 @@ interface PermissionBridge {
     fun openLocationSettings()
     fun openBatterySettings()
     fun isPermanentlyDenied(requirement: RuntimeRequirement): Boolean
+
+    /** Invoked after each permission request returns, whatever the outcome. */
+    fun setPermissionResultListener(listener: (() -> Unit)?) = Unit
 }

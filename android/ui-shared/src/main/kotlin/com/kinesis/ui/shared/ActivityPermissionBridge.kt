@@ -29,6 +29,11 @@ class ActivityPermissionBridge(
 
     private val prefs = activity.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
     private var notificationsPending = false
+    private var resultListener: (() -> Unit)? = null
+
+    override fun setPermissionResultListener(listener: (() -> Unit)?) {
+        resultListener = listener
+    }
 
     private val launcher = activity.registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions(),
@@ -36,8 +41,10 @@ class ActivityPermissionBridge(
         onResult()
         if (notificationsPending) {
             notificationsPending = false
-            launchIfNeeded(listOf(Manifest.permission.POST_NOTIFICATIONS))
+            // The notification prompt comes next; the listener fires after it, not before.
+            if (launchIfNeeded(listOf(Manifest.permission.POST_NOTIFICATIONS))) return@registerForActivityResult
         }
+        resultListener?.invoke()
     }
 
     override fun requestPermissions(requirements: List<RuntimeRequirement>) {
@@ -45,20 +52,24 @@ class ActivityPermissionBridge(
         notificationsPending = Build.VERSION.SDK_INT >= 33 && !isGranted(Manifest.permission.POST_NOTIFICATIONS)
         if (required.isEmpty()) {
             onResult()
+            var launched = false
             if (notificationsPending) {
                 notificationsPending = false
-                launchIfNeeded(listOf(Manifest.permission.POST_NOTIFICATIONS))
+                launched = launchIfNeeded(listOf(Manifest.permission.POST_NOTIFICATIONS))
             }
+            if (!launched) resultListener?.invoke()
         } else {
             launchIfNeeded(required)
         }
     }
 
-    private fun launchIfNeeded(permissions: List<String>) {
+    /** Returns true when a request was launched. */
+    private fun launchIfNeeded(permissions: List<String>): Boolean {
         val toAsk = permissions.filterNot(::isGranted)
-        if (toAsk.isEmpty()) return
+        if (toAsk.isEmpty()) return false
         prefs.edit { toAsk.forEach { putBoolean(it, true) } }
         launcher.launch(toAsk.toTypedArray())
+        return true
     }
 
     override fun isPermanentlyDenied(requirement: RuntimeRequirement): Boolean {
